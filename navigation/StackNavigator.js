@@ -1,0 +1,336 @@
+import React from "react";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createStackNavigator } from "@react-navigation/stack";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import Icon from 'react-native-vector-icons/Ionicons';
+import { Button,Dimensions,tintcolor, View,Text, ScrollView,SafeAreaView,Image,TextComponent,TouchableOpacity,StyleSheet, TextInput } from 'react-native';
+import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale, heightPercentageToDP } from '../services/responsiveFunc';
+
+import SplashScreen from '../pages/SplashScreen';
+import Onboarding from '../pages/Onboarding.';
+import signin from '../pages/signin';
+import signup from '../pages/signup';
+import forgotpassword from '../pages/forgotpassword';
+import newpassword from '../pages/newpassword';
+import Contact from "../pages/Contact";
+import hamburger from "../pages/hamburger";
+import { getActiveChildNavigationOptions } from "react-navigation";
+import Profile from "../pages/Profile";
+import wallet from "../pages/wallet";
+import settings from "../pages/settings";
+import notification from "../pages/notification";
+import paymentinfo from "../pages/paymentinfo";
+import termsofuse from "../pages/termsofuse";
+import logout from "../pages/logout";
+import termsandconditions from "../pages/termsandconditions";
+import { Label } from "native-base";
+import color from "color";
+
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator ();
+const Drawer = createDrawerNavigator();
+
+const MainStackNavigator = () => {
+  return (
+    <Stack.Navigator
+    initialRouteName="SplashScreen">
+       <Stack.Screen
+          name="SplashScreen"         
+          component={SplashScreen}
+          options={{
+            headerShown: false,
+            title: 'First Page', //Set Header Title
+            headerStyle: {
+              backgroundColor: '#f4511e', //Set Header color
+            },
+            headerTintColor: '#fff', //Set Header text color
+            headerTitleStyle: {
+              fontWeight: 'bold', //Set Header text style
+            },
+          }}
+        />
+       <Stack.Screen
+          name="Onboarding"
+          component={Onboarding}
+          options={{
+            headerShown: false,
+            headerStyle: {
+              backgroundColor: '#f4511e', //Set Header color
+            },
+            headerTintColor: '#fff', //Set Header text color
+            headerTitleStyle: {
+              fontWeight: 'bold', //Set Header text style
+            }, 
+          }}
+        />
+       <Stack.Screen
+          name="signin"
+          component={signin}
+          options={{ 
+            headerStyle: {
+              height:hp('9%'),
+              backgroundColor: '#ffffff', //Set Header color
+            },
+            headerTintColor: '#000000', //Set Header text color
+            headerTitleStyle: {
+              fontWeight: 'bold', //Set Header text style
+            },
+            headerTitle: () =>(
+              <Image style={{resizeMode:'contain',alignSelf:'center',marginEnd:wp('15%')}}
+              source={require('../Image/toplogo.png')}/>
+              
+            ),
+          }}
+        />
+      <Stack.Screen
+          name="signup"
+          component={signup}
+          options={{ 
+            headerStyle: {
+              height:hp('9%'),
+              backgroundColor: '#ffffff', //Set Header color
+            },
+            headerTintColor: '#000000', //Set Header text color
+            headerTitleStyle: {
+              fontWeight: 'bold', //Set Header text style
+            },
+            headerTitle: () =>(
+              <Image style={{resizeMode:'contain',alignSelf:'center',marginEnd:wp('15%')}}
+              source={require('../Image/toplogo.png')}/>
+              
+            ),
+          }}
+        />
+         <Stack.Screen
+          name="hamburger"
+          component={DrawerNavigator}
+          options={{
+            
+            headerShown: false,
+            headerStyle: {
+              backgroundColor: '#f4511e', //Set Header color
+            },
+            headerTintColor: '#fff', //Set Header text color
+            headerTitleStyle: {
+              fontWeight: 'bold', //Set Header text style
+            }, 
+          }}
+        />
+       <Stack.Screen
+          name="forgotpassword"
+          component={forgotpassword}
+          options={{ 
+            headerStyle: {
+              height:hp('9%'),
+              backgroundColor: '#ffffff', //Set Header color
+            },
+            headerTintColor: '#000000', //Set Header text color
+            headerTitleStyle: {
+              fontWeight: 'bold', //Set Header text style
+            },
+            headerTitle: () =>(
+              <Image style={{resizeMode:'contain',alignSelf:'center',marginEnd:wp('15%')}}
+              source={require('../Image/toplogo.png')}/>
+              
+            ),
+          }}
+        />
+      <Stack.Screen
+          name="newpassword"
+          component={newpassword}
+          options={{ 
+            headerStyle: {
+              height:hp('9%'),
+              backgroundColor: '#ffffff', //Set Header color
+            },
+            headerTintColor: '#000000', //Set Header text color
+            headerTitleStyle: {
+              fontWeight: 'bold', //Set Header text style
+            },
+            headerTitle: () =>(
+              <Image style={{resizeMode:'contain',alignSelf:'center',marginEnd:wp('15%')}}
+              source={require('../Image/toplogo.png')}/>
+              
+            ),
+          }}
+        />
+         <Stack.Screen
+          name="termsandconditions"
+          component={termsandconditions}
+          options={{ 
+            title:"Terms and Conditions",
+            headerStyle: {
+              height:hp('9%'),
+              backgroundColor: 'blue', //Set Header color
+            },
+            headerTintColor: '#ffffff', //Set Header text color
+            headerTitleStyle: {
+              fontWeight: 'bold',
+              fontSize:moderateScale(17) //Set Header text style
+            },
+          }}
+        />
+    </Stack.Navigator>
+  );
+}
+const ContactStackNavigator = () => {
+    return (
+      <Stack.Navigator>
+        <Stack.Screen name="Contact" component={Contact} />
+      </Stack.Navigator>
+    );
+  }
+
+  function BottomTabNavigator() {
+    return (
+      <Tab.Navigator
+      tabBarOptions={{
+        activeBackgroundColor:'#87ceeb',
+        activeTintColor:'blue',
+        inactiveTintColor: 'grey', 
+        showLabel:true,
+        showIcon:true,
+      }}
+
+      initialRouteName="Home"
+      shifting='false'>
+        
+        <Tab.Screen name="Home"  component={hamburger}
+        options={{
+          title: 'Ham',
+          tabBarLabel:() =>null,
+          tabBarIcon: () =>(
+            <View style={{borderWidth:0.5,borderRadius:50,backgroundColor:'#dcdcdc',height:hp('4%'),width:wp('8%'),justifyContent:'center',alignItems:'center'}}>
+            <Icon name="home-outline" color="#48d1cc" size={25}/>
+            </View>
+          ),
+          
+        }}/>
+        <Tab.Screen name="settings" component={Contact} 
+        options={{
+          tabBarLabel:() =>null,
+          tabBarIcon: () =>(
+            <View style={{position: 'absolute',
+            height: hp('8%'),
+            justifyContent: 'center',
+            alignItems: 'center'}}>
+            <Icon name="add-circle-outline" color="#48d1cc" size={50}/>
+            </View>
+          ),
+          
+        }}/>
+        <Tab.Screen name="Contact" component={Contact} 
+        options={{
+          tabBarLabel:() =>null,
+          tabBarIcon: () =>(
+            <View style={{borderWidth:0.5,borderRadius:50,backgroundColor:'#dcdcdc',height:hp('4%'),width:wp('8%'),justifyContent:'center',alignItems:'center'}}>
+            <Icon name="search-outline" color="black" size={25}/>
+            </View>
+          ),
+          
+        }}/>
+      </Tab.Navigator>
+    );
+  }
+
+  function DrawerNavigator() {
+    return(
+      <Drawer.Navigator
+      drawerContentOptions={{
+        itemStyle:{marginTop:hp('0%')},
+        contenComponent:createDrawerNavigator
+      }}
+      
+      drawerStyle={{
+        
+        backgroundColor:'#ffffff',
+        
+      }}
+      initialRouteName="Home">
+
+<Drawer.Screen name="Home" component={BottomTabNavigator} options={{
+          drawerLabel: () =>null,  
+          title: null,
+           
+        }} />
+       
+        <Drawer.Screen name="profile" component={Profile} options={{
+           title: 'My Profile',
+           drawerIcon: () => (
+             <View style={{padding:3,borderWidth:0.5,borderRadius:5,backgroundColor:'#dcdcdc'}}>
+            <Icon name="person-outline" color="black" size={25}/>
+            </View>
+           ), 
+        }} 
+        
+        />
+         <Drawer.Screen name="wallet" component={wallet} options={{
+           title: 'My Wallet',
+           drawerIcon: () => (
+            <View style={{padding:3,borderWidth:0.5,borderRadius:5,backgroundColor:'#dcdcdc'}}>
+            <Icon name="wallet-outline" color="black" size={25}/>
+            </View>
+           ), 
+        }} 
+        
+        />
+         <Drawer.Screen name="setting" component={settings} options={{
+           title: 'Settings',
+           drawerIcon: () => (
+            <View style={{padding:3,borderWidth:0.5,borderRadius:5,backgroundColor:'#dcdcdc'}}>
+            <Icon name="settings-outline" color="black" size={25}/>
+            </View>
+           ), 
+        }} 
+        
+        />
+         <Drawer.Screen name="notification" component={notification} options={{
+           title: 'Notification',
+           drawerIcon: () => (
+            <View style={{padding:3,borderWidth:0.5,borderRadius:5,backgroundColor:'#dcdcdc'}}>
+            <Icon name="notifications-outline" color="black" size={25}/>
+            </View>
+           ), 
+        }} 
+        
+        />
+         <Drawer.Screen name="paymentinfo" component={paymentinfo} options={{
+           title: 'Payment Information',
+           drawerIcon: () => (
+            <View style={{padding:3,borderWidth:0.5,borderRadius:5,backgroundColor:'#dcdcdc'}}>
+            <Icon name="card-outline" color="black" size={25}/>
+            </View>
+           ), 
+        }} 
+        
+        />
+         <Drawer.Screen name="termsofuse" component={termsofuse} options={{
+           title: 'Terms Of Use',
+           drawerIcon: () => (
+            <View style={{padding:3,borderWidth:0.5,borderRadius:5,backgroundColor:'#dcdcdc'}}>
+            <Icon name="document-text-outline" color="black" size={25}/>
+            </View>
+           ), 
+        }} 
+        
+        />
+         <Drawer.Screen name="logout" component={logout} options={{
+           title: 'Logout',
+           drawerIcon: () => (
+            <View style={{padding:3,borderWidth:0.5,borderRadius:5,backgroundColor:'#dcdcdc'}}>
+            <Icon name="log-out-outline" color="black" size={25}/>
+            </View>
+           ), 
+        }} 
+        
+        />
+        
+       
+        
+      </Drawer.Navigator>
+
+    );
+  }
+  
+
+export { MainStackNavigator, ContactStackNavigator, BottomTabNavigator, DrawerNavigator };
