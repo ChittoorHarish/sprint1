@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
+import styles from './styles';
 import { Button, View, Text,ActivityIndicator, SafeAreaView,Image,TextComponent,TouchableOpacity,StyleSheet, TextInput } from 'react-native';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale } from '../../services/responsiveFunc';
 
@@ -83,15 +84,15 @@ const signin = (props) => {
 
 
   return (
-    <SafeAreaView style={{ flex: 1,backgroundColor:'white' }}>
+    <SafeAreaView style={styles.safe}>
       <View style={{justifyContent:'center',}}>
-      <View style={{justifyContent:'center',alignItems:'flex-start',marginTop:hp('21%')}}>
-        <Text style={{fontSize:moderateScale(22),marginLeft:wp('5%'),fontFamily:'Poppins-Bold'}}>Sign In</Text>
+      <View style={styles.signintitle}>
+        <Text style={styles.signintitle}>Sign In</Text>
 
       </View>
-      <View style={{justifyContent:'center',alignItems:'center'}}>
+      <View style={styles.basic}>
       <View style={styles.SectionStyle}>
-        <View style={{justifyContent:'center',alignItems:'center'}}>
+        <View style={styles.basic}>
       <Icon name="mail-outline" size={30}/>
       </View>
           <TextInput
@@ -104,7 +105,7 @@ const signin = (props) => {
         </View>
         <View style={styles.SectionStyle1}>
  
-        <View style={{justifyContent:'center',alignItems:'center'}}>
+        <View style={styles.basic}>
       <Icon name="lock-closed-outline" size={30}/>
       </View>
  
@@ -118,28 +119,28 @@ const signin = (props) => {
           />
             <TouchableOpacity onPress={updateSecureTextEntry}>
             {data.secureTextEntry ? 
-          <Text style={{fontSize:moderateScale(17),color:'#1e90ff',fontFamily:'Poppins-Bold'}}>Show</Text> : <Text style={{fontSize:moderateScale(17),color:'#1e90ff',fontWeight:'bold'}}>Hide</Text>}
+          <Text style={styles.show}>Show</Text> : <Text style={styles.hide}>Hide</Text>}
           </TouchableOpacity>
         </View>
         </View>
-        <View style={{justifyContent:'center',alignItems:'flex-start'}}>
+        <View style={styles.basic}>
           <TouchableOpacity
           onPress={() => props.navigation.navigate('forgotpassword')}>
-          <Text style={{fontSize:moderateScale(17),color:'#1e90ff',fontWeight:'bold',marginLeft:wp('5%'),fontFamily:'Poppins-Bold'}}>Forgot Password</Text>
+          <Text style={styles.forgotpasstext}>Forgot Password</Text>
           </TouchableOpacity>
         </View>
-        <View style={{justifyContent:'center',alignItems:'center',marginTop:hp('10%'),alignSelf:'center'}}>
-            <TouchableOpacity style={{justifyContent:'center',alignItems:'center',backgroundColor:'#1e90ff',borderRadius:7,padding:11,width:wp('83%'),alignSelf:'center'}}
+        <View style={touchsend}>
+            <TouchableOpacity style={styles.touchable}
              onPress={() => sendcred()}>
-              <Text style={{fontSize:moderateScale(18),color:'white',fontFamily:'Poppins-Bold'}}>Sign In</Text>
+              <Text style={styles.signintext}>Sign In</Text>
 
             </TouchableOpacity>
           </View>
-          <View style={{justifyContent:'center',alignItems:'center',flexDirection:'row',marginTop:hp('12%')}}>
-            <Text style={{fontSize:moderateScale(16),color:'black',fontFamily:'Poppins-Regular'}}>Don't have an account?</Text>
+          <View style={touchsend2}>
+            <Text style={styles.noacc}>Don't have an account?</Text>
             <TouchableOpacity
             onPress={() => props.navigation.navigate('signup')}>
-            <Text style={{fontSize:moderateScale(16),color:'#1e90ff',marginLeft:wp('1%'),fontFamily:'Poppins-Bold'}}>SignUp</Text>
+            <Text style={styles.signuptext}>SignUp</Text>
             </TouchableOpacity>
 
           </View>
@@ -152,34 +153,7 @@ export default signin;
 
 const styles = StyleSheet.create({
  
-  SectionStyle: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'transparent',
-    borderWidth: 2,
-    marginTop:hp('2%'),
-    borderColor: 'transparent',
-    borderBottomColor:'black',
-    height: hp('6%'),
-    margin:11,
-    marginEnd:wp('4%'),
-    marginLeft:wp('5%'),
-},
-SectionStyle1: {
-  flexDirection: 'row',
-  justifyContent: 'center',
-  alignItems: 'center',
-  backgroundColor: 'transparent',
-  borderWidth: 2,
-  marginTop:hp('3%'),
-  borderColor: 'transparent',
-  borderBottomColor:'black',
-  height: hp('6%'),
-  margin:11,
-  marginEnd:wp('4%'),
-  marginLeft:wp('5%'),
-},
+  
 
 
 });

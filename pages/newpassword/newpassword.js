@@ -2,6 +2,7 @@
 // https://aboutreact.com/react-native-stack-navigation //
 import React, {useState} from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
+import styles from './styles';
 import { Button, View, Text, SafeAreaView,Image,TextComponent,TouchableOpacity,StyleSheet, TextInput } from 'react-native';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale } from '../../services/responsiveFunc';
 
@@ -54,17 +55,17 @@ const newpassword = (props) => {
   }
 
   return (
-    <SafeAreaView style={{ flex: 1,backgroundColor:'white' }}>
+    <SafeAreaView style={styles.safe}>
       <View style={{justifyContent:'center',}}>
-      <View style={{justifyContent:'center',alignItems:'flex-start',marginTop:hp('21%')}}>
-        <Text style={{fontSize:moderateScale(22),marginLeft:wp('5%'),fontFamily:'Poppins-Bold',}}>Set New Password</Text>
+      <View style={style.setnewpass}>
+        <Text style={styles.title}>Set New Password</Text>
 
       </View>
       <View style={{justifyContent:'center',alignItems:'center', marginTop:hp('4%'),}}>
       
         <View style={styles.SectionStyle1}>
  
-        <View style={{justifyContent:'center',alignItems:'center'}}>
+        <View style={styles.basic}>
       <Icon name="lock-closed-outline" size={30}/>
       </View>
  
@@ -79,7 +80,7 @@ const newpassword = (props) => {
         </View>
         <View style={styles.SectionStyle1}>
  
-        <View style={{justifyContent:'center',alignItems:'center'}}>
+        <View style={styles.basic}>
       <Icon name="lock-closed-outline" size={30}/>
       </View>
  
@@ -94,8 +95,8 @@ const newpassword = (props) => {
         </View>
         </View>
         
-        <View style={{justifyContent:'center',alignItems:'center',marginTop:hp('22%'),alignSelf:'center'}}>
-            <TouchableOpacity style={{justifyContent:'center',alignItems:'center',backgroundColor:'#1e90ff',borderRadius:7,padding:11,width:wp('83%'),alignSelf:'center'}}
+        <View style={style.touchnewpass}>
+            <TouchableOpacity style={styles.touch}
             >
               <Text style={{fontSize:moderateScale(18),color:'white',fontFamily:'Poppins-Bold'}}>Submit</Text>
 
@@ -110,19 +111,4 @@ const newpassword = (props) => {
 export default newpassword;
 
 const styles = StyleSheet.create({
- 
-SectionStyle1: {
-  flexDirection: 'row',
-  justifyContent: 'center',
-  alignItems: 'center',
-  backgroundColor: 'transparent',
-  borderWidth: 2,
-  borderColor: 'transparent',
-  borderBottomColor:'black',
-  height: hp('6%'),
-  margin:11,
-  marginEnd:wp('4%'),
-  marginLeft:wp('5%'),
-},
-
 });

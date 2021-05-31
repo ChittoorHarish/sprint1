@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
+import styles from './styles';
 import { Button, View, Text, SafeAreaView,Image,TextComponent,TouchableOpacity,StyleSheet, TextInput } from 'react-native';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale } from '../../services/responsiveFunc';
 
@@ -54,21 +55,21 @@ const forgotpassword = (props) => {
   }
 
   return (
-    <SafeAreaView style={{ flex: 1,backgroundColor:'white' }}>
+    <SafeAreaView style={styles.safe}>
       <View style={{justifyContent:'center',}}>
-      <View style={{justifyContent:'center',alignItems:'flex-start',marginTop:hp('21%')}}>
+      <View style={styles.forgotpassword}>
         <Text style={{fontSize:moderateScale(22),marginLeft:wp('5%'),fontFamily:'Poppins-Bold'}}>Forgot Password</Text>
 
       </View>
-      <View style={{justifyContent:'center',alignItems:'flex-start',marginTop:hp('2%')}}>
+      <View style={styles.forgotpasstext}>
           <Text style={{marginLeft:wp('5%'),marginEnd:wp('7%'),color:'grey',fontSize:moderateScale(17),fontFamily:'Poppins-Regular'}}>
-              Please enter the email address ypu used to create your account and we'll send yoou a link to reset your password.
+              Please enter the email address you used to create your account and we'll send yoou a link to reset your password.
           </Text>
       </View>
-      <View style={{justifyContent:'center',alignItems:'center',marginTop:hp('2.5%')}}>
+      <View style={styles,textinp}>
       <View style={styles.SectionStyle}>
  
-      <View style={{justifyContent:'center',alignItems:'center'}}>
+      <View style={styles.basic}>
       <Icon name="mail-outline" size={30}/>
       </View>
    <TextInput
@@ -81,7 +82,7 @@ const forgotpassword = (props) => {
  </View>
         </View>
         
-        <View style={{justifyContent:'center',alignItems:'center',marginTop:hp('24%'),alignSelf:'center'}}>
+        <View style={styles.buttonsend}>
             <TouchableOpacity style={{justifyContent:'center',alignItems:'center',backgroundColor:'#1e90ff',borderRadius:7,padding:11,width:wp('83%'),alignSelf:'center'}}
              onPress={() => sendcred()}>
               <Text style={{fontSize:moderateScale(18),color:'white',fontFamily:'Poppins-Bold'}}>Submit</Text>
@@ -97,18 +98,5 @@ export default forgotpassword;
 
 const styles = StyleSheet.create({
  
-  SectionStyle: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'transparent',
-    borderWidth: 2,
-    marginTop:hp('2%'),
-    borderColor: 'transparent',
-    borderBottomColor:'black',
-    height: hp('6%'),
-    margin:11,
-    marginEnd:wp('4%'),
-    marginLeft:wp('5%'),
-},
+ 
 });

@@ -1,5 +1,6 @@
 import  React, { useState } from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
+import styles from './styles';
 import { Button, View,Text, ScrollView,SafeAreaView,Image,TextComponent,TouchableOpacity,StyleSheet, TextInput } from 'react-native';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale } from '../../services/responsiveFunc';
 
@@ -134,20 +135,20 @@ const [data1, setData1] = React.useState({
   return (
     <SafeAreaView style={{ flex: 1,backgroundColor:'white' }}>
         <ScrollView>
-      <View style={{justifyContent:'center',alignItems:'flex-start'}}>
-      <View style={{justifyContent:'center',alignItems:'flex-start',marginTop:hp('4%')}}>
-        <Text style={{fontSize:moderateScale(22),marginLeft:wp('5%'),fontFamily:'Poppins-Bold',}}>Sign Up</Text>
+      <View style={styles.basicstart}>
+      <View style={styles.signuptext}>
+        <Text style={styles.signuptitle}>Sign Up</Text>
 
       </View>
-      <View style={{justifyContent:'center',alignItems:'flex-start'}}>
+      <View style={styles.basicstart}>
       <View style={styles.SectionStyle}>
  
-      <View style={{justifyContent:'center',alignItems:'center'}}>
+      <View style={styles.basic}>
       <Icon name="person-outline" size={30}/>
       </View>
  
           <TextInput
-              style={{flex:1,fontSize:moderateScale(17),marginLeft:wp('3%')}}
+              style={styles.textin}
               placeholder="First Name"
               value={firstname}
               onChangeText={(text)=>setFirstname(text)}
@@ -156,12 +157,12 @@ const [data1, setData1] = React.useState({
         </View>
         <View style={styles.SectionStyle}>
  
-        <View style={{justifyContent:'center',alignItems:'center'}}>
+        <View style={styles.basic}>
       <Icon name="person-outline" size={30}/>
       </View>
  
           <TextInput
-              style={{flex:1,fontSize:moderateScale(17),marginLeft:wp('3%')}}
+              style={styles.textin}
               placeholder="Last Name"
               value={lastname}
               onChangeText={(text)=>setLastname(text)}
@@ -170,12 +171,12 @@ const [data1, setData1] = React.useState({
         </View>
         <View style={styles.SectionStyle}>
  
-        <View style={{justifyContent:'center',alignItems:'center'}}>
+        <View style={styles.basic}>
       <Icon name="person-outline" size={30}/>
       </View>
  
           <TextInput
-              style={{flex:1,fontSize:moderateScale(17),marginLeft:wp('3%')}}
+              style={styles.textin}
               placeholder="User Name"
               value={username}
               onChangeText={(text)=>setUsername(text)}
@@ -184,27 +185,27 @@ const [data1, setData1] = React.useState({
         </View>
         <View style={styles.SectionStyle}>
  
-        <View style={{justifyContent:'center',alignItems:'center'}}>
+        <View style={styles.basic}>
       <Icon name="mail-outline" size={30}/>
       </View>
  
           <TextInput
-              style={{flex:1,fontSize:moderateScale(17),marginLeft:wp('3%')}}
+              style={styles.textin}
               placeholder="Email Address"
               value={email}
               onChangeText={(text)=>setEmail(text)}
           />
  
         </View>
-        <View style={{flexDirection:'row',marginLeft:wp('5%'),alignItems:'center',justifyContent:'center',marginEnd:wp('4%')}}>
+        <View style={styles.country}>
         <View style={styles.SectionStyle1}>
            
-        <View style={{justifyContent:'center',alignItems:'center'}}>
+        <View style={styles.basic}>
       <Icon name="globe-outline" size={30}/>
       </View>
 
    <TextInput
-       style={{flex:1,fontSize:moderateScale(17),marginLeft:wp('3%')}}
+       style={styles.textin}
        placeholder="Country"
        value={country_code}
               onChangeText={(text)=>setCountry_code(text)}
@@ -212,12 +213,12 @@ const [data1, setData1] = React.useState({
    </View>
    <View style={styles.SectionStyle1}>
            
-   <View style={{justifyContent:'center',alignItems:'center'}}>
+   <View style={styles.basic}>
       <Icon name="calendar-outline" size={30}/>
       </View>
 
    <TextInput
-       style={{flex:1,fontSize:moderateScale(17),marginLeft:wp('3%')}}
+       style={styles.textin}
        placeholder="DOB"
        value={dob}
               onChangeText={(text)=>setDob(text)}
@@ -228,12 +229,12 @@ const [data1, setData1] = React.useState({
  </View>
  <View style={styles.SectionStyle}>
  
- <View style={{justifyContent:'center',alignItems:'center'}}>
+ <View style={styles.basic}>
 <Icon name="call-outline" size={30}/>
 </View>
 
    <TextInput
-       style={{flex:1,fontSize:moderateScale(17),marginLeft:wp('3%')}}
+       style={styles.textin}
        placeholder="Phone"
        value={phone_no}
        onChangeText={(text)=>setPhone_no(text)}
@@ -242,12 +243,12 @@ const [data1, setData1] = React.useState({
  </View>
  <View style={styles.SectionStyle}>
  
- <View style={{justifyContent:'center',alignItems:'center'}}>
+ <View style={styles.basic}>
       <Icon name="lock-closed-outline" size={30}/>
       </View>
 
    <TextInput
-       style={{flex:1,fontSize:moderateScale(17),marginLeft:wp('3%')}}
+       style={styles.textin}
        placeholder="Password"
        secureTextEntry={false}  
        secureTextEntry={data.secureTextEntry ? true : false}
@@ -262,12 +263,12 @@ const [data1, setData1] = React.useState({
  </View>
  <View style={styles.SectionStyle}>
 
- <View style={{justifyContent:'center',alignItems:'center'}}>
+ <View style={styles.basic}>
       <Icon name="lock-closed-outline" size={30}/>
       </View>
 
    <TextInput
-       style={{flex:1,fontSize:moderateScale(17),marginLeft:wp('3%'),}}
+       style={styles.textin}
        placeholder="Confirm Password"
        secureTextEntry={false} 
        secureTextEntry={data1.secureTextEntry2 ? true : false}
@@ -280,26 +281,26 @@ const [data1, setData1] = React.useState({
           </TouchableOpacity>
     
  </View>
- <View style={{justifyContent:'center',alignItems:'center'}}>
- <View style={{justifyContent:'center',marginLeft:wp('5%'),alignItems:'center',flexDirection:'row',marginEnd:wp('4%')}}>
- <View style={{justifyContent:'center',alignItems:'center',}}>
+ <View style={styles.basic}>
+ <View style={styles.check}>
+ <View style={styles.basic}>
    <TouchableOpacity onPress={() => agregarFavoritos()}>
      {estado ?
       <Icon name="checkbox-outline" color="blue" size={28}/> : <View style={{borderWidth:2,borderColor:'black',marginLeft:wp('0.5%'),marginTop:hp('0.2%'),height:hp('2.9%'),width:wp('5.5%')}}></View>}
       </TouchableOpacity>
       </View>
-   <Text style={{fontSize:moderateScale(17),marginLeft:wp('3%'),fontFamily:'Poppins-Regular'}}>I accept the</Text>
+   <Text style={styles.accept}>I accept the</Text>
    <TouchableOpacity 
    onPress={() => props.navigation.navigate('termsandconditions')}>
-   <Text style={{fontSize:moderateScale(17),color:'#1e90ff',fontFamily:'Poppins-Regular'}}> Terms & Conditions</Text>
+   <Text style={styles.terms}> Terms & Conditions</Text>
    </TouchableOpacity>
-   <Text style={{fontSize:moderateScale(17),fontFamily:'Poppins-Regular'}}> and</Text>
+   <Text style={styles.and}> and</Text>
 
  </View>
  </View>
  <View style={{justifyContent:'center',marginLeft:wp('5%'),alignItems:'center'}}>
    <TouchableOpacity>
-   <Text style={{fontSize:moderateScale(17),color:'#1e90ff',marginLeft:wp('10%'),fontFamily:'Poppins-Regular'}}>Privacy Policies</Text>
+   <Text style={styles.privacy}>Privacy Policies</Text>
    </TouchableOpacity>
 
  </View>
@@ -308,10 +309,10 @@ const [data1, setData1] = React.useState({
        
         
           </View>
-          <View style={{justifyContent:'center',alignItems:'center',marginTop:hp('9%'),alignSelf:'center',marginBottom:hp('1%')}}>
-            <TouchableOpacity style={{justifyContent:'center',alignItems:'center',backgroundColor:'#1e90ff',borderRadius:7,padding:11,width:wp('83%'),alignSelf:'center'}}
+          <View style={styles.send}>
+            <TouchableOpacity style={styles.sendbt}
             onPress={() => sendcred()}>
-              <Text style={{fontSize:moderateScale(18),color:'white',fontFamily:'Poppins-Bold'}}>Sign Up</Text>
+              <Text style={styles.signuptextbot}>Sign Up</Text>
 
             </TouchableOpacity>
           </View>
@@ -324,35 +325,5 @@ const [data1, setData1] = React.useState({
 export default signup;
 
 const styles = StyleSheet.create({
- 
-  SectionStyle: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'transparent',
-    borderWidth: 2,
-    marginTop:hp('2%'),
-    borderColor: 'transparent',
-    borderBottomColor:'black',
-    height: hp('6%'),
-    margin:11,
-    marginEnd:wp('4%'),
-    marginLeft:wp('5%'),
-},
-SectionStyle1: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'transparent',
-    borderWidth: 2,
-    width:wp('43%'),
-    marginHorizontal:wp('2%'),
-    marginTop:hp('2%'),
-    borderColor: 'transparent',
-    borderBottomColor:'black',
-    height: hp('6%'),
-
-
-  },
 
 });
