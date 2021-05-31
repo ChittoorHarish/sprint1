@@ -1,6 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {heightScale, widthScale} from '../../utils/Utils';
-import COLORS from '../../assets/colors';
+
 
 const styles = StyleSheet.create({
  signintitle:{

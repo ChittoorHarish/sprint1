@@ -150,10 +150,3 @@ const signin = (props) => {
 }
 
 export default signin;
-
-const styles = StyleSheet.create({
- 
-  
-
-
-});

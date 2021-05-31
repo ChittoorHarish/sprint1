@@ -77,7 +77,7 @@ const MainStackNavigator = () => {
             },
             headerTitle: () =>(
               <Image style={{resizeMode:'contain',alignSelf:'center',marginEnd:wp('15%')}}
-              source={require('./assets/Image/toplogo.png')}/>
+              source={require('./assets/image/toplogo.png')}/>
               
             ),
           }}
@@ -96,7 +96,7 @@ const MainStackNavigator = () => {
             },
             headerTitle: () =>(
               <Image style={{resizeMode:'contain',alignSelf:'center',marginEnd:wp('15%')}}
-              source={require('./assets/Image/toplogo.png')}/>
+              source={require('./assets/image/toplogo.png')}/>
               
             ),
           }}
@@ -130,7 +130,7 @@ const MainStackNavigator = () => {
             },
             headerTitle: () =>(
               <Image style={{resizeMode:'contain',alignSelf:'center',marginEnd:wp('15%')}}
-              source={require('./assets/Image/toplogo.png')}/>
+              source={require('./assets/image/toplogo.png')}/>
               
             ),
           }}
@@ -149,7 +149,7 @@ const MainStackNavigator = () => {
             },
             headerTitle: () =>(
               <Image style={{resizeMode:'contain',alignSelf:'center',marginEnd:wp('15%')}}
-              source={require('./assets/Image/toplogo.png')}/>
+              source={require('./assets/image/toplogo.png')}/>
               
             ),
           }}
