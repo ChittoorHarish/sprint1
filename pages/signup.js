@@ -15,6 +15,25 @@ const signup= (props) => {
   const [dob,setDob] = useState('');
   const [password,setPassword] = useState('');
   const [confirm_password,setConfirm_password] = useState('');
+  const [data, setData] = React.useState({
+    secureTextEntry: true,
+});
+const [data1, setData1] = React.useState({
+  secureTextEntry2: true,
+});
+
+  const updateSecureTextEntry = () => {
+    setData({
+        ...data,
+        secureTextEntry: !data.secureTextEntry
+    });
+  }
+  const updateSecureTextEntry2 = () => {
+    setData1({
+        ...data1,
+        secureTextEntry2: !data1.secureTextEntry2
+    });
+  }
 
   const [estado, setEstado] = useState(false);
 
@@ -84,16 +103,30 @@ const signup= (props) => {
     .then(res=>res.json())
     .then((responseJson) => {
       //Success
-      alert(JSON.stringify(responseJson));
-      console.log(responseJson);
+      
+      console.log(responseJson.code)
+
+      if(responseJson.code==200  
+  
+        ){
+          props.navigation.navigate('hamburger')
+        }
+        else{
+          alert(
+            "Please Check the Fields to Proceed",
+            
+            [
+              {
+                text: "Cancel",
+                onPress: () => console.log("Cancel Pressed"),
+                style: "cancel"
+              },
+              { text: "OK", onPress: () => console.log("OK Pressed") }
+            ],
+            
+          );
+        }
     })
-    //If response is not in json then in error
-    .catch((error) => {
-      //Error
-      alert(JSON.stringify(error));
-      console.error(error);
-    });
-    props.navigation.navigate('hamburger')
     
    
   }
@@ -103,7 +136,7 @@ const signup= (props) => {
         <ScrollView>
       <View style={{justifyContent:'center',alignItems:'flex-start'}}>
       <View style={{justifyContent:'center',alignItems:'flex-start',marginTop:hp('4%')}}>
-        <Text style={{fontSize:moderateScale(22),marginLeft:wp('5%'),fontWeight:'bold',}}>Sign Up</Text>
+        <Text style={{fontSize:moderateScale(22),marginLeft:wp('5%'),fontFamily:'Poppins-Bold',}}>Sign Up</Text>
 
       </View>
       <View style={{justifyContent:'center',alignItems:'flex-start'}}>
@@ -215,11 +248,16 @@ const signup= (props) => {
 
    <TextInput
        style={{flex:1,fontSize:moderateScale(17),marginLeft:wp('3%')}}
-       placeholder={"Password"}
+       placeholder="Password"
        secureTextEntry={false}  
+       secureTextEntry={data.secureTextEntry ? true : false}
        value={password}
               onChangeText={(text)=>setPassword(text)}  
    />
+    <TouchableOpacity onPress={updateSecureTextEntry}>
+            {data.secureTextEntry ? 
+           <Icon name="eye-off-outline" size={30}/> :  <Icon name="eye-outline" size={30}/>}
+          </TouchableOpacity>
      
  </View>
  <View style={styles.SectionStyle}>
@@ -230,13 +268,19 @@ const signup= (props) => {
 
    <TextInput
        style={{flex:1,fontSize:moderateScale(17),marginLeft:wp('3%'),}}
-       placeholder={"Confirm Password"}
+       placeholder="Confirm Password"
        secureTextEntry={false} 
+       secureTextEntry={data1.secureTextEntry2 ? true : false}
        value={confirm_password}
               onChangeText={(text)=>setConfirm_password(text)}   
    />
+   <TouchableOpacity onPress={updateSecureTextEntry2}>
+            {data1.secureTextEntry2 ? 
+           <Icon name="eye-off-outline" size={30}/> :  <Icon name="eye-outline" size={30}/>}
+          </TouchableOpacity>
     
  </View>
+ <View style={{justifyContent:'center',alignItems:'center'}}>
  <View style={{justifyContent:'center',marginLeft:wp('5%'),alignItems:'center',flexDirection:'row',marginEnd:wp('4%')}}>
  <View style={{justifyContent:'center',alignItems:'center',}}>
    <TouchableOpacity onPress={() => agregarFavoritos()}>
@@ -244,28 +288,30 @@ const signup= (props) => {
       <Icon name="checkbox-outline" color="blue" size={28}/> : <View style={{borderWidth:2,borderColor:'black',marginLeft:wp('0.5%'),marginTop:hp('0.2%'),height:hp('2.9%'),width:wp('5.5%')}}></View>}
       </TouchableOpacity>
       </View>
-   <Text style={{fontSize:moderateScale(17),marginLeft:wp('3%')}}>I accept the</Text>
+   <Text style={{fontSize:moderateScale(17),marginLeft:wp('3%'),fontFamily:'Poppins-Regular'}}>I accept the</Text>
    <TouchableOpacity 
    onPress={() => props.navigation.navigate('termsandconditions')}>
-   <Text style={{fontSize:moderateScale(17),color:'blue'}}> Terms & Conditions</Text>
+   <Text style={{fontSize:moderateScale(17),color:'#1e90ff',fontFamily:'Poppins-Regular'}}> Terms & Conditions</Text>
    </TouchableOpacity>
-   <Text style={{fontSize:moderateScale(17),}}> and</Text>
+   <Text style={{fontSize:moderateScale(17),fontFamily:'Poppins-Regular'}}> and</Text>
 
+ </View>
  </View>
  <View style={{justifyContent:'center',marginLeft:wp('5%'),alignItems:'center'}}>
    <TouchableOpacity>
-   <Text style={{fontSize:moderateScale(17),color:'blue',marginLeft:wp('10%')}}>Privacy Policies</Text>
+   <Text style={{fontSize:moderateScale(17),color:'#1e90ff',marginLeft:wp('10%'),fontFamily:'Poppins-Regular'}}>Privacy Policies</Text>
    </TouchableOpacity>
 
  </View>
+ 
         </View>
        
         
           </View>
           <View style={{justifyContent:'center',alignItems:'center',marginTop:hp('9%'),alignSelf:'center',marginBottom:hp('1%')}}>
-            <TouchableOpacity style={{justifyContent:'center',alignItems:'center',backgroundColor:'blue',borderRadius:7,padding:11,width:wp('83%'),alignSelf:'center'}}
+            <TouchableOpacity style={{justifyContent:'center',alignItems:'center',backgroundColor:'#1e90ff',borderRadius:7,padding:11,width:wp('83%'),alignSelf:'center'}}
             onPress={() => sendcred()}>
-              <Text style={{fontSize:moderateScale(18),color:'white',fontWeight:'bold'}}>Sign Up</Text>
+              <Text style={{fontSize:moderateScale(18),color:'white',fontFamily:'Poppins-Bold'}}>Sign Up</Text>
 
             </TouchableOpacity>
           </View>

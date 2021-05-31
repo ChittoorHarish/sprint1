@@ -92,7 +92,7 @@ const MainStackNavigator = () => {
             },
             headerTintColor: '#000000', //Set Header text color
             headerTitleStyle: {
-              fontWeight: 'bold', //Set Header text style
+              fontFamily:'Poppins-Bold', //Set Header text style
             },
             headerTitle: () =>(
               <Image style={{resizeMode:'contain',alignSelf:'center',marginEnd:wp('15%')}}
@@ -126,7 +126,7 @@ const MainStackNavigator = () => {
             },
             headerTintColor: '#000000', //Set Header text color
             headerTitleStyle: {
-              fontWeight: 'bold', //Set Header text style
+              fontFamily:'Poppins-Bold', //Set Header text style
             },
             headerTitle: () =>(
               <Image style={{resizeMode:'contain',alignSelf:'center',marginEnd:wp('15%')}}
@@ -145,7 +145,7 @@ const MainStackNavigator = () => {
             },
             headerTintColor: '#000000', //Set Header text color
             headerTitleStyle: {
-              fontWeight: 'bold', //Set Header text style
+              fontFamily:'Poppins-Bold', //Set Header text style
             },
             headerTitle: () =>(
               <Image style={{resizeMode:'contain',alignSelf:'center',marginEnd:wp('15%')}}
@@ -161,11 +161,11 @@ const MainStackNavigator = () => {
             title:"Terms and Conditions",
             headerStyle: {
               height:hp('9%'),
-              backgroundColor: 'blue', //Set Header color
+              backgroundColor: '#1e90ff', //Set Header color
             },
             headerTintColor: '#ffffff', //Set Header text color
             headerTitleStyle: {
-              fontWeight: 'bold',
+              fontFamily:'Poppins-Bold',
               fontSize:moderateScale(17) //Set Header text style
             },
           }}
@@ -185,8 +185,8 @@ const ContactStackNavigator = () => {
     return (
       <Tab.Navigator
       tabBarOptions={{
-        activeBackgroundColor:'#87ceeb',
-        activeTintColor:'blue',
+        activeBackgroundColor:'#1e90ff',
+        activeTintColor:'#1e90ff',
         inactiveTintColor: 'grey', 
         showLabel:true,
         showIcon:true,
@@ -200,13 +200,13 @@ const ContactStackNavigator = () => {
           title: 'Ham',
           tabBarLabel:() =>null,
           tabBarIcon: () =>(
-            <View style={{borderWidth:0.5,borderRadius:50,backgroundColor:'#dcdcdc',height:hp('4%'),width:wp('8%'),justifyContent:'center',alignItems:'center'}}>
-            <Icon name="home-outline" color="#48d1cc" size={25}/>
+            <View style={{borderWidth:0.5,borderRadius:50,backgroundColor:'#ffffff',height:hp('4%'),width:wp('8%'),justifyContent:'center',alignItems:'center'}}>
+            <Icon name="home-outline" color="#1e90ff" size={25}/>
             </View>
           ),
           
         }}/>
-        <Tab.Screen name="settings" component={Contact} 
+        <Tab.Screen name="settings" component={settings} 
         options={{
           tabBarLabel:() =>null,
           tabBarIcon: () =>(
@@ -223,8 +223,8 @@ const ContactStackNavigator = () => {
         options={{
           tabBarLabel:() =>null,
           tabBarIcon: () =>(
-            <View style={{borderWidth:0.5,borderRadius:50,backgroundColor:'#dcdcdc',height:hp('4%'),width:wp('8%'),justifyContent:'center',alignItems:'center'}}>
-            <Icon name="search-outline" color="black" size={25}/>
+            <View style={{borderWidth:0.5,borderRadius:50,backgroundColor:'#ffffff',height:hp('4%'),width:wp('8%'),justifyContent:'center',alignItems:'center'}}>
+            <Icon name="search-outline" color="#1e90ff" size={25}/>
             </View>
           ),
           
@@ -237,7 +237,8 @@ const ContactStackNavigator = () => {
     return(
       <Drawer.Navigator
       drawerContentOptions={{
-        itemStyle:{marginTop:hp('0%')},
+        labelStyle:{fontFamily:'Poppins-Regular'},
+        itemStyle:{marginTop:12},
         contenComponent:createDrawerNavigator
       }}
       
@@ -249,8 +250,13 @@ const ContactStackNavigator = () => {
       initialRouteName="Home">
 
 <Drawer.Screen name="Home" component={BottomTabNavigator} options={{
-          drawerLabel: () =>null,  
-          title: null,
+           title: 'Home',
+           
+           drawerIcon: () => (
+             <View style={{padding:3,borderWidth:0.5,borderRadius:5,backgroundColor:'#dcdcdc'}}>
+            <Icon name="home-outline" color="black" size={25}/>
+            </View>
+           ), 
            
         }} />
        
@@ -266,6 +272,7 @@ const ContactStackNavigator = () => {
         />
          <Drawer.Screen name="wallet" component={wallet} options={{
            title: 'My Wallet',
+           
            drawerIcon: () => (
             <View style={{padding:3,borderWidth:0.5,borderRadius:5,backgroundColor:'#dcdcdc'}}>
             <Icon name="wallet-outline" color="black" size={25}/>

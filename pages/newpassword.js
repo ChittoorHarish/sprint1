@@ -9,81 +9,55 @@ const newpassword = (props) => {
   const [confirm_password,setConfirm_password] = useState('');
   const [password,setPassword] = useState('');
 
-  // sendcred = () => {
+  sendcred = () => {
 
-  //   if (!password.trim()) {
-  //     alert('Please Enter Email');
-  //     return;
-  //   }
-  //   //Check for the Email TextInput
-  //   if (!confirm_password.trim()) {
-  //     alert('Please Enter Password');
-  //     return;
-  //   }
-  //   //Checked Successfully
-  //   //Do whatever you want
+    if (!password.trim()) {
+      alert('Please Enter Email');
+      return;
+    }
+    //Check for the Email TextInput
+    if (!confirm_password.trim()) {
+      alert('Please Enter Password');
+      return;
+    }
+    //Checked Successfully
+    //Do whatever you want
     
 
-  //   console.log(confirm_password,password)
-  //   fetch("https://obn1qqspll.execute-api.us-east-1.amazonaws.com/dev/user/login",{
-  //     method:"POST",
-  //     headers:{
-  //       'Content-Type':'application/json'
-  //     },
-  //     body:JSON.stringify({
-  //       "confirm_password":confirm_password,
-  //       "password":password
+    console.log(confirm_password,password)
+    fetch("https://obn1qqspll.execute-api.us-east-1.amazonaws.com/dev/user/login",{
+      method:"POST",
+      headers:{
+        'Content-Type':'application/json'
+      },
+      body:JSON.stringify({
+        "confirm_password":confirm_password,
+        "password":password
 
-  //     })
+      })
 
-  //   })
-  //   .then(res=>res.json())
-  //   .then((responseJson) => {
-  //     //Success
-      
-  //     console.log(responseJson.code)
-  //     if(responseJson.code==200 
-  
-  //       ){
-  //         alert(
-  //           "Password Changed",
-            
-  //           [
-  //             {
-  //               text: "Cancel",
-  //               onPress: () => console.log("Cancel Pressed"),
-  //               style: "cancel"
-  //             },
-  //             { text: "OK", onPress: () => console.log("OK Pressed") }
-  //           ],
-
-  //         )
-  //       }
-  //       else{
-  //         alert(
-  //           "InValid Credential, Unable to Login ",
-            
-  //           [
-  //             {
-  //               text: "Cancel",
-  //               onPress: () => console.log("Cancel Pressed"),
-  //               style: "cancel"
-  //             },
-  //             { text: "OK", onPress: () => console.log("OK Pressed") }
-  //           ],
-            
-  //         );
-  //       }
-  //   })
-  //   //If response is not in json then in error
+    })
+    .then(res=>res.json())
+    .then((responseJson) => {
+      //Success
+      alert(JSON.stringify(responseJson));
+      console.log(responseJson);
+    })
+    //If response is not in json then in error
+    .catch((error) => {
+      //Error
+      alert(JSON.stringify(error));
+      console.error(error);
+    });
+    //If response is not in json then in error
    
-  // }
+  }
 
   return (
     <SafeAreaView style={{ flex: 1,backgroundColor:'white' }}>
       <View style={{justifyContent:'center',}}>
       <View style={{justifyContent:'center',alignItems:'flex-start',marginTop:hp('21%')}}>
-        <Text style={{fontSize:moderateScale(22),marginLeft:wp('5%'),fontWeight:'bold',}}>Set New Password</Text>
+        <Text style={{fontSize:moderateScale(22),marginLeft:wp('5%'),fontFamily:'Poppins-Bold',}}>Set New Password</Text>
 
       </View>
       <View style={{justifyContent:'center',alignItems:'center', marginTop:hp('4%'),}}>
@@ -121,9 +95,9 @@ const newpassword = (props) => {
         </View>
         
         <View style={{justifyContent:'center',alignItems:'center',marginTop:hp('22%'),alignSelf:'center'}}>
-            <TouchableOpacity style={{justifyContent:'center',alignItems:'center',backgroundColor:'blue',borderRadius:7,padding:11,width:wp('83%'),alignSelf:'center'}}
+            <TouchableOpacity style={{justifyContent:'center',alignItems:'center',backgroundColor:'#1e90ff',borderRadius:7,padding:11,width:wp('83%'),alignSelf:'center'}}
             >
-              <Text style={{fontSize:moderateScale(18),color:'white',fontWeight:'bold'}}>Submit</Text>
+              <Text style={{fontSize:moderateScale(18),color:'white',fontFamily:'Poppins-Bold'}}>Submit</Text>
 
             </TouchableOpacity>
           </View>

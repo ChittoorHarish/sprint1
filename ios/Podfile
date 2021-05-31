@@ -12,7 +12,8 @@ target 'fiya' do
     :hermes_enabled => false
   )
 
-  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
+
 
   target 'fiyaTests' do
     inherit! :complete

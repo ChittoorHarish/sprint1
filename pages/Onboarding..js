@@ -1,4 +1,3 @@
-
 import React, {useState} from 'react';
 
 // import all the components we are going to use
@@ -13,6 +12,7 @@ import {
   ImageBackground,
   TouchableOpacity,
 } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 //import AppIntroSlider to use it
 import AppIntroSlider from 'react-native-app-intro-slider';
@@ -32,10 +32,28 @@ const App = ({navigation}) => {
   const onSkip = () => {
     setShowRealApp(true); 
   };
+ const renderNextButton = () => {
+    return (
+      <View style={{justifyContent:'center',alignItems:'center'}}>
+      <View style={styles.buttonCircle}>
+       <Text style={{textAlign:'center',fontFamily:'Poppins-Bold',fontSize:moderateScale(16),color:'white'}}>Next</Text>
+      </View>
+      </View>
+    );
+  }
+  const renderdoneButton = () => {
+    return (
+      <View style={{justifyContent:'center',alignItems:'center'}}>
+      <View style={styles.buttonCircle}>
+       <Text style={{textAlign:'center',fontFamily:'Poppins-Bold',fontSize:moderateScale(16),color:'white'}}>Submit</Text>
+      </View>
+      </View>
+    );
+  }
 
   const RenderItem = ({item}) => {
     return (
-      <View style={{justifyContent:'center',alignItems:'center'}}>
+      <View style={{justifyContent:'center',alignItems:'center',backgroundColor:'ffffff'}}>
       <View
         style={{
           alignItems: 'center',
@@ -57,16 +75,16 @@ const App = ({navigation}) => {
         </View>
         </ImageBackground>
       </View>
-      <View style={{justifyContent:'center',alignItems:'center',marginLeft:wp('7%'),marginTop:hp('3%'),marginEnd:wp('7%')}}>
-       <Text style={{fontSize:moderateScale(17),textAlign:'center'}}>
+      <View style={{justifyContent:'center',alignItems:'center',marginLeft:wp('7%'),marginTop:hp('1%'),marginEnd:wp('7%')}}>
+       <Text style={{fontSize:moderateScale(17),textAlign:'center',fontFamily:'Poppins-Regular'}}>
          {item.text1}
 
        </Text>
-       <Text style={{fontSize:moderateScale(17),textAlign:'center'}}>
+       <Text style={{fontSize:moderateScale(17),textAlign:'center',fontFamily:'Poppins-Regular'}}>
          {item.text2}
 
        </Text>
-       <Text style={{fontSize:moderateScale(17),textAlign:'center',}}>
+       <Text style={{fontSize:moderateScale(17),textAlign:'center',fontFamily:'Poppins-Regular'}}>
          {item.text3}
 
        </Text>
@@ -89,15 +107,15 @@ const App = ({navigation}) => {
 
           </Image>
           </View>
-          <View style={{justifyContent:'center',alignItems:'center',marginTop:hp('18%')}}>
+          <View style={{justifyContent:'center',alignItems:'center',marginTop:hp('15%')}}>
             <TouchableOpacity style={{justifyContent:'center',alignItems:'center',backgroundColor:'white',borderRadius:7,padding:11,width:wp('80%'),alignSelf:'center'}}
             onPress={() => navigation.navigate('signin')}>
-              <Text style={{fontSize:moderateScale(18),color:'black',fontWeight:'bold'}}>Sign In</Text>
+              <Text style={{fontSize:moderateScale(18),color:'black',fontFamily:'Poppins-Bold',textAlign:'center'}}>Sign In</Text>
 
             </TouchableOpacity>
             <TouchableOpacity style={{marginTop:hp('5%'),justifyContent:'center',alignItems:'center',alignSelf:'center'}}
             onPress={() => navigation.navigate('signup')}>
-              <Text style={{fontSize:moderateScale(18),color:'white',fontWeight:'bold',}}>Sign Up</Text>
+              <Text style={{fontSize:moderateScale(18),color:'white',fontFamily:'Poppins-Bold',textAlign:'center',marginLeft:wp('1%')}}>Sign Up</Text>
 
             </TouchableOpacity>
 
@@ -110,14 +128,15 @@ const App = ({navigation}) => {
       ) : (
         <AppIntroSlider
           data={slides}
-          activeDotStyle ={{width:wp('12%'), backgroundColor:'blue'}}
+          activeDotStyle ={{width:wp('12%'), backgroundColor:'#1e90ff'}}
           dotStyle= {{width:wp('12%'),backgroundColor:'#add8e6'}}
           renderItem={RenderItem}
           onDone={onDone} 
           showSkipButton={false}
           onSkip={onSkip}
           bottomButton style={{backgroundColor:'white'}}
-          doneLabel="Get Started"
+          renderNextButton={renderNextButton}
+          renderDoneButton={renderdoneButton}
           
           
         />
@@ -135,6 +154,26 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 10,
     justifyContent: 'center',
+  },
+  buttonCircle: {
+    width:wp('82%'),
+    height:hp('5%'),
+    backgroundColor: '#1e90ff',
+    borderRadius: 5,
+    marginEnd:wp('5%'),
+    marginLeft:wp('5%'),
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  buttonCircle: {
+    width:wp('82%'),
+    height:hp('5%'),
+    backgroundColor: '#1e90ff',
+    borderRadius: 5,
+    marginEnd:wp('5%'),
+    marginLeft:wp('5%'),
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   titleStyle: {
     padding: 10,
@@ -157,34 +196,34 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: 'white',
     textAlign: 'center',
-    alignSelf:'center'
+    alignSelf:'center',
+    fontFamily:'Poppins-Regular'
   },
   introTitleStyle: {
     fontSize: moderateScale(26),
     color: 'black',
     marginTop:hp('10%'),
     textAlign: 'center',
-    fontWeight: 'bold',
+    fontFamily:'Poppins-Bold',
     alignSelf:'center'
   },
   introTitleStyle2: {
     fontSize: moderateScale(26),
     color: 'black',
     textAlign: 'center',
-    fontWeight: 'bold',
+    fontFamily:'Poppins-Bold',
   },
   introTitleStyle3: {
     fontSize: moderateScale(26),
     color: 'black',
     textAlign: 'center',
-    fontWeight: 'bold',
+    fontFamily:'Poppins-Bold',
   },
 });
 
 const slides = [
   {
     key: 's1',
-    text: 'Best Recharge offers',
     title: 'Post a Question',
     title2: 'Ask for advice',
     title3:'Request a Service',
@@ -197,7 +236,7 @@ const slides = [
     title: 'Name your Price.',
     title2: 'Negotiate.',
     title3:'Sale.',
-    text2: "YOU decide yoyr reward amount. You choose your helper. The higher the reward amount, the better the helper will do- it's basic supply and demand",
+    text2: "YOU decide your reward amount. You choose your helper. The higher the reward amount, the better the helper will do- it's basic supply and demand",
     image: require('../Image/T2.png'),
 
   },

@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { Button, View, Text, SafeAreaView,Image,TextComponent,TouchableOpacity,StyleSheet, TextInput } from 'react-native';
+import { Button, View, Text,ActivityIndicator, SafeAreaView,Image,TextComponent,TouchableOpacity,StyleSheet, TextInput } from 'react-native';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale } from '../services/responsiveFunc';
 
 const signin = (props) => {
 
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
+  
 
   const [data, setData] = React.useState({
     secureTextEntry: true,
@@ -18,6 +19,7 @@ const signin = (props) => {
         secureTextEntry: !data.secureTextEntry
     });
 }
+
 
   sendcred = () => {
 
@@ -32,6 +34,7 @@ const signin = (props) => {
     }
     //Checked Successfully
     //Do whatever you want
+   
     
 
     console.log(email,password)
@@ -52,6 +55,7 @@ const signin = (props) => {
       //Success
       
       console.log(responseJson.code)
+
       if(responseJson.code==200  
   
         ){
@@ -82,7 +86,7 @@ const signin = (props) => {
     <SafeAreaView style={{ flex: 1,backgroundColor:'white' }}>
       <View style={{justifyContent:'center',}}>
       <View style={{justifyContent:'center',alignItems:'flex-start',marginTop:hp('21%')}}>
-        <Text style={{fontSize:moderateScale(22),marginLeft:wp('5%'),fontWeight:'bold',}}>Sign In</Text>
+        <Text style={{fontSize:moderateScale(22),marginLeft:wp('5%'),fontFamily:'Poppins-Bold'}}>Sign In</Text>
 
       </View>
       <View style={{justifyContent:'center',alignItems:'center'}}>
@@ -114,28 +118,28 @@ const signin = (props) => {
           />
             <TouchableOpacity onPress={updateSecureTextEntry}>
             {data.secureTextEntry ? 
-          <Text style={{fontSize:moderateScale(17),color:'blue',fontWeight:'bold'}}>Show</Text> : <Text style={{fontSize:moderateScale(17),color:'blue',fontWeight:'bold'}}>Hide</Text>}
+          <Text style={{fontSize:moderateScale(17),color:'#1e90ff',fontFamily:'Poppins-Bold'}}>Show</Text> : <Text style={{fontSize:moderateScale(17),color:'#1e90ff',fontWeight:'bold'}}>Hide</Text>}
           </TouchableOpacity>
         </View>
         </View>
         <View style={{justifyContent:'center',alignItems:'flex-start'}}>
           <TouchableOpacity
           onPress={() => props.navigation.navigate('forgotpassword')}>
-          <Text style={{fontSize:moderateScale(17),color:'blue',fontWeight:'bold',marginLeft:wp('5%')}}>Forgot Password</Text>
+          <Text style={{fontSize:moderateScale(17),color:'#1e90ff',fontWeight:'bold',marginLeft:wp('5%'),fontFamily:'Poppins-Bold'}}>Forgot Password</Text>
           </TouchableOpacity>
         </View>
         <View style={{justifyContent:'center',alignItems:'center',marginTop:hp('10%'),alignSelf:'center'}}>
-            <TouchableOpacity style={{justifyContent:'center',alignItems:'center',backgroundColor:'blue',borderRadius:7,padding:11,width:wp('83%'),alignSelf:'center'}}
+            <TouchableOpacity style={{justifyContent:'center',alignItems:'center',backgroundColor:'#1e90ff',borderRadius:7,padding:11,width:wp('83%'),alignSelf:'center'}}
              onPress={() => sendcred()}>
-              <Text style={{fontSize:moderateScale(18),color:'white',fontWeight:'bold'}}>Sign In</Text>
+              <Text style={{fontSize:moderateScale(18),color:'white',fontFamily:'Poppins-Bold'}}>Sign In</Text>
 
             </TouchableOpacity>
           </View>
           <View style={{justifyContent:'center',alignItems:'center',flexDirection:'row',marginTop:hp('12%')}}>
-            <Text style={{fontSize:moderateScale(16),color:'black'}}>Don't have an account?</Text>
+            <Text style={{fontSize:moderateScale(16),color:'black',fontFamily:'Poppins-Regular'}}>Don't have an account?</Text>
             <TouchableOpacity
             onPress={() => props.navigation.navigate('signup')}>
-            <Text style={{fontSize:moderateScale(16),color:'blue',marginLeft:wp('1%'),fontWeight:'bold'}}>SignUp</Text>
+            <Text style={{fontSize:moderateScale(16),color:'#1e90ff',marginLeft:wp('1%'),fontFamily:'Poppins-Bold'}}>SignUp</Text>
             </TouchableOpacity>
 
           </View>
@@ -176,5 +180,6 @@ SectionStyle1: {
   marginEnd:wp('4%'),
   marginLeft:wp('5%'),
 },
+
 
 });

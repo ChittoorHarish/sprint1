@@ -24,10 +24,32 @@ const forgotpassword = (props) => {
 
     })
     .then(res=>res.json())
-    .then(data=>{
-      console.log(data)
+    .then((responseJson) => {
+      //Success
+      
+      console.log(responseJson.code)
+
+      if(responseJson.code==200  
+  
+        ){
+          props.navigation.navigate('newpassword')
+        }
+        else{
+          alert(
+            "Please Enter Registered Email ",
+            
+            [
+              {
+                text: "Cancel",
+                onPress: () => console.log("Cancel Pressed"),
+                style: "cancel"
+              },
+              { text: "OK", onPress: () => console.log("OK Pressed") }
+            ],
+            
+          );
+        }
     })
-    props.navigation.navigate('newpassword')
    
   }
 
@@ -35,11 +57,11 @@ const forgotpassword = (props) => {
     <SafeAreaView style={{ flex: 1,backgroundColor:'white' }}>
       <View style={{justifyContent:'center',}}>
       <View style={{justifyContent:'center',alignItems:'flex-start',marginTop:hp('21%')}}>
-        <Text style={{fontSize:moderateScale(22),marginLeft:wp('5%'),fontWeight:'bold',}}>Forgot Password</Text>
+        <Text style={{fontSize:moderateScale(22),marginLeft:wp('5%'),fontFamily:'Poppins-Bold'}}>Forgot Password</Text>
 
       </View>
       <View style={{justifyContent:'center',alignItems:'flex-start',marginTop:hp('2%')}}>
-          <Text style={{marginLeft:wp('5%'),marginEnd:wp('7%'),color:'grey',fontSize:moderateScale(17)}}>
+          <Text style={{marginLeft:wp('5%'),marginEnd:wp('7%'),color:'grey',fontSize:moderateScale(17),fontFamily:'Poppins-Regular'}}>
               Please enter the email address ypu used to create your account and we'll send yoou a link to reset your password.
           </Text>
       </View>
@@ -60,9 +82,9 @@ const forgotpassword = (props) => {
         </View>
         
         <View style={{justifyContent:'center',alignItems:'center',marginTop:hp('24%'),alignSelf:'center'}}>
-            <TouchableOpacity style={{justifyContent:'center',alignItems:'center',backgroundColor:'blue',borderRadius:7,padding:11,width:wp('83%'),alignSelf:'center'}}
+            <TouchableOpacity style={{justifyContent:'center',alignItems:'center',backgroundColor:'#1e90ff',borderRadius:7,padding:11,width:wp('83%'),alignSelf:'center'}}
              onPress={() => sendcred()}>
-              <Text style={{fontSize:moderateScale(18),color:'white',fontWeight:'bold'}}>Submit</Text>
+              <Text style={{fontSize:moderateScale(18),color:'white',fontFamily:'Poppins-Bold'}}>Submit</Text>
 
             </TouchableOpacity>
           </View>
