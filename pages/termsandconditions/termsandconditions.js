@@ -2,7 +2,7 @@ import React from "react";
 import { View, StyleSheet,} from "react-native";
 import { Button, Text, SafeAreaView,Image,TextComponent,TouchableOpacity, TextInput,} from 'react-native';
 import { ScrollView } from "react-native-gesture-handler";
-import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale } from '../services/responsiveFunc';
+import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale } from '../../services/responsiveFunc';
 
 const termsandconditions = ({navigation}) => {
   return (

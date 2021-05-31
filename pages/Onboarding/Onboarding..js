@@ -17,8 +17,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 //import AppIntroSlider to use it
 import AppIntroSlider from 'react-native-app-intro-slider';
 import { color } from 'react-native-reanimated';
-import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale } from '../services/responsiveFunc';
-import signin from './signin';
+import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale } from '../../services/responsiveFunc';
+import signin from '../signin/signin';
 
 const window = Dimensions.get("window");
 const screen = Dimensions.get("screen");
@@ -99,11 +99,11 @@ const App = ({navigation}) => {
       {showRealApp ? (
         <SafeAreaView style={{ flex: 1}}>
         <ImageBackground style={{flex:1}}
-        source={require('../Image/splashss.png')}>
+        source={require('../assets/Image/splashss.png')}>
           <View style={{justifyContent:'center',alignItems:'center'}}>
           <View style={{justifyContent:'center',alignItems:'center'}}>
           <Image style={{justifyContent:'center',alignItems:'center',marginTop:hp('18%'),alignSelf:'center'}}
-          source ={require('../Image/Logo.png')}>
+          source ={require('../assets/Image/Logo.png')}>
 
           </Image>
           </View>
@@ -227,7 +227,7 @@ const slides = [
     title: 'Post a Question',
     title2: 'Ask for advice',
     title3:'Request a Service',
-    image: require('../Image/T1.png'),
+    image: require('../assets/Image/T1.png'),
     text1:"Whether you prefer text-chat, picture sharing or face-to-face video calling, we've got you covered. Getting started is as easy as explaining what you need and when you need"
     
   },
@@ -237,7 +237,7 @@ const slides = [
     title2: 'Negotiate.',
     title3:'Sale.',
     text2: "YOU decide your reward amount. You choose your helper. The higher the reward amount, the better the helper will do- it's basic supply and demand",
-    image: require('../Image/T2.png'),
+    image: require('../assets/Image/T2.png'),
 
   },
   {
@@ -246,7 +246,7 @@ const slides = [
     title2: 'Get Results.',
     title3:'Close the Deal.',
     text3: "Connect as agrred upon. Complete your transaction. Rate your helper, And get on with your day. A WIN-WIN for both parties",
-    image: require('../Image/T3.png'),
+    image: require('../assets/Image/T3.png'),
 
   },
  

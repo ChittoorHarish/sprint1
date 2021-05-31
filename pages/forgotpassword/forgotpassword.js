@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { Button, View, Text, SafeAreaView,Image,TextComponent,TouchableOpacity,StyleSheet, TextInput } from 'react-native';
-import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale } from '../services/responsiveFunc';
+import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale } from '../../services/responsiveFunc';
 
 const forgotpassword = (props) => {
   const [email,setEmail] = useState('');

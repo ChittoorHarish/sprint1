@@ -6,23 +6,23 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { Button,Dimensions,tintcolor, View,Text, ScrollView,SafeAreaView,Image,TextComponent,TouchableOpacity,StyleSheet, TextInput } from 'react-native';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale, heightPercentageToDP } from '../services/responsiveFunc';
 
-import SplashScreen from '../pages/SplashScreen';
-import Onboarding from '../pages/Onboarding.';
-import signin from '../pages/signin';
-import signup from '../pages/signup';
-import forgotpassword from '../pages/forgotpassword';
-import newpassword from '../pages/newpassword';
-import Contact from "../pages/Contact";
-import hamburger from "../pages/hamburger";
+import SplashScreen from '../pages/SplashScreen/SplashScreen';
+import Onboarding from '../pages/Onboarding/Onboarding.'
+import signin from '../pages/signin/signin';
+import signup from '../pages/signup/signup';
+import forgotpassword from '../pages/forgotpassword/forgotpassword';
+import newpassword from '../pages/newpassword/newpassword';
+import Contact from "../pages/Contact/Contact";
+import hamburger from "../pages/hamburger/hamburger";
 import { getActiveChildNavigationOptions } from "react-navigation";
-import Profile from "../pages/Profile";
-import wallet from "../pages/wallet";
-import settings from "../pages/settings";
-import notification from "../pages/notification";
-import paymentinfo from "../pages/paymentinfo";
-import termsofuse from "../pages/termsofuse";
-import logout from "../pages/logout";
-import termsandconditions from "../pages/termsandconditions";
+import Profile from "../pages/Profile/Profile";
+import wallet from "../pages/wallet/wallet";
+import settings from "../pages/settings/settings";
+import notification from "../pages/notification/notification";
+import paymentinfo from "../pages/paymentinfo/paymentinfo";
+import termsofuse from "../pages/termsofuse/termsofuse";
+import logout from "../pages/logout/logout";
+import termsandconditions from "../pages/termsandconditions/termsandconditions";
 import { Label } from "native-base";
 import color from "color";
 
@@ -77,7 +77,7 @@ const MainStackNavigator = () => {
             },
             headerTitle: () =>(
               <Image style={{resizeMode:'contain',alignSelf:'center',marginEnd:wp('15%')}}
-              source={require('../Image/toplogo.png')}/>
+              source={require('../assets/Image/toplogo.png')}/>
               
             ),
           }}
@@ -96,7 +96,7 @@ const MainStackNavigator = () => {
             },
             headerTitle: () =>(
               <Image style={{resizeMode:'contain',alignSelf:'center',marginEnd:wp('15%')}}
-              source={require('../Image/toplogo.png')}/>
+              source={require('../assets/Image/toplogo.png')}/>
               
             ),
           }}
@@ -130,7 +130,7 @@ const MainStackNavigator = () => {
             },
             headerTitle: () =>(
               <Image style={{resizeMode:'contain',alignSelf:'center',marginEnd:wp('15%')}}
-              source={require('../Image/toplogo.png')}/>
+              source={require('../assets/Image/toplogo.png')}/>
               
             ),
           }}
@@ -149,7 +149,7 @@ const MainStackNavigator = () => {
             },
             headerTitle: () =>(
               <Image style={{resizeMode:'contain',alignSelf:'center',marginEnd:wp('15%')}}
-              source={require('../Image/toplogo.png')}/>
+              source={require('../assets/Image/toplogo.png')}/>
               
             ),
           }}
