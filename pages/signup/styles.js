@@ -1,11 +1,14 @@
 import {StyleSheet} from 'react-native';
-
+import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale } from '../../services/responsiveFunc';
 
 const styles = StyleSheet.create({
     basic:{
         justifyContent:'center',
         alignItems:'center'
     },
+    safe:{
+        flex: 1,backgroundColor:'white' 
+      },
     signuptext:{
         justifyContent:'center',
         alignItems:'flex-start',

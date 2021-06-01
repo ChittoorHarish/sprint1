@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-
+import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale } from '../../services/responsiveFunc';
 
 const styles = StyleSheet.create({
  signintitle:{
@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
  safe:{
    flex: 1,backgroundColor:'white' 
  },
- signintitle:{
+ signintitletext:{
    fontSize:moderateScale(22),
    marginLeft:wp('5%'),
    fontFamily:'Poppins-Bold'
@@ -68,7 +68,7 @@ forgotpasstext:{
 noacc:{
    fontSize:moderateScale(16),color:'black',fontFamily:'Poppins-Regular'
 },
-signintext:{
+signintextbot:{
    fontSize:moderateScale(18),color:'white',fontFamily:'Poppins-Bold'
 },
 show:{
@@ -77,7 +77,7 @@ show:{
 hide:{
    fontSize:moderateScale(17),color:'#1e90ff',fontWeight:'bold'
 },
-touchable:{},
+touchable:{
 justifyContent:'center',
 alignItems:'center',
 backgroundColor:'#1e90ff',
@@ -85,5 +85,6 @@ borderRadius:7,
 padding:11,
 width:wp('83%'),
 alignSelf:'center'
+},
 });
 export default styles;

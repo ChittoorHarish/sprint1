@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-
+import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale } from '../../services/responsiveFunc';
 
 const styles = StyleSheet.create({
   title:{
@@ -22,6 +22,10 @@ const styles = StyleSheet.create({
     marginTop:hp('4%'),
     alignSelf:'center',
     marginBottom:hp('2%')
-  }
+  },
+  center: {
+    justifyContent:'flex-start',
+    alignItems:'flex-start',
+  },
 });
 export default styles;

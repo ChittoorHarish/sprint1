@@ -7,7 +7,7 @@ import { Button,Dimensions,tintcolor, View,Text, ScrollView,SafeAreaView,Image,T
 import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale, heightPercentageToDP } from '../services/responsiveFunc';
 
 import SplashScreen from '../pages/SplashScreen/SplashScreen';
-import Onboarding from '../pages/Onboarding/Onboarding.'
+import Onboarding from '../pages/Onboarding/Onboarding'
 import signin from '../pages/signin/signin';
 import signup from '../pages/signup/signup';
 import forgotpassword from '../pages/forgotpassword/forgotpassword';
@@ -77,7 +77,7 @@ const MainStackNavigator = () => {
             },
             headerTitle: () =>(
               <Image style={{resizeMode:'contain',alignSelf:'center',marginEnd:wp('15%')}}
-              source={require('./assets/image/toplogo.png')}/>
+              source={require('./toplogo.png')}/>
               
             ),
           }}
@@ -96,7 +96,7 @@ const MainStackNavigator = () => {
             },
             headerTitle: () =>(
               <Image style={{resizeMode:'contain',alignSelf:'center',marginEnd:wp('15%')}}
-              source={require('./assets/image/toplogo.png')}/>
+              source={require('./toplogo.png')}/>
               
             ),
           }}
@@ -130,7 +130,7 @@ const MainStackNavigator = () => {
             },
             headerTitle: () =>(
               <Image style={{resizeMode:'contain',alignSelf:'center',marginEnd:wp('15%')}}
-              source={require('./assets/image/toplogo.png')}/>
+              source={require('./toplogo.png')}/>
               
             ),
           }}
@@ -149,7 +149,7 @@ const MainStackNavigator = () => {
             },
             headerTitle: () =>(
               <Image style={{resizeMode:'contain',alignSelf:'center',marginEnd:wp('15%')}}
-              source={require('./assets/image/toplogo.png')}/>
+              source={require('./toplogo.png')}/>
               
             ),
           }}

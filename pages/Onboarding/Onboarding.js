@@ -76,7 +76,7 @@ const App = ({navigation}) => {
         </View>
         </ImageBackground>
       </View>
-      <View style={style.onboardtext}>
+      <View style={styles.onboardtext}>
        <Text style={styles.itemtext}>
          {item.text1}
 
@@ -100,23 +100,23 @@ const App = ({navigation}) => {
       {showRealApp ? (
         <SafeAreaView style={{ flex: 1}}>
         <ImageBackground style={{flex:1}}
-        source={require('./assets/image/splashss.png')}>
+        source={require('../assets/image/splashss.png')}>
           <View style={styles.basic}>
           <View style={styles.basic}>
           <Image style={styles.img}
-          source ={require('./assets/image/Logo.png')}>
+          source ={require('../assets/image/Logo.png')}>
 
           </Image>
           </View>
           <View style={{justifyContent:'center',alignItems:'center',marginTop:hp('15%')}}>
-            <TouchableOpacity style={signintouch}
+            <TouchableOpacity style={styles.signintouch}
             onPress={() => navigation.navigate('signin')}>
-              <Text style={signintext}>Sign In</Text>
+              <Text style={styles.signintext}>Sign In</Text>
 
             </TouchableOpacity>
-            <TouchableOpacity style={signuptouch}
+            <TouchableOpacity style={styles.signuptouch}
             onPress={() => navigation.navigate('signup')}>
-              <Text style={signuptext}>Sign Up</Text>
+              <Text style={styles.signuptext}>Sign Up</Text>
 
             </TouchableOpacity>
 
@@ -148,9 +148,9 @@ const App = ({navigation}) => {
 
 export default App;
 
-const styles = StyleSheet.create({
+// const styles = StyleSheet.create({
   
-});
+// });
 
 const slides = [
   {
@@ -158,7 +158,7 @@ const slides = [
     title: 'Post a Question',
     title2: 'Ask for advice',
     title3:'Request a Service',
-    image: require('./assets/image/T1.png'),
+    image: require('../assets/image/T1.png'),
     text1:"Whether you prefer text-chat, picture sharing or face-to-face video calling, we've got you covered. Getting started is as easy as explaining what you need and when you need"
     
   },
@@ -168,7 +168,7 @@ const slides = [
     title2: 'Negotiate.',
     title3:'Sale.',
     text2: "YOU decide your reward amount. You choose your helper. The higher the reward amount, the better the helper will do- it's basic supply and demand",
-    image: require('./assets/image/T2.png'),
+    image: require('../assets/image/T2.png'),
 
   },
   {
@@ -177,7 +177,7 @@ const slides = [
     title2: 'Get Results.',
     title3:'Close the Deal.',
     text3: "Connect as agrred upon. Complete your transaction. Rate your helper, And get on with your day. A WIN-WIN for both parties",
-    image: require('./assets/image/T3.png'),
+    image: require('../assets/image/T3.png'),
 
   },
  

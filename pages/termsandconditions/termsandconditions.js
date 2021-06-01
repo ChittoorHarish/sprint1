@@ -44,11 +44,8 @@ const termsandconditions = ({navigation}) => {
   );
 };
 
-const styles = StyleSheet.create({
-  center: {
-    justifyContent:'flex-start',
-    alignItems:'flex-start',
-  },
-});
+// const styles = StyleSheet.create({
+  
+// });
 
 export default termsandconditions;

@@ -133,7 +133,7 @@ const [data1, setData1] = React.useState({
   }
 
   return (
-    <SafeAreaView style={{ flex: 1,backgroundColor:'white' }}>
+    <SafeAreaView style={styles.safe}>
         <ScrollView>
       <View style={styles.basicstart}>
       <View style={styles.signuptext}>
@@ -324,6 +324,6 @@ const [data1, setData1] = React.useState({
 
 export default signup;
 
-const styles = StyleSheet.create({
+// const styles = StyleSheet.create({
 
-});
+// });

@@ -66,7 +66,7 @@ const forgotpassword = (props) => {
               Please enter the email address you used to create your account and we'll send yoou a link to reset your password.
           </Text>
       </View>
-      <View style={styles,textinp}>
+      <View style={styles.textinp}>
       <View style={styles.SectionStyle}>
  
       <View style={styles.basic}>
@@ -96,7 +96,7 @@ const forgotpassword = (props) => {
 
 export default forgotpassword;
 
-const styles = StyleSheet.create({
+// const styles = StyleSheet.create({
  
  
-});
+// });

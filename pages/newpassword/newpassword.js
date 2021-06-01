@@ -57,7 +57,7 @@ const newpassword = (props) => {
   return (
     <SafeAreaView style={styles.safe}>
       <View style={{justifyContent:'center',}}>
-      <View style={style.setnewpass}>
+      <View style={styles.setnewpass}>
         <Text style={styles.title}>Set New Password</Text>
 
       </View>
@@ -95,7 +95,7 @@ const newpassword = (props) => {
         </View>
         </View>
         
-        <View style={style.touchnewpass}>
+        <View style={styles.touchnewpass}>
             <TouchableOpacity style={styles.touch}
             >
               <Text style={{fontSize:moderateScale(18),color:'white',fontFamily:'Poppins-Bold'}}>Submit</Text>
@@ -110,5 +110,5 @@ const newpassword = (props) => {
 
 export default newpassword;
 
-const styles = StyleSheet.create({
-});
+// const styles = StyleSheet.create({
+// });

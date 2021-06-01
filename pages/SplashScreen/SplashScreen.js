@@ -10,7 +10,7 @@ const SplashScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <ImageBackground style={{flex:1}}
-      source={require('./assets/image/0_1Splash.png')}>
+      source={require('../assets/image/0_1Splash.png')}>
 
       </ImageBackground>
     

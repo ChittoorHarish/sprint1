@@ -87,7 +87,7 @@ const signin = (props) => {
     <SafeAreaView style={styles.safe}>
       <View style={{justifyContent:'center',}}>
       <View style={styles.signintitle}>
-        <Text style={styles.signintitle}>Sign In</Text>
+        <Text style={styles.signintitletext}>Sign In</Text>
 
       </View>
       <View style={styles.basic}>
@@ -129,14 +129,14 @@ const signin = (props) => {
           <Text style={styles.forgotpasstext}>Forgot Password</Text>
           </TouchableOpacity>
         </View>
-        <View style={touchsend}>
+        <View style={styles.touchsend}>
             <TouchableOpacity style={styles.touchable}
              onPress={() => sendcred()}>
-              <Text style={styles.signintext}>Sign In</Text>
+              <Text style={styles.signintextbot}>Sign In</Text>
 
             </TouchableOpacity>
           </View>
-          <View style={touchsend2}>
+          <View style={styles.touchsend2}>
             <Text style={styles.noacc}>Don't have an account?</Text>
             <TouchableOpacity
             onPress={() => props.navigation.navigate('signup')}>

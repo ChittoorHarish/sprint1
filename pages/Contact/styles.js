@@ -1,6 +1,7 @@
 import {StyleSheet} from 'react-native';
 import {heightScale, widthScale} from '../../utils/Utils';
-import COLORS from '../../assets/colors';
+import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale } from '../../services/responsiveFunc';
+
 
 const styles = StyleSheet.create({
   mainContainer: {
