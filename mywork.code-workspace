@@ -1,0 +1,13 @@
+{
+    "folders": [
+        {
+            "path": "../../../ayalyfe-backend"
+        },
+        {
+            "path": "../../../ayalyfe-chefportal"
+        },
+        {
+            "path": "."
+        }
+    ]
+}

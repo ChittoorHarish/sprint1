@@ -100,11 +100,11 @@ const App = ({navigation}) => {
       {showRealApp ? (
         <SafeAreaView style={{ flex: 1}}>
         <ImageBackground style={{flex:1}}
-        source={require('../assets/image/splashss.png')}>
+        source={require('../assets/Image/splashss.png')}>
           <View style={styles.basic}>
           <View style={styles.basic}>
           <Image style={styles.img}
-          source ={require('../assets/image/Logo.png')}>
+          source ={require('../assets/Image/Logo.png')}>
 
           </Image>
           </View>
@@ -158,7 +158,7 @@ const slides = [
     title: 'Post a Question',
     title2: 'Ask for advice',
     title3:'Request a Service',
-    image: require('../assets/image/T1.png'),
+    image: require('../assets/Image/T1.png'),
     text1:"Whether you prefer text-chat, picture sharing or face-to-face video calling, we've got you covered. Getting started is as easy as explaining what you need and when you need"
     
   },
@@ -168,7 +168,7 @@ const slides = [
     title2: 'Negotiate.',
     title3:'Sale.',
     text2: "YOU decide your reward amount. You choose your helper. The higher the reward amount, the better the helper will do- it's basic supply and demand",
-    image: require('../assets/image/T2.png'),
+    image: require('../assets/Image/T2.png'),
 
   },
   {
@@ -177,7 +177,7 @@ const slides = [
     title2: 'Get Results.',
     title3:'Close the Deal.',
     text3: "Connect as agrred upon. Complete your transaction. Rate your helper, And get on with your day. A WIN-WIN for both parties",
-    image: require('../assets/image/T3.png'),
+    image: require('../assets/Image/T3.png'),
 
   },
  
