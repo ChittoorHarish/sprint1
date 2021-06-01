@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         fontSize:moderateScale(18),color:'white',fontFamily:'Poppins-Bold'
     },
     accept:{
-        fontSize:moderateScale(17),marginLeft:wp('3%'),fontFamily:'Poppins-Regular'
+        fontSize:moderateScale(17),marginLeft:wp('1%'),fontFamily:'Poppins-Regular'
     },
     terms:{
         fontSize:moderateScale(17),color:'#1e90ff',fontFamily:'Poppins-Regular'
@@ -93,6 +93,16 @@ const styles = StyleSheet.create({
         alignItems:'center',
         flexDirection:'row',
         marginEnd:wp('4%')
+    },
+    basiccheck:{
+        justifyContent:'center',
+        alignItems:'center',
+        marginLeft:wp('3%')
+    },
+    basicbot:{
+        justifyContent:'center',
+        alignItems:'center',
+        marginEnd:wp('3%')
     }
 });
 export default styles;

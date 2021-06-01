@@ -238,16 +238,17 @@ const ContactStackNavigator = () => {
       <Drawer.Navigator
       drawerContentOptions={{
         labelStyle:{fontFamily:'Poppins-Regular'},
-        itemStyle:{marginTop:12},
+        itemStyle:{marginTop:hp('1%')},
         contenComponent:createDrawerNavigator
       }}
-      
       drawerStyle={{
         
         backgroundColor:'#ffffff',
         
       }}
       initialRouteName="Home">
+       
+        
 
 <Drawer.Screen name="Home" component={BottomTabNavigator} options={{
            title: 'Home',

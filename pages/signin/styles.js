@@ -59,6 +59,10 @@ basic:{
     justifyContent:'center',
     alignItems:'center'
 },
+basicpass:{
+   justifyContent:'center',
+   alignItems:'flex-start'
+},
 signuptext:{
    fontSize:moderateScale(16),color:'#1e90ff',marginLeft:wp('1%'),fontFamily:'Poppins-Bold'
 },
@@ -75,7 +79,7 @@ show:{
    fontSize:moderateScale(17),color:'#1e90ff',fontFamily:'Poppins-Bold'
 },
 hide:{
-   fontSize:moderateScale(17),color:'#1e90ff',fontWeight:'bold'
+   fontSize:moderateScale(17),color:'#1e90ff',fontFamily:'Poppins-Bold'
 },
 touchable:{
 justifyContent:'center',

@@ -11,7 +11,7 @@ const termsandconditions = ({navigation}) => {
       < ScrollView>
     <View style={styles.center}>
         <View style={styles.title}>
-            <Text style={{fontSize:moderateScale(22),fontFamily:'Poppins-Bond'}}>lorem ipsum</Text>
+            <Text style={{fontSize:moderateScale(22),fontFamily:'Poppins-Bold'}}>lorem ipsum</Text>
         </View>
         <View style={styles.title}>
             <Text style={{fontSize:moderateScale(16),textAlign:'justify',lineHeight:30,fontFamily:'Poppins-Regular'}}>It is a long established fact that a leader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',making look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.</Text>
@@ -19,13 +19,13 @@ const termsandconditions = ({navigation}) => {
         <View style={styles.title}>
             <Text style={{fontSize:moderateScale(16),textAlign:'justify',lineHeight:30,fontFamily:'Poppins-Regular'}}>It is a long established fact that a leader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here'. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested Sections1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H.Rackham.</Text>
         </View>
-        <View style={styles,title2}>
+        <View style={styles.title2}>
             <Text style={{fontSize:moderateScale(16),textAlign:'justify',lineHeight:30,fontFamily:'Poppins-Regular'}}>- versions from the 1914 translation by H. Rackham</Text>
         </View>
-        <View style={styles,title2}>
+        <View style={styles.title2}>
             <Text style={{fontSize:moderateScale(16),textAlign:'justify',lineHeight:30,fontFamily:'Poppins-Regular'}}>- versions from the 1914 translation by H. Rackham</Text>
         </View>
-        <View style={styles,title2}>
+        <View style={styles.title2}>
             <Text style={{fontSize:moderateScale(16),textAlign:'justify',lineHeight:30,fontFamily:'Poppins-Regular'}}>- versions from the 1914 translation by H. Rackham</Text>
         </View>
        

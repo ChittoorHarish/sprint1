@@ -100,7 +100,10 @@ const signin = (props) => {
               placeholder="Ashley@mail.com"
               value={email}
               onChangeText={(text)=>setEmail(text)}
+          
           />
+          
+          
  
         </View>
         <View style={styles.SectionStyle1}>
@@ -123,7 +126,7 @@ const signin = (props) => {
           </TouchableOpacity>
         </View>
         </View>
-        <View style={styles.basic}>
+        <View style={styles.basicpass}>
           <TouchableOpacity
           onPress={() => props.navigation.navigate('forgotpassword')}>
           <Text style={styles.forgotpasstext}>Forgot Password</Text>
@@ -150,3 +153,4 @@ const signin = (props) => {
 }
 
 export default signin;
+

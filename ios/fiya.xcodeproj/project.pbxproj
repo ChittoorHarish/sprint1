@@ -15,6 +15,9 @@
 		33F4F83D2EE644C4842BBF53 /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD9E139105ED4C20A76A5D4A /* Roboto.ttf */; };
 		48C0BBACBEEF4D069E728F8E /* Roboto_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96BD0359B97046B18D64DD7B /* Roboto_medium.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		892FA04D26664AEE00260440 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 892FA04C26664AEE00260440 /* fonts */; };
+		892FA05026664F3200260440 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 892FA04E26664F3200260440 /* Poppins-Regular.ttf */; };
+		892FA05126664F3200260440 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 892FA04F26664F3200260440 /* Poppins-Bold.ttf */; };
 		897B6FAD2663B99F0040BB08 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 897B6FAC2663B99F0040BB08 /* fonts */; };
 		C1E66AEA400A5247227F0F08 /* libPods-fiya.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53385A9F633D5786B0E039A6 /* libPods-fiya.a */; };
 		E8F018A30BAAE39D31113A31 /* libPods-fiya-fiyaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F70C89B0EEADFA498CC40723 /* libPods-fiya-fiyaTests.a */; };
@@ -44,6 +47,9 @@
 		53385A9F633D5786B0E039A6 /* libPods-fiya.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-fiya.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		590CD3D15B83114F69BB6CE6 /* Pods-fiya-fiyaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fiya-fiyaTests.release.xcconfig"; path = "Target Support Files/Pods-fiya-fiyaTests/Pods-fiya-fiyaTests.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = fiya/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		892FA04C26664AEE00260440 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
+		892FA04E26664F3200260440 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Regular.ttf"; path = "fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		892FA04F26664F3200260440 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Bold.ttf"; path = "fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		897B6FAC2663B99F0040BB08 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		96BD0359B97046B18D64DD7B /* Roboto_medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto_medium.ttf; path = "../node_modules/native-base/Fonts/Roboto_medium.ttf"; sourceTree = "<group>"; };
 		A30B8D698966FD5F5BD8C5A7 /* Pods-fiya.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fiya.debug.xcconfig"; path = "Target Support Files/Pods-fiya/Pods-fiya.debug.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				897B6FAC2663B99F0040BB08 /* fonts */,
+				892FA04C26664AEE00260440 /* fonts */,
 				13B07FAE1A68108700A75B9A /* fiya */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* fiyaTests */,
@@ -161,6 +168,8 @@
 		B83B824E3E3B43A3879BD22F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				892FA04F26664F3200260440 /* Poppins-Bold.ttf */,
+				892FA04E26664F3200260440 /* Poppins-Regular.ttf */,
 				96BD0359B97046B18D64DD7B /* Roboto_medium.ttf */,
 				CD9E139105ED4C20A76A5D4A /* Roboto.ttf */,
 				52860C16479E45199579385E /* rubicon-icon-font.ttf */,
@@ -263,11 +272,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				892FA05126664F3200260440 /* Poppins-Bold.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				48C0BBACBEEF4D069E728F8E /* Roboto_medium.ttf in Resources */,
+				892FA04D26664AEE00260440 /* fonts in Resources */,
 				897B6FAD2663B99F0040BB08 /* fonts in Resources */,
 				33F4F83D2EE644C4842BBF53 /* Roboto.ttf in Resources */,
 				1BA05D37E9934BC68AA3AF98 /* rubicon-icon-font.ttf in Resources */,
+				892FA05026664F3200260440 /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

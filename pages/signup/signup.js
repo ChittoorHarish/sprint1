@@ -1,7 +1,8 @@
 import  React, { useState } from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
-import { Button, View,Text, ScrollView,SafeAreaView,Image,TextComponent,TouchableOpacity,StyleSheet, TextInput } from 'react-native';
+import CheckBox from '@react-native-community/checkbox';
+import { Button, View,Text, ScrollView,SafeAreaView,Image,TextComponent,TouchableOpacity,StyleSheet,TextInput } from 'react-native';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale } from '../../services/responsiveFunc';
 
 
@@ -16,6 +17,7 @@ const signup= (props) => {
   const [dob,setDob] = useState('');
   const [password,setPassword] = useState('');
   const [confirm_password,setConfirm_password] = useState('');
+  const [toggleCheckBox, setToggleCheckBox] = useState(false)
   const [data, setData] = React.useState({
     secureTextEntry: true,
 });
@@ -48,6 +50,7 @@ const [data1, setData1] = React.useState({
     if (!firstname.trim()) {
       alert('Please Enter FirstName to Proceed');
       return;
+      
     }
     if (!lastname.trim()) {
       alert('Please Enter LastName to Proceed');
@@ -197,36 +200,6 @@ const [data1, setData1] = React.useState({
           />
  
         </View>
-        <View style={styles.country}>
-        <View style={styles.SectionStyle1}>
-           
-        <View style={styles.basic}>
-      <Icon name="globe-outline" size={30}/>
-      </View>
-
-   <TextInput
-       style={styles.textin}
-       placeholder="Country"
-       value={country_code}
-              onChangeText={(text)=>setCountry_code(text)}
-   />
-   </View>
-   <View style={styles.SectionStyle1}>
-           
-   <View style={styles.basic}>
-      <Icon name="calendar-outline" size={30}/>
-      </View>
-
-   <TextInput
-       style={styles.textin}
-       placeholder="DOB"
-       value={dob}
-              onChangeText={(text)=>setDob(text)}
-   />
-   
-
- </View>
- </View>
  <View style={styles.SectionStyle}>
  
  <View style={styles.basic}>
@@ -281,13 +254,15 @@ const [data1, setData1] = React.useState({
           </TouchableOpacity>
     
  </View>
- <View style={styles.basic}>
+ <View style={styles.basicbot}>
  <View style={styles.check}>
- <View style={styles.basic}>
-   <TouchableOpacity onPress={() => agregarFavoritos()}>
-     {estado ?
-      <Icon name="checkbox-outline" color="blue" size={28}/> : <View style={{borderWidth:2,borderColor:'black',marginLeft:wp('0.5%'),marginTop:hp('0.2%'),height:hp('2.9%'),width:wp('5.5%')}}></View>}
-      </TouchableOpacity>
+ <View style={styles.basiccheck}>
+ <CheckBox
+    disabled={false}
+    value={toggleCheckBox}
+    boxType={'square'}
+    onValueChange={(newValue) => setToggleCheckBox(newValue)}
+  />
       </View>
    <Text style={styles.accept}>I accept the</Text>
    <TouchableOpacity 
@@ -305,12 +280,13 @@ const [data1, setData1] = React.useState({
 
  </View>
  
+ 
         </View>
        
         
           </View>
           <View style={styles.send}>
-            <TouchableOpacity style={styles.sendbt}
+            <TouchableOpacity style={styles.sendbtn}
             onPress={() => sendcred()}>
               <Text style={styles.signuptextbot}>Sign Up</Text>
 
