@@ -103,6 +103,16 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         alignItems:'center',
         marginEnd:wp('3%')
-    }
+    },
+    errortitle:{
+        justifyContent:'center',
+        alignItems:'center',
+        marginTop:hp('2%')
+     },
+     errortext:{
+       fontSize:moderateScale(16),
+       fontFamily:'Poppins-Regular',
+       color:'red'
+     },
 });
 export default styles;

@@ -6,10 +6,13 @@ import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale } 
 
 const forgotpassword = (props) => {
   const [email,setEmail] = useState('');
+  const [errormsg, setErrormsg] = useState(false);
+  const [errormsgtext, setErrormsgtext] = useState('');
 
   sendcred = () => {
     if (!email.trim()) {
-      alert('Please Enter Email to Proceed');
+      setErrormsgtext('Please Enter Email')
+      setErrormsg(true);
       return;
     }
     console.log(email)
@@ -81,6 +84,11 @@ const forgotpassword = (props) => {
 
  </View>
         </View>
+        {errormsg?
+        <View style={styles.errortitle}>
+          <Text style={styles.errortext}>{errormsgtext}</Text>
+        </View>
+        :null}
         
         <View style={styles.buttonsend}>
             <TouchableOpacity style={{justifyContent:'center',alignItems:'center',backgroundColor:'#1e90ff',borderRadius:7,padding:11,width:wp('83%'),alignSelf:'center'}}

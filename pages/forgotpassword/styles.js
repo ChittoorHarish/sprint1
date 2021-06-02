@@ -48,6 +48,16 @@ textinp:{
   alignItems:'center',
   marginTop:hp('2.5%')
 },
+errortitle:{
+  justifyContent:'center',
+  alignItems:'center',
+  marginTop:hp('2%')
+},
+errortext:{
+ fontSize:moderateScale(16),
+ fontFamily:'Poppins-Regular',
+ color:'red'
+},
 
 });
 export default styles;

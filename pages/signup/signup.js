@@ -17,7 +17,9 @@ const signup= (props) => {
   const [dob,setDob] = useState('');
   const [password,setPassword] = useState('');
   const [confirm_password,setConfirm_password] = useState('');
-  const [toggleCheckBox, setToggleCheckBox] = useState(false)
+  const [toggleCheckBox, setToggleCheckBox] = useState(false);
+  const [errormsg, setErrormsg] = useState(false);
+  const [errormsgtext, setErrormsgtext] = useState('');
   const [data, setData] = React.useState({
     secureTextEntry: true,
 });
@@ -48,40 +50,49 @@ const [data1, setData1] = React.useState({
 
   sendcred = () => {
     if (!firstname.trim()) {
-      alert('Please Enter FirstName to Proceed');
+      setErrormsgtext('Please Enter First Name')
+      setErrormsg(true);
       return;
       
     }
     if (!lastname.trim()) {
-      alert('Please Enter LastName to Proceed');
+      setErrormsgtext('Please Enter Last Name')
+      setErrormsg(true);
       return;
     }
     if (!username.trim()) {
-      alert('Please Enter UserName to Proceed');
+      setErrormsgtext('Please Enter UserName')
+      setErrormsg(true);
       return;
     }
     if (!email.trim()) {
-      alert('Please Enter Email to Proceed');
+      setErrormsgtext('Please Enter Valid Email!')
+      setErrormsg(true);
       return;
     }
     if (!phone_no.trim()) {
-      alert('Please Enter Phone Number to Proceed');
+      setErrormsgtext('Please Enter Phone')
+      setErrormsg(true);
       return;
     }
-    if (!country_code.trim()) {
-      alert('Please Enter Country Code to Proceed');
-      return;
-    }
-    if (!dob.trim()) {
-      alert('Please Enter Bate of Birth to Proceed');
-      return;
-    }
+    // if (!country_code.trim()) {
+    //   setErrormsgtext('Please Enter Valid Email!')
+    //   setErrormsg(true);
+    //   return;
+    // }
+    // if (!dob.trim()) {
+    //   setErrormsgtext('Please Enter Valid Email!')
+    //   setErrormsg(true);
+    //   return;
+    // }
     if (!password.trim()) {
-      alert('Please Enter Password to Proceed');
+      setErrormsgtext('Please Enter Password')
+      setErrormsg(true);
       return;
     }
     if (!confirm_password.trim()) {
-      alert('Please Re-Enter Password to Proceed');
+      setErrormsgtext('Please Enter Confirm Password')
+      setErrormsg(true);
       return;
     }
 
@@ -285,6 +296,11 @@ const [data1, setData1] = React.useState({
        
         
           </View>
+          {errormsg?
+        <View style={styles.errortitle}>
+          <Text style={styles.errortext}>{errormsgtext}</Text>
+        </View>
+        :null}
           <View style={styles.send}>
             <TouchableOpacity style={styles.sendbtn}
             onPress={() => sendcred()}>

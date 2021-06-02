@@ -9,16 +9,20 @@ import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale } 
 const newpassword = (props) => {
   const [confirm_password,setConfirm_password] = useState('');
   const [password,setPassword] = useState('');
+  const [errormsg, setErrormsg] = useState(false);
+  const [errormsgtext, setErrormsgtext] = useState('');
 
   sendcred = () => {
 
     if (!password.trim()) {
-      alert('Please Enter Email');
+      setErrormsgtext('Please Enter Password')
+      setErrormsg(true);
       return;
     }
     //Check for the Email TextInput
     if (!confirm_password.trim()) {
-      alert('Please Enter Password');
+      setErrormsgtext('Please Enter Confirm Password')
+      setErrormsg(true);
       return;
     }
     //Checked Successfully
@@ -94,6 +98,11 @@ const newpassword = (props) => {
            
         </View>
         </View>
+        {errormsg?
+        <View style={styles.errortitle}>
+          <Text style={styles.errortext}>{errormsgtext}</Text>
+        </View>
+        :null}
         
         <View style={styles.touchnewpass}>
             <TouchableOpacity style={styles.touch}

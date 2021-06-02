@@ -51,7 +51,17 @@ SectionStyle1: {
     padding:11,
     width:wp('83%'),
     alignSelf:'center'
-  }
+  },
+  errortitle:{
+    justifyContent:'center',
+    alignItems:'center',
+    marginTop:hp('2%')
+ },
+ errortext:{
+   fontSize:moderateScale(16),
+   fontFamily:'Poppins-Regular',
+   color:'red'
+ },
 
 });
 export default styles;

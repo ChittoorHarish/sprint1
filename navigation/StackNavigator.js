@@ -76,7 +76,7 @@ const MainStackNavigator = () => {
               fontWeight: 'bold', //Set Header text style
             },
             headerTitle: () =>(
-              <Image style={{resizeMode:'contain',alignSelf:'center',marginEnd:wp('15%')}}
+              <Image style={{resizeMode:'contain',alignSelf:'center'}}
               source={require('./toplogo.png')}/>
               
             ),
@@ -95,7 +95,7 @@ const MainStackNavigator = () => {
               fontFamily:'Poppins-Bold', //Set Header text style
             },
             headerTitle: () =>(
-              <Image style={{resizeMode:'contain',alignSelf:'center',marginEnd:wp('15%')}}
+              <Image style={{resizeMode:'contain',alignSelf:'center'}}
               source={require('./toplogo.png')}/>
               
             ),
@@ -129,7 +129,7 @@ const MainStackNavigator = () => {
               fontFamily:'Poppins-Bold', //Set Header text style
             },
             headerTitle: () =>(
-              <Image style={{resizeMode:'contain',alignSelf:'center',marginEnd:wp('15%')}}
+              <Image style={{resizeMode:'contain',alignSelf:'center',}}
               source={require('./toplogo.png')}/>
               
             ),
@@ -148,7 +148,7 @@ const MainStackNavigator = () => {
               fontFamily:'Poppins-Bold', //Set Header text style
             },
             headerTitle: () =>(
-              <Image style={{resizeMode:'contain',alignSelf:'center',marginEnd:wp('15%')}}
+              <Image style={{resizeMode:'contain',alignSelf:'center'}}
               source={require('./toplogo.png')}/>
               
             ),
