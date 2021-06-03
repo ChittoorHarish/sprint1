@@ -128,7 +128,21 @@ const styles = StyleSheet.create({
         marginLeft:wp('7%'),
         marginTop:hp('1%'),
         marginEnd:wp('7%')
-      }
+      },
+      skipCircle: {
+        width:wp('82%'),
+        backgroundColor: 'transparent',
+        marginEnd:wp('5%'),
+        marginLeft:wp('5%'),
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+      onskip:{
+        textAlign:'center',
+        fontFamily:'Poppins-Bold',
+        fontSize:moderateScale(16),
+        color:'grey'
+      },
 
 });
 export default styles;

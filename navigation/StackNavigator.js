@@ -22,6 +22,8 @@ import notification from "../pages/notification/notification";
 import paymentinfo from "../pages/paymentinfo/paymentinfo";
 import termsofuse from "../pages/termsofuse/termsofuse";
 import logout from "../pages/logout/logout";
+import homeongoing from "../pages/homeongoing/homeongoing";
+import homeongoing1 from "../pages/homeongoing1/homeongoing1";
 import termsandconditions from "../pages/termsandconditions/termsandconditions";
 import { Label } from "native-base";
 import color from "color";
@@ -159,6 +161,38 @@ const MainStackNavigator = () => {
           component={termsandconditions}
           options={{ 
             title:"Terms and Conditions",
+            headerStyle: {
+              height:hp('9%'),
+              backgroundColor: '#1e90ff', //Set Header color
+            },
+            headerTintColor: '#ffffff', //Set Header text color
+            headerTitleStyle: {
+              fontFamily:'Poppins-Bold',
+              fontSize:moderateScale(17) //Set Header text style
+            },
+          }}
+        />
+         <Stack.Screen
+          name="homeongoing"
+          component={homeongoing}
+          options={{ 
+            title:"Ongoing",
+            headerStyle: {
+              height:hp('9%'),
+              backgroundColor: '#1e90ff', //Set Header color
+            },
+            headerTintColor: '#ffffff', //Set Header text color
+            headerTitleStyle: {
+              fontFamily:'Poppins-Bold',
+              fontSize:moderateScale(17) //Set Header text style
+            },
+          }}
+        />
+         <Stack.Screen
+          name="homeongoing1"
+          component={homeongoing1}
+          options={{ 
+            title:"Ongoing",
             headerStyle: {
               height:hp('9%'),
               backgroundColor: '#1e90ff', //Set Header color

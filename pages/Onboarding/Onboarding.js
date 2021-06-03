@@ -46,11 +46,21 @@ const App = ({navigation}) => {
     return (
       <View style={styles.basic}>
       <View style={styles.buttonCircle}>
-       <Text style={styles.onnext}>Submit</Text>
+       <Text style={styles.onnext}>Get Started</Text>
       </View>
       </View>
     );
   }
+  const renderskipButton = () => {
+    return (
+      <View style={styles.basic}>
+      <View style={styles.skipCircle}>
+       <Text style={styles.onskip}>Skip</Text>
+      </View>
+      </View>
+    );
+  }
+  
 
   const RenderItem = ({item}) => {
     return (
@@ -129,15 +139,16 @@ const App = ({navigation}) => {
       ) : (
         <AppIntroSlider
           data={slides}
-          activeDotStyle ={{width:wp('12%'), backgroundColor:'#1e90ff'}}
-          dotStyle= {{width:wp('12%'),backgroundColor:'#add8e6'}}
+          activeDotStyle ={{width:wp('12%'), backgroundColor:'#1e90ff',marginLeft:wp('-2%')}}
+          dotStyle= {{width:wp('12%'),backgroundColor:'#add8e6',marginLeft:wp('-2.5%')}}
           renderItem={RenderItem}
           onDone={onDone} 
-          showSkipButton={false}
+          showSkipButton={true}
           onSkip={onSkip}
           bottomButton style={{backgroundColor:'white'}}
           renderNextButton={renderNextButton}
           renderDoneButton={renderdoneButton}
+          renderSkipButton={renderskipButton}
           
           
         />
@@ -155,19 +166,19 @@ export default App;
 const slides = [
   {
     key: 's1',
-    title: 'Post a Question',
-    title2: 'Ask for advice',
-    title3:'Request a Service',
+    title: 'Post a Question.',
+    title2: 'Ask for Advice.',
+    title3:'Request a Service.',
     image: require('../assets/image/T1.png'),
-    text1:"Whether you prefer text-chat, picture sharing or face-to-face video calling, we've got you covered. Getting started is as easy as explaining what you need and when you need"
+    text1:"Whether you prefer text-chat, picture sharing or face-to-face video calling, we've got you covered. Getting started is as easy as explaining what you need and when you need it."
     
   },
   {
     key: 's2',
     title: 'Name your Price.',
     title2: 'Negotiate.',
-    title3:'Sale.',
-    text2: "YOU decide your reward amount. You choose your helper. The higher the reward amount, the better the helper will do- it's basic supply and demand",
+    title3:'Sign.',
+    text2: "YOU decide your reward amount. YOU choose your helper. The higher the reward amount, the better the helper will be- it's basic supply and demand",
     image: require('../assets/image/T2.png'),
 
   },
@@ -176,7 +187,7 @@ const slides = [
     title: 'Connect.',
     title2: 'Get Results.',
     title3:'Close the Deal.',
-    text3: "Connect as agrred upon. Complete your transaction. Rate your helper, And get on with your day. A WIN-WIN for both parties",
+    text3: "Connect as agreed upon. Complete your transaction. Rate your helper. And get on with your day. A WIN-WIN for both parties",
     image: require('../assets/image/T3.png'),
 
   },

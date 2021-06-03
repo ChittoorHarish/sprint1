@@ -98,8 +98,54 @@ const styles = StyleSheet.create({
     justifyContent:'center',alignItems:'center',width:wp('19%'),backgroundColor:'#999999',flexDirection:'row',borderRadius:20,padding:5,marginLeft:wp('32%')
   },
   insidepic:{
-    justifyContent:'center',alignItems:'center',width:wp('17%'),height:hp('8%'),borderRadius:5
-  }
+    justifyContent:'center',borderWidth:0.1,alignItems:'center',width:wp('15%'),height:hp('8%'),borderRadius:5
+  },
+  basic1:{
+    justifyContent:'center',alignItems:'flex-start'
+  },
+  heading:{
+    justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',marginLeft:wp('4%'),marginTop:hp("2%"),
+  },
+  titlebox:{
+    justifyContent:'center',alignItems:'flex-start',flexDirection:'column',marginLeft:wp("3%")
+  },
+  nametitle:{
+    fontSize:moderateScale(16),fontFamily:'Poppins-Bold',color:'black'
+  },
+  occupation:{
+    fontSize:moderateScale(15),fontFamily:'Poppins-Regular',color:'#888888'
+  },
+  ellipsis:{
+    justifyContent:'flex-end',alignItems:'flex-end',marginHorizontal:wp('38%')
+  },
+  detailbox:{
+    justifyContent:'flex-start',marginLeft:wp('5%'),alignItems:'flex-start',borderWidth:0.5,borderColor:'grey',height:hp("33%"),width:wp('90%'),marginTop:hp('2%'),borderRadius:10,
+  },
+  detail1:{
+    justifyContent:'center',alignItems:'flex-start',flexDirection:'row',marginLeft:wp('3%'),marginTop:hp('1.5%')
+  },
+  touch:{
+    justifyContent:'center',alignItems:'flex-start',flexDirection:'column'
+  },
+  chaptertitle:{
+    fontFamily:'Poppins-Bold',fontSize:moderateScale(16)
+  },
+  chaptername:{
+    fontFamily:'Poppins-Regular',fontSize:moderateScale(15),color:'#888888'
+  },
+  captionview:{
+    justifyContent:'center',alignItems:'center',marginLeft:wp('4%'),marginEnd:wp('4%'),marginTop:hp('1%')
+  },
+  description:{
+    fontFamily:'Poppins-Regular',fontSize:moderateScale(13)
+  },
+  imageview:{
+    justifyContent:'center',alignItems:'center',flexDirection:'row',marginTop:hp('1%')
+  },
+  insideview:{
+    justifyContent:'center',alignItems:'center',marginLeft:wp('40%'),
+  },
+ 
 
 });
 export default styles;

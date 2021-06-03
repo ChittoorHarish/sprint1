@@ -131,7 +131,7 @@ const signin = (props) => {
         <View style={styles.basicpass}>
           <TouchableOpacity
             onPress={() => props.navigation.navigate('forgotpassword')}>
-            <Text style={styles.forgotpasstext}>Forgot Password</Text>
+            <Text style={styles.forgotpasstext}>Forgot Password?</Text>
           </TouchableOpacity>
         </View>
         {errormsg?
@@ -150,7 +150,7 @@ const signin = (props) => {
           <Text style={styles.noacc}>Don't have an account?</Text>
           <TouchableOpacity
             onPress={() => props.navigation.navigate('signup')}>
-            <Text style={styles.signuptext}>SignUp</Text>
+            <Text style={styles.signuptext}>Sign Up</Text>
           </TouchableOpacity>
 
         </View>
