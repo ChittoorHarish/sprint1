@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
  touchsend:{
     justifyContent:'center',
     alignItems:'center',
-    marginTop:hp('10%'),
+    marginTop:hp('5%'),
     alignSelf:'center'
  },
  touchsend2:{

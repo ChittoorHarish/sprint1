@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
 buttonsend:{
   justifyContent:'center',
   alignItems:'center',
-  marginTop:hp('24%'),
+  marginTop:hp('15%'),
   alignSelf:'center'
 },
 textinp:{

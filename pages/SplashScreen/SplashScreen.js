@@ -5,7 +5,7 @@ import { Button, View, Text, SafeAreaView, ImageBackground, Image } from 'react-
 const SplashScreen = ({ navigation }) => {
     setTimeout (() =>{
         navigation.replace('Onboarding');
-   },3000
+   },2000
     );
   return (
     <SafeAreaView style={{ flex: 1 }}>

@@ -1,5 +1,5 @@
-import React from "react";
-import { View, StyleSheet, Text, Image } from "react-native";
+import React, {useState} from "react";
+import { View, StyleSheet, Text, SafeAreaView,Image } from "react-native";
 import styles from './styles';
 import OptionsMenu from "react-native-option-menu";
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -7,9 +7,12 @@ import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale, heightPercentageToDP } from '../../services/responsiveFunc';
 
 const homeongoing = (props) => {
+  const [discard, discardPost] = useState();
+  const [edit, editPost] = useState();
     const myIcon = (<Icon name="ellipsis-vertical-outline" color="grey" size={25} />)
    
   return (
+    <SafeAreaView style={{flex:1,backgroundColor:'white'}}>
       <ScrollView>
       <View style={styles.basic1}>
     <View style={styles.headertitle}>
@@ -26,7 +29,7 @@ source={require('../assets/image/galgadot.jpeg')}></Image>
   customButton={myIcon}
   destructiveIndex={1}
   options={["Edit", "Discard", "Cancel"]}
-   />
+  actions={[editPost, discardPost]}/>
 </View>
     </View>
     <View style={styles.bodyview}>
@@ -157,6 +160,7 @@ source={require('../assets/image/gal.png')}></Image>
             </View>
     </View>
     </ScrollView>
+    </SafeAreaView>
 
     
   );

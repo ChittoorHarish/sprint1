@@ -24,6 +24,7 @@ import termsofuse from "../pages/termsofuse/termsofuse";
 import logout from "../pages/logout/logout";
 import homeongoing from "../pages/homeongoing/homeongoing";
 import homeongoing1 from "../pages/homeongoing1/homeongoing1";
+import CustomSidebarMenu from '../CustomSidebarMenu';
 import termsandconditions from "../pages/termsandconditions/termsandconditions";
 import { Label } from "native-base";
 import color from "color";
@@ -31,6 +32,28 @@ import color from "color";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator ();
 const Drawer = createDrawerNavigator();
+// const NavigationDrawerStructure = (props) => {
+//   //Structure for the navigatin Drawer
+//   const toggleDrawer = () => {
+//     //Props to open/close the drawer
+//     props.navigationProps.toggleDrawer();
+//   };
+
+//   return (
+//     <View style={{flexDirection: 'row'}}>
+//       <TouchableOpacity onPress={toggleDrawer}>
+//         {/*Donute Button Image */}
+//         <Image
+//           source={{
+//             uri:
+//               'https://raw.githubusercontent.com/AboutReact/sampleresource/master/drawerWhite.png',
+//           }}
+//           style={{width: 25, height: 25, marginLeft: 5}}
+//         />
+//       </TouchableOpacity>
+//     </View>
+//   );
+// };
 
 const MainStackNavigator = () => {
   return (
@@ -219,9 +242,7 @@ const ContactStackNavigator = () => {
     return (
       <Tab.Navigator
       tabBarOptions={{
-        activeBackgroundColor:'#1e90ff',
-        activeTintColor:'#1e90ff',
-        inactiveTintColor: 'grey', 
+        activeTintColor:'#1ab2ff',
         showLabel:true,
         showIcon:true,
       }}
@@ -233,22 +254,34 @@ const ContactStackNavigator = () => {
         options={{
           title: 'Ham',
           tabBarLabel:() =>null,
-          tabBarIcon: () =>(
-            <View style={{borderWidth:0.5,borderRadius:50,backgroundColor:'#ffffff',height:hp('4%'),width:wp('8%'),justifyContent:'center',alignItems:'center'}}>
-            <Icon name="home-outline" color="#1e90ff" size={25}/>
-            </View>
+          tabBarIcon: ({ color,}) =>(  
+            <Icon name="home"
+            color={color}
+            size={25}
+            
+            />
           ),
           
         }}/>
         <Tab.Screen name="settings" component={settings} 
         options={{
           tabBarLabel:() =>null,
-          tabBarIcon: () =>(
-            <View style={{position: 'absolute',
-            height: hp('8%'),
-            justifyContent: 'center',
-            alignItems: 'center'}}>
-            <Icon name="add-circle-outline" color="#48d1cc" size={50}/>
+          tabBarIcon: ({}) =>(
+            <View
+        style={{
+          position: 'absolute',
+          bottom: 9, // space from bottombar
+          height: 60,
+          width: 62,
+          borderRadius: 30,
+          backgroundColor: '#1ab2ff',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+            <Icon name="add"
+            color={'#ffffff'}
+            size={35}
+            />
             </View>
           ),
           
@@ -256,10 +289,11 @@ const ContactStackNavigator = () => {
         <Tab.Screen name="Contact" component={Contact} 
         options={{
           tabBarLabel:() =>null,
-          tabBarIcon: () =>(
-            <View style={{borderWidth:0.5,borderRadius:50,backgroundColor:'#ffffff',height:hp('4%'),width:wp('8%'),justifyContent:'center',alignItems:'center'}}>
-            <Icon name="search-outline" color="#1e90ff" size={25}/>
-            </View>
+          tabBarIcon: ({ color,}) =>(
+            <Icon name="search"
+            color={color}
+            size={25}
+            />
           ),
           
         }}/>
@@ -275,8 +309,9 @@ const ContactStackNavigator = () => {
         itemStyle:{marginTop:hp('1%')},
         contenComponent:createDrawerNavigator
       }}
+      drawerContent={(props) => <CustomSidebarMenu {...props} />}
       drawerStyle={{
-        
+        width:wp('78%'),
         backgroundColor:'#ffffff',
         
       }}

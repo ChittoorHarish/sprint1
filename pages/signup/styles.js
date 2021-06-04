@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     send:{
         justifyContent:'center',
         alignItems:'center',
-        marginTop:hp('9%'),
+        marginTop:hp('5%'),
         alignSelf:'center',
         marginBottom:hp('1%')
     },

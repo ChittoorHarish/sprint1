@@ -9,10 +9,11 @@ import { Button, Text, SafeAreaView,Image,TextComponent,TouchableOpacity, TextIn
 import { ScrollView } from "react-native-gesture-handler";
 import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale } from '../../services/responsiveFunc';
 
-const homeongoing1 = ({props}) => {
+const homeongoing1 = (props) => {
     const [toggle, setToggle] = useState(false);
     const refRBSheet = useRef();
-    const [editPost, discardPost] = useState();
+    const [discard, discardPost] = useState();
+    const [edit, editPost] = useState();
     const myIcon = (<Icon name="ellipsis-vertical-outline" color="grey" size={25} />)
   return (
     <SafeAreaView style={{flex:1,backgroundColor:'white'}}>
@@ -135,6 +136,7 @@ style={{
             </TouchableOpacity>
             <RBSheet
         ref={refRBSheet}
+        animationType="slide"
         closeOnDragDown={true}
         closeOnPressMask={true}
         closeOnPressBack={true}

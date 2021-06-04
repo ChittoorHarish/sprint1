@@ -49,32 +49,32 @@ const [data1, setData1] = React.useState({
   //console.log(estado);
 
   sendcred = () => {
-    if (!firstname.trim()) {
-      setErrormsgtext('Please Enter First Name')
-      setErrormsg(true);
-      return;
+    // if (!firstname.trim()) {
+    //   setErrormsgtext('Please Enter First Name')
+    //   setErrormsg(true);
+    //   return;
       
-    }
-    if (!lastname.trim()) {
-      setErrormsgtext('Please Enter Last Name')
-      setErrormsg(true);
-      return;
-    }
-    if (!username.trim()) {
-      setErrormsgtext('Please Enter UserName')
-      setErrormsg(true);
-      return;
-    }
-    if (!email.trim()) {
-      setErrormsgtext('Please Enter Valid Email!')
-      setErrormsg(true);
-      return;
-    }
-    if (!phone_no.trim()) {
-      setErrormsgtext('Please Enter Phone')
-      setErrormsg(true);
-      return;
-    }
+    // }
+    // if (!lastname.trim()) {
+    //   setErrormsgtext('Please Enter Last Name')
+    //   setErrormsg(true);
+    //   return;
+    // }
+    // if (!username.trim()) {
+    //   setErrormsgtext('Please Enter UserName')
+    //   setErrormsg(true);
+    //   return;
+    // }
+    // if (!email.trim()) {
+    //   setErrormsgtext('Please Enter Valid Email!')
+    //   setErrormsg(true);
+    //   return;
+    // }
+    // if (!phone_no.trim()) {
+    //   setErrormsgtext('Please Enter Phone')
+    //   setErrormsg(true);
+    //   return;
+    // }
     // if (!country_code.trim()) {
     //   setErrormsgtext('Please Enter Valid Email!')
     //   setErrormsg(true);
@@ -85,16 +85,16 @@ const [data1, setData1] = React.useState({
     //   setErrormsg(true);
     //   return;
     // }
-    if (!password.trim()) {
-      setErrormsgtext('Please Enter Password')
-      setErrormsg(true);
-      return;
-    }
-    if (!confirm_password.trim()) {
-      setErrormsgtext('Please Enter Confirm Password')
-      setErrormsg(true);
-      return;
-    }
+    // if (!password.trim()) {
+    //   setErrormsgtext('Please Enter Password')
+    //   setErrormsg(true);
+    //   return;
+    // }
+    // if (!confirm_password.trim()) {
+    //   setErrormsgtext('Please Enter Confirm Password')
+    //   setErrormsg(true);
+    //   return;
+    // }
 
     console.log(firstname,lastname,username,email,phone_no,country_code,dob,password,confirm_password)
     fetch("https://obn1qqspll.execute-api.us-east-1.amazonaws.com/dev/user/signup",{
@@ -108,8 +108,6 @@ const [data1, setData1] = React.useState({
         "username":username,
         "email":email,
         "phone_no":phone_no,
-        "country_code":country_code,
-        "dob":dob,
         "password":password,
         "confirm_password":confirm_password
       })
@@ -127,19 +125,22 @@ const [data1, setData1] = React.useState({
           props.navigation.navigate('hamburger')
         }
         else{
-          alert(
-            "Please Check the Fields to Proceed",
+          setErrormsgtext(responseJson.message)
+          setErrormsg(true);
+          return;
+          // alert(
+          //   "Please Check the Fields to Proceed",
             
-            [
-              {
-                text: "Cancel",
-                onPress: () => console.log("Cancel Pressed"),
-                style: "cancel"
-              },
-              { text: "OK", onPress: () => console.log("OK Pressed") }
-            ],
+          //   [
+          //     {
+          //       text: "Cancel",
+          //       onPress: () => console.log("Cancel Pressed"),
+          //       style: "cancel"
+          //     },
+          //     { text: "OK", onPress: () => console.log("OK Pressed") }
+          //   ],
             
-          );
+          // );
         }
     })
     
@@ -234,7 +235,8 @@ const [data1, setData1] = React.useState({
    <TextInput
        style={styles.textin}
        placeholder="Password"
-       secureTextEntry={false}  
+       secureTextEntry={false} 
+       keyboardType="numeric" 
        secureTextEntry={data.secureTextEntry ? true : false}
        value={password}
               onChangeText={(text)=>setPassword(text)}  

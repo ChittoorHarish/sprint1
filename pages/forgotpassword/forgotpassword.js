@@ -10,11 +10,11 @@ const forgotpassword = (props) => {
   const [errormsgtext, setErrormsgtext] = useState('');
 
   sendcred = () => {
-    if (!email.trim()) {
-      setErrormsgtext('Please Enter Email')
-      setErrormsg(true);
-      return;
-    }
+    // if (!email.trim()) {
+    //   setErrormsgtext('Please Enter Email')
+    //   setErrormsg(true);
+    //   return;
+    // }
     console.log(email)
     fetch("https://obn1qqspll.execute-api.us-east-1.amazonaws.com/dev/user/password/forgot",{
       method:"POST",
@@ -39,19 +39,22 @@ const forgotpassword = (props) => {
           props.navigation.navigate('newpassword')
         }
         else{
-          alert(
-            "Please Enter Registered Email ",
+          setErrormsgtext(responseJson.message)
+          setErrormsg(true);
+          return;
+          // alert(
+          //   "Please Enter Registered Email ",
             
-            [
-              {
-                text: "Cancel",
-                onPress: () => console.log("Cancel Pressed"),
-                style: "cancel"
-              },
-              { text: "OK", onPress: () => console.log("OK Pressed") }
-            ],
+          //   [
+          //     {
+          //       text: "Cancel",
+          //       onPress: () => console.log("Cancel Pressed"),
+          //       style: "cancel"
+          //     },
+          //     { text: "OK", onPress: () => console.log("OK Pressed") }
+          //   ],
             
-          );
+          // );
         }
     })
    

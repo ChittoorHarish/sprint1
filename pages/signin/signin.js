@@ -26,19 +26,19 @@ const signin = (props) => {
 
   sendcred = () => {
 
-    if (!email.trim()) {
-      // alert('Please Enter Email');
-      setErrormsgtext('Please Enter Valid Email!')
-      setErrormsg(true);
-      return;
-    }
-    //Check for the Email TextInput
-    if (!password.trim()) {
-      // alert('Please Enter Password');
-      setErrormsgtext('Please Enter Valid Password!')
-      setErrormsg(true);
-      return;
-    }
+    // if (!email.trim()) {
+    //   // alert('Please Enter Email');
+    //   setErrormsgtext('Please Enter Valid Email!')
+    //   setErrormsg(true);
+    //   return;
+    // }
+    // //Check for the Email TextInput
+    // if (!password.trim()) {
+    //   // alert('Please Enter Password');
+    //   setErrormsgtext('Please Enter Valid Password!')
+    //   setErrormsg(true);
+    //   return;
+    // }
     //Checked Successfully
     //Do whatever you want
 
@@ -49,6 +49,7 @@ const signin = (props) => {
       method: "POST",
       headers: {
         'Content-Type': 'application/json'
+        
       },
       body: JSON.stringify({
         "email": email,
@@ -69,19 +70,24 @@ const signin = (props) => {
           props.navigation.navigate('hamburger')
         }
         else {
-          alert(
-            "InValid Credential, Unable to Login ",
+          setErrormsgtext(responseJson.message)
+     setErrormsg(true);
+      return;
+          
+          // alert(
+          //   "InValid Credential, Unable to Login ",
 
-            [
-              {
-                text: "Cancel",
-                onPress: () => console.log("Cancel Pressed"),
-                style: "cancel"
-              },
-              { text: "OK", onPress: () => console.log("OK Pressed") }
-            ],
+          //   [
+          //     {
+          //       text: "Cancel",
+          //       onPress: () => console.log("Cancel Pressed"),
+          //       style: "cancel"
+          //     },
+          //     { text: "OK", onPress: () => console.log("OK Pressed") }
+          //   ],
 
-          );
+          // );
+          
         }
       })
     //If response is not in json then in error
