@@ -25,30 +25,20 @@ const CustomSidebarMenu = (props) => {
   return (
     <SafeAreaView style={{flex: 1}}>
          
-     <View style={{justifyContent:'center',alignItems:'center',width:wp('78'),height:hp('13%'),backgroundColor:'blue',}}>
+     <View style={{justifyContent:'center',alignItems:'center',width:wp('78'),height:hp('30%'),marginBottom:hp('0'),backgroundColor:'#1ab2ff',borderBottomEndRadius:30,borderBottomStartRadius:30}}>
 
      </View>
       <DrawerContentScrollView {...props}>
         <DrawerItemList {...props} />
         
       </DrawerContentScrollView>
-    </SafeAreaView>
+      </SafeAreaView>
+
   );
 };
 
 const styles = StyleSheet.create({
-  sideMenuProfileIcon: {
-    resizeMode: 'center',
-    width: 100,
-    height: 100,
-    borderRadius: 100 / 2,
-    alignSelf: 'center',
-  },
-  iconStyle: {
-    width: 15,
-    height: 15,
-    marginHorizontal: 5,
-  },
+ 
 });
 
 export default CustomSidebarMenu;

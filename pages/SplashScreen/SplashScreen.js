@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from './styles';
-import { Button, View, Text, SafeAreaView, ImageBackground, Image } from 'react-native';
+import { Button, View, Text, SafeAreaView, ImageBackground, Image,StatusBar } from 'react-native';
 
 const SplashScreen = ({ navigation }) => {
     setTimeout (() =>{

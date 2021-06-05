@@ -117,11 +117,12 @@ const [data1, setData1] = React.useState({
     .then((responseJson) => {
       //Success
       
-      console.log(responseJson.code)
+      console.log(responseJson.data)
 
       if(responseJson.code==200  
   
         ){
+          
           props.navigation.navigate('hamburger')
         }
         else{
@@ -222,6 +223,7 @@ const [data1, setData1] = React.useState({
        style={styles.textin}
        placeholder="Phone"
        value={phone_no}
+       keyboardType='numeric'
        onChangeText={(text)=>setPhone_no(text)}
    />
 
@@ -236,7 +238,6 @@ const [data1, setData1] = React.useState({
        style={styles.textin}
        placeholder="Password"
        secureTextEntry={false} 
-       keyboardType="numeric" 
        secureTextEntry={data.secureTextEntry ? true : false}
        value={password}
               onChangeText={(text)=>setPassword(text)}  

@@ -30,10 +30,11 @@ const newpassword = (props) => {
     
 
     console.log(confirm_password,password)
-    fetch("https://obn1qqspll.execute-api.us-east-1.amazonaws.com/dev/user/login",{
+    fetch("https://obn1qqspll.execute-api.us-east-1.amazonaws.com/dev/user/password/reset",{
       method:"POST",
       headers:{
-        'Content-Type':'application/json'
+        'Content-Type':'application/json',
+       //'Token':"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIwIiwiZW1haWwiOiJzaW5naG5lZXJhajMxQGdtYWlsLmNvbSIsImlhdCI6MTYyMTQyNjQyMCwiZXhwIjoxNjIxNDI2NzIwfQ.0hRfm3hjDiaiS9a7spJ1QYNkysRw5tuZNdpX-JYM3qE"
       },
       body:JSON.stringify({
         "confirm_password":confirm_password,
@@ -46,7 +47,7 @@ const newpassword = (props) => {
     .then((responseJson) => {
       //Success
       alert(JSON.stringify(responseJson));
-      console.log(responseJson);
+      console.log(responseJson.data);
     })
     //If response is not in json then in error
     .catch((error) => {
@@ -106,7 +107,7 @@ const newpassword = (props) => {
         
         <View style={styles.touchnewpass}>
             <TouchableOpacity style={styles.touch}
-            >
+            onPress={() => sendcred()}>
               <Text style={{fontSize:moderateScale(18),color:'white',fontFamily:'Poppins-Bold'}}>Submit</Text>
 
             </TouchableOpacity>

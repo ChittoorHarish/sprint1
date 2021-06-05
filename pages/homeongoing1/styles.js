@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
         fontFamily:'Poppins-Bold',fontSize:moderateScale(18)
       },
       detailview:{
-        justifyContent:'flex-start',alignItems:'flex-start',height:hp('35%'),width:wp('90%'),borderWidth:0.2,marginTop:hp('2%'),borderColor:'grey',marginLeft:wp('4%'),borderRadius:10,
+        justifyContent:'flex-start',alignItems:'flex-start',height:hp('38%'),width:wp('90%'),borderWidth:0.2,marginTop:hp('2%'),borderColor:'grey',marginLeft:wp('4%'),borderRadius:10,
       },
       detail:{
         justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',marginLeft:wp('4%'),marginTop:hp("2%"),

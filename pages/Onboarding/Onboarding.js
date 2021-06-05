@@ -17,6 +17,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 //import AppIntroSlider to use it
 import AppIntroSlider from 'react-native-app-intro-slider';
 import styles from './styles';
+import { StatusBar } from 'react-native';
 import { color } from 'react-native-reanimated';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale } from '../../services/responsiveFunc';
 import signin from '../signin/signin';
@@ -108,6 +109,7 @@ const App = ({navigation}) => {
   return (
     <>
       {showRealApp ? (
+        
         <SafeAreaView style={{ flex: 1}}>
         <ImageBackground style={{flex:1}}
         source={require('../assets/image/splashss.png')}>
@@ -136,6 +138,7 @@ const App = ({navigation}) => {
         </ImageBackground>
        
       </SafeAreaView>
+     
       ) : (
         <AppIntroSlider
           data={slides}

@@ -246,6 +246,7 @@ const ContactStackNavigator = () => {
         showLabel:true,
         showIcon:true,
       }}
+      
 
       initialRouteName="Home"
       shifting='false'>

@@ -70,9 +70,10 @@ const hamburger = (props) => {
             borderColor: 'transparent',
             
           }}
-          activeTabStyle={{backgroundColor: '#F2F2F2', marginTop: 2}}
+          activeTabStyle={{backgroundColor: '#F2F2F2', marginTop: 2,borderBottomWidth:3,borderBottomColor:'#1ab2ff'}}
           tabTextStyle={{color: '#888888', fontFamily:'Poppins-Bold',fontSize:moderateScale(17)}}
           activeTabTextStyle={{color: '#444444'}}
+          
         />
         {customStyleIndex === 0 && (
           <View style={styles.basic1}>
