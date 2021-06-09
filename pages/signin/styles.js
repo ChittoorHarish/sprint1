@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
  signintitletext:{
    fontSize:moderateScale(22),
    marginLeft:wp('5%'),
+   color:'rgb(80,80,80)',
    fontFamily:'Poppins-Bold'
  },
  touchsend:{
@@ -70,16 +71,16 @@ forgotpasstext:{
    fontSize:moderateScale(17),color:'#1e90ff',fontWeight:'bold',marginLeft:wp('5%'),fontFamily:'Poppins-Bold'
 },
 noacc:{
-   fontSize:moderateScale(16),color:'black',fontFamily:'Poppins-Regular'
+   fontSize:moderateScale(17),color:'grey',fontFamily:'Poppins-Regular'
 },
 signintextbot:{
    fontSize:moderateScale(18),color:'white',fontFamily:'Poppins-Bold'
 },
 show:{
-   fontSize:moderateScale(17),color:'#1e90ff',fontFamily:'Poppins-Bold'
+   fontSize:moderateScale(17),color:'#1e90ff',fontFamily:'Poppins-Medium'
 },
 hide:{
-   fontSize:moderateScale(17),color:'#1e90ff',fontFamily:'Poppins-Bold'
+   fontSize:moderateScale(17),color:'#1e90ff',fontFamily:'Poppins-Medium'
 },
 touchable:{
 justifyContent:'center',
@@ -96,7 +97,7 @@ errortitle:{
    marginTop:hp('2%')
 },
 errortext:{
-  fontSize:moderateScale(16),
+  fontSize:moderateScale(18),
   fontFamily:'Poppins-Regular',
   color:'red'
 },

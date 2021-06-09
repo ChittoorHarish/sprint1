@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
-import { Button, View, Text, ActivityIndicator, SafeAreaView, Image, TextComponent, TouchableOpacity, StyleSheet, TextInput } from 'react-native';
+import { Button, View, Text, ActivityIndicator, SafeAreaView, Image, TextComponent, TouchableOpacity, StyleSheet, TextInput, } from 'react-native';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale } from '../../services/responsiveFunc';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const signin = (props) => {
 
@@ -24,25 +25,8 @@ const signin = (props) => {
   }
 
 
+
   sendcred = () => {
-
-    // if (!email.trim()) {
-    //   // alert('Please Enter Email');
-    //   setErrormsgtext('Please Enter Valid Email!')
-    //   setErrormsg(true);
-    //   return;
-    // }
-    // //Check for the Email TextInput
-    // if (!password.trim()) {
-    //   // alert('Please Enter Password');
-    //   setErrormsgtext('Please Enter Valid Password!')
-    //   setErrormsg(true);
-    //   return;
-    // }
-    //Checked Successfully
-    //Do whatever you want
-
-
 
     console.log(email, password)
     fetch("https://obn1qqspll.execute-api.us-east-1.amazonaws.com/dev/user/login", {
@@ -62,12 +46,18 @@ const signin = (props) => {
       .then((responseJson) => {
         //Success
 
-        console.log(responseJson.code)
+        console.log(responseJson.data);
 
-        if (responseJson.code == 200
+        if (responseJson.code == 200) 
+        {
+          console.log("1. auth_token:" + responseJson.data.token);
+          console.log("1. auth_userid:" + responseJson.data.id);
 
-        ) {
-          props.navigation.navigate('hamburger')
+          AsyncStorage.setItem('auth_token',responseJson.data.token);
+          AsyncStorage.setItem('auth_userid',responseJson.data.id);
+
+          props.navigation.navigate('Home');
+          //let token = await AsyncStorage.getItem('auth_token')
         }
         else {
           setErrormsgtext(responseJson.message)

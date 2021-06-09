@@ -64,12 +64,12 @@ const forgotpassword = (props) => {
     <SafeAreaView style={styles.safe}>
       <View style={{justifyContent:'center',}}>
       <View style={styles.forgotpassword}>
-        <Text style={{fontSize:moderateScale(22),marginLeft:wp('5%'),fontFamily:'Poppins-Bold'}}>Forgot Password</Text>
+        <Text style={{fontSize:moderateScale(22),color:'rgb(80,80,80)',marginLeft:wp('5%'),fontFamily:'Poppins-Bold'}}>Forgot Password</Text>
 
       </View>
       <View style={styles.forgotpasstext}>
-          <Text style={{marginLeft:wp('5%'),marginEnd:wp('7%'),color:'grey',fontSize:moderateScale(17),fontFamily:'Poppins-Regular'}}>
-              Please enter the email address you used to create your account and we'll send yoou a link to reset your password.
+          <Text style={{marginLeft:wp('5%'),marginEnd:wp('7%'),color:'grey',fontSize:moderateScale(14),fontFamily:'Poppins-Regular'}}>
+              Please enter the email address you used to create your account and we'll send you a link to reset your password.
           </Text>
       </View>
       <View style={styles.textinp}>

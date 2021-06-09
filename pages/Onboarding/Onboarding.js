@@ -142,11 +142,11 @@ const App = ({navigation}) => {
       ) : (
         <AppIntroSlider
           data={slides}
-          activeDotStyle ={{width:wp('12%'), backgroundColor:'#1e90ff',marginLeft:wp('-2%')}}
-          dotStyle= {{width:wp('12%'),backgroundColor:'#add8e6',marginLeft:wp('-2.5%')}}
+          activeDotStyle ={{width:wp('12%'), backgroundColor:'#1e90ff',marginLeft:wp('-2%'),marginBottom:hp('5%')}}
+          dotStyle= {{width:wp('12%'),backgroundColor:'#add8e6',marginLeft:wp('-2.5%'),marginBottom:hp('5%')}}
           renderItem={RenderItem}
           onDone={onDone} 
-          showSkipButton={true}
+          
           onSkip={onSkip}
           bottomButton style={{backgroundColor:'white'}}
           renderNextButton={renderNextButton}
@@ -181,7 +181,7 @@ const slides = [
     title: 'Name your Price.',
     title2: 'Negotiate.',
     title3:'Sign.',
-    text2: "YOU decide your reward amount. YOU choose your helper. The higher the reward amount, the better the helper will be- it's basic supply and demand",
+    text2: "YOU decide your reward amount. YOU choose your helper. The higher the reward amount, the better the helper will be- it's basic supply and demand.",
     image: require('../assets/image/T2.png'),
 
   },

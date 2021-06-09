@@ -15,13 +15,13 @@ const styles = StyleSheet.create({
         marginTop:hp('4%')
     },
     signuptitle:{
-        fontSize:moderateScale(22),marginLeft:wp('5%'),fontFamily:'Poppins-Bold',
+        fontSize:moderateScale(22),marginLeft:wp('5%'),fontFamily:'Poppins-Bold',color:'rgb(80,80,80)',
     },
     and:{
-        fontSize:moderateScale(17),fontFamily:'Poppins-Regular'
+        fontSize:moderateScale(15),fontFamily:'Poppins-Regular'
     },
     privacy:{
-        fontSize:moderateScale(17),color:'#1e90ff',marginLeft:wp('10%'),fontFamily:'Poppins-Regular'
+        fontSize:moderateScale(15),color:'#1e90ff',marginLeft:wp('13%'),fontFamily:'Poppins-Regular'
     },
     sendbtn:{
         justifyContent:'center',alignItems:'center',backgroundColor:'#1e90ff',borderRadius:7,padding:11,width:wp('83%'),alignSelf:'center'
@@ -30,10 +30,10 @@ const styles = StyleSheet.create({
         fontSize:moderateScale(18),color:'white',fontFamily:'Poppins-Bold'
     },
     accept:{
-        fontSize:moderateScale(17),marginLeft:wp('1%'),fontFamily:'Poppins-Regular'
+        fontSize:moderateScale(15),marginLeft:wp('1%'),fontFamily:'Poppins-Regular'
     },
     terms:{
-        fontSize:moderateScale(17),color:'#1e90ff',fontFamily:'Poppins-Regular'
+        fontSize:moderateScale(15),color:'#1e90ff',fontFamily:'Poppins-Regular'
     },
     basicstart:{
         justifyContent:'center',
@@ -97,7 +97,8 @@ const styles = StyleSheet.create({
     basiccheck:{
         justifyContent:'center',
         alignItems:'center',
-        marginLeft:wp('3%')
+        marginLeft:wp('3%'),
+        margin:4
     },
     basicbot:{
         justifyContent:'center',
@@ -110,7 +111,7 @@ const styles = StyleSheet.create({
         marginTop:hp('2%')
      },
      errortext:{
-       fontSize:moderateScale(16),
+       fontSize:moderateScale(17),
        fontFamily:'Poppins-Regular',
        color:'red'
      },

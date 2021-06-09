@@ -24,7 +24,7 @@ import termsofuse from "../pages/termsofuse/termsofuse";
 import logout from "../pages/logout/logout";
 import homeongoing from "../pages/homeongoing/homeongoing";
 import homeongoing1 from "../pages/homeongoing1/homeongoing1";
-import CustomSidebarMenu from '../CustomSidebarMenu';
+import CustomSidebarMenu from '../pages/CustomSidebarMenu/CustomSidebarMenu';
 import termsandconditions from "../pages/termsandconditions/termsandconditions";
 import { Label } from "native-base";
 import color from "color";
@@ -127,7 +127,7 @@ const MainStackNavigator = () => {
           }}
         />
          <Stack.Screen
-          name="hamburger"
+          name="Home"
           component={DrawerNavigator}
           options={{
             
@@ -249,7 +249,8 @@ const ContactStackNavigator = () => {
       
 
       initialRouteName="Home"
-      shifting='false'>
+      shifting='false'
+      >
         
         <Tab.Screen name="Home"  component={hamburger}
         options={{
@@ -268,11 +269,13 @@ const ContactStackNavigator = () => {
         options={{
           tabBarLabel:() =>null,
           tabBarIcon: ({}) =>(
-            <View
+           
+            <TouchableOpacity
         style={{
-          position: 'absolute',
+          position:'relative',
           bottom: 9, // space from bottombar
           height: 60,
+          zIndex:1,
           width: 62,
           borderRadius: 30,
           backgroundColor: '#1ab2ff',
@@ -283,7 +286,8 @@ const ContactStackNavigator = () => {
             color={'#ffffff'}
             size={35}
             />
-            </View>
+            </TouchableOpacity>
+           
           ),
           
         }}/>
@@ -307,10 +311,11 @@ const ContactStackNavigator = () => {
       <Drawer.Navigator
       drawerContentOptions={{
         labelStyle:{fontFamily:'Poppins-Regular'},
-        itemStyle:{marginTop:hp('1%')},
+        itemStyle:{},
         contenComponent:createDrawerNavigator
       }}
       drawerContent={(props) => <CustomSidebarMenu {...props} />}
+      
       drawerStyle={{
         width:wp('78%'),
         backgroundColor:'#ffffff',
@@ -322,9 +327,8 @@ const ContactStackNavigator = () => {
 
 <Drawer.Screen name="Home" component={BottomTabNavigator} options={{
            title: 'Home',
-           
            drawerIcon: () => (
-             <View style={{padding:3,borderWidth:0.5,borderRadius:5,backgroundColor:'#dcdcdc'}}>
+             <View style={{padding:3,borderWidth:0.5,borderRadius:5,backgroundColor:'#f2f2f2'}}>
             <Icon name="home-outline" color="black" size={25}/>
             </View>
            ), 
@@ -334,7 +338,7 @@ const ContactStackNavigator = () => {
         <Drawer.Screen name="profile" component={Profile} options={{
            title: 'My Profile',
            drawerIcon: () => (
-             <View style={{padding:3,borderWidth:0.5,borderRadius:5,backgroundColor:'#dcdcdc'}}>
+             <View style={{padding:3,borderWidth:0.5,borderRadius:5,backgroundColor:'#f2f2f2'}}>
             <Icon name="person-outline" color="black" size={25}/>
             </View>
            ), 
@@ -345,7 +349,7 @@ const ContactStackNavigator = () => {
            title: 'My Wallet',
            
            drawerIcon: () => (
-            <View style={{padding:3,borderWidth:0.5,borderRadius:5,backgroundColor:'#dcdcdc'}}>
+            <View style={{padding:3,borderWidth:0.5,borderRadius:5,backgroundColor:'#f2f2f2'}}>
             <Icon name="wallet-outline" color="black" size={25}/>
             </View>
            ), 
@@ -355,7 +359,7 @@ const ContactStackNavigator = () => {
          <Drawer.Screen name="setting" component={settings} options={{
            title: 'Settings',
            drawerIcon: () => (
-            <View style={{padding:3,borderWidth:0.5,borderRadius:5,backgroundColor:'#dcdcdc'}}>
+            <View style={{padding:3,borderWidth:0.5,borderRadius:5,backgroundColor:'#f2f2f2'}}>
             <Icon name="settings-outline" color="black" size={25}/>
             </View>
            ), 
@@ -365,7 +369,7 @@ const ContactStackNavigator = () => {
          <Drawer.Screen name="notification" component={notification} options={{
            title: 'Notification',
            drawerIcon: () => (
-            <View style={{padding:3,borderWidth:0.5,borderRadius:5,backgroundColor:'#dcdcdc'}}>
+            <View style={{padding:3,borderWidth:0.5,borderRadius:5,backgroundColor:'#f2f2f2'}}>
             <Icon name="notifications-outline" color="black" size={25}/>
             </View>
            ), 
@@ -375,7 +379,7 @@ const ContactStackNavigator = () => {
          <Drawer.Screen name="paymentinfo" component={paymentinfo} options={{
            title: 'Payment Information',
            drawerIcon: () => (
-            <View style={{padding:3,borderWidth:0.5,borderRadius:5,backgroundColor:'#dcdcdc'}}>
+            <View style={{padding:3,borderWidth:0.5,borderRadius:5,backgroundColor:'#f2f2f2'}}>
             <Icon name="card-outline" color="black" size={25}/>
             </View>
            ), 
@@ -383,9 +387,9 @@ const ContactStackNavigator = () => {
         
         />
          <Drawer.Screen name="termsofuse" component={termsofuse} options={{
-           title: 'Terms Of Use',
+           title: 'Terms of Use',
            drawerIcon: () => (
-            <View style={{padding:3,borderWidth:0.5,borderRadius:5,backgroundColor:'#dcdcdc'}}>
+            <View style={{padding:3,borderWidth:0.5,borderRadius:5,backgroundColor:'#f2f2f2'}}>
             <Icon name="document-text-outline" color="black" size={25}/>
             </View>
            ), 
@@ -393,9 +397,9 @@ const ContactStackNavigator = () => {
         
         />
          <Drawer.Screen name="logout" component={logout} options={{
-           title: 'Logout',
+           title: 'Log Out',
            drawerIcon: () => (
-            <View style={{padding:3,borderWidth:0.5,borderRadius:5,backgroundColor:'#dcdcdc'}}>
+            <View style={{padding:3,borderWidth:0.5,borderRadius:5,backgroundColor:'#f2f2f2'}}>
             <Icon name="log-out-outline" color="black" size={25}/>
             </View>
            ), 

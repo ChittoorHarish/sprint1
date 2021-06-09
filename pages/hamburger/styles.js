@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
   center: {
     flex: 1,
     justifyContent: "flex-start",
+    zIndex:0,
     alignItems: "flex-start",
     backgroundColor:'#ffffff'
   },
@@ -21,12 +22,23 @@ const styles = StyleSheet.create({
     justifyContent:'flex-start',
     alignItems:'flex-start',
     marginTop:hp('5%'),
-    marginLeft:wp('3%')
+    flexDirection:'row',
+    marginLeft:wp('3%'),
+    marginEnd:wp('4%')
   },
   fiya:{
     justifyContent:'center',
     alignItems:'center',
     marginTop:hp('3%')
+  },
+  notification:{
+    justifyContent:'flex-end',alignItems:'flex-end',marginLeft:wp('70%'),
+  },
+  belltext:{
+    fontSize:moderateScale(10),color:'#1ab2ff',fontFamily:'Poppins-Regular',textAlign:'center'
+  },
+  notificationtext:{
+    justifyContent:'center',alignItems:'center',borderRadius:10,backgroundColor:'white',width:wp('3.5%'),marginTop:hp('0.5%'),marginLeft:wp('-4.5%')
   },
   home:{
     textAlign:'center',
@@ -40,7 +52,7 @@ const styles = StyleSheet.create({
     borderWidth:0.1,height:hp("16%"),width:wp('32.5%'),borderRadius:80,
   },
   name:{
-    fontSize:moderateScale(20),fontFamily:'Poppins-Bold',color:'#ffffff',marginTop:hp('1%')
+    fontSize:moderateScale(20),fontFamily:'Poppins-Bold',color:'#ffffff',marginTop:hp('1%'),lineHeight:30
   },
   procontainer:{
     justifyContent:'flex-start',alignItems:'center',width:wp("25%"),height:hp("4.2%"),borderRadius:20,backgroundColor:'#4dc3ff',flexDirection:'row',marginTop:hp('0.5%')
@@ -55,7 +67,7 @@ const styles = StyleSheet.create({
     justifyContent:'center',alignItems:'center',marginLeft:wp('0.5%')
   },
   points:{
-    textAlign:'center',fontFamily:'Poppins-Regular',fontWeight:'bold',fontSize:moderateScale(15),color:'#fff',marginLeft:wp('1%')
+    textAlign:'center',fontFamily:'Poppins-Medium',fontSize:moderateScale(15),color:'#fff',marginLeft:wp('1%'),lineHeight:21
   },
   pointsbot:{
     textAlign:'center',fontFamily:'Poppins-Regular',fontSize:moderateScale(15),color:'#fff',marginLeft:wp('1%')
@@ -110,16 +122,16 @@ const styles = StyleSheet.create({
     justifyContent:'center',alignItems:'flex-start',flexDirection:'column',marginLeft:wp("3%")
   },
   nametitle:{
-    fontSize:moderateScale(16),fontFamily:'Poppins-Bold',color:'black'
+    fontSize:moderateScale(16),fontFamily:'Poppins-SemiBold',color:'rgb(80,80,80)',lineHeight:25
   },
   occupation:{
-    fontSize:moderateScale(15),fontFamily:'Poppins-Regular',color:'#888888'
+    fontSize:moderateScale(12),fontFamily:'Poppins-Regular',color:'#888888',lineHeight:18
   },
   ellipsis:{
-    justifyContent:'flex-end',alignItems:'flex-end',marginHorizontal:wp('38%')
+    justifyContent:'flex-end',alignItems:'flex-end',marginHorizontal:wp('42%')
   },
   detailbox:{
-    justifyContent:'flex-start',marginLeft:wp('5%'),alignItems:'flex-start',borderWidth:0.5,borderColor:'grey',height:hp("33%"),width:wp('90%'),marginTop:hp('2%'),borderRadius:10,
+    justifyContent:'flex-start',marginLeft:wp('5%'),alignItems:'flex-start',borderWidth:0.5,borderColor:'grey',height:hp("34%"),width:wp('90%'),marginTop:hp('2%'),borderRadius:10,
   },
   detail1:{
     justifyContent:'center',alignItems:'flex-start',flexDirection:'row',marginLeft:wp('3%'),marginTop:hp('1.5%')
@@ -128,16 +140,16 @@ const styles = StyleSheet.create({
     justifyContent:'center',alignItems:'flex-start',flexDirection:'column'
   },
   chaptertitle:{
-    fontFamily:'Poppins-Bold',fontSize:moderateScale(16)
+    fontFamily:'Poppins-Bold',fontSize:moderateScale(16),lineHeight:25,color:'rgb(80,80,80)'
   },
   chaptername:{
-    fontFamily:'Poppins-Regular',fontSize:moderateScale(15),color:'#888888'
+    fontFamily:'Poppins-Regular',fontSize:moderateScale(14),color:'#888888',lineHeight:21
   },
   captionview:{
     justifyContent:'center',alignItems:'center',marginLeft:wp('4%'),marginEnd:wp('4%'),marginTop:hp('1%')
   },
   description:{
-    fontFamily:'Poppins-Regular',fontSize:moderateScale(13)
+    fontFamily:'Poppins-Regular',fontSize:moderateScale(12),lineHeight:18,color:'rgb(80,80,80)'
   },
   imageview:{
     justifyContent:'center',alignItems:'center',flexDirection:'row',marginTop:hp('1%')

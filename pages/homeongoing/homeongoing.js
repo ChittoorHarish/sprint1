@@ -3,13 +3,35 @@ import { View, StyleSheet, Text, SafeAreaView,Image } from "react-native";
 import styles from './styles';
 import OptionsMenu from "react-native-option-menu";
 import Icon from 'react-native-vector-icons/Ionicons';
+import { useEffect } from "react";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale, heightPercentageToDP } from '../../services/responsiveFunc';
 
 const homeongoing = (props) => {
   const [discard, discardPost] = useState();
   const [edit, editPost] = useState();
+  const [data, setData] = useState('');
     const myIcon = (<Icon name="ellipsis-vertical-outline" color="grey" size={25} />)
+
+    useEffect(async () => {
+      let token = await AsyncStorage.getItem('auth_token');
+      let userid = await AsyncStorage.getItem('auth_userid');
+   //  setAuthtoken(a.id)
+     fetch("https://obn1qqspll.execute-api.us-east-1.amazonaws.com/dev/user/post/get?user_id=" + userid,
+     {
+       method: 'GET',
+      headers: {
+        "Authorization": 'Bearer ' + token
+      }
+       
+     })
+     .then(res=>res.json())
+     .then(results=>{
+       console.log("resp:" + JSON.stringify(results))
+       setData(results)
+     })
+   },[]) 
    
   return (
     <SafeAreaView style={{flex:1,backgroundColor:'white'}}>
@@ -36,7 +58,7 @@ source={require('../assets/image/galgadot.jpeg')}></Image>
               <View style={styles.info}>
                 <View style={{justifyContent:'center',alignItems:'flex-start',flexDirection:'column'}}>
                  
-                  <Text style={styles.chaptertitle}>Lorem Ipsum</Text>
+                  <Text style={styles.chaptertitle}>Inaya_04</Text>
                   <Text style={styles.chaptername}>Algebra</Text>
                   
                 </View>

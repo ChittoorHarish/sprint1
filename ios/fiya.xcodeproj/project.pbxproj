@@ -19,6 +19,9 @@
 		892FA05026664F3200260440 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 892FA04E26664F3200260440 /* Poppins-Regular.ttf */; };
 		892FA05126664F3200260440 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 892FA04F26664F3200260440 /* Poppins-Bold.ttf */; };
 		897B6FAD2663B99F0040BB08 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 897B6FAC2663B99F0040BB08 /* fonts */; };
+		89CAC03D266FEC8E00632E21 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 89CAC03C266FEC8E00632E21 /* fonts */; };
+		89CAC040266FF43C00632E21 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CAC03E266FF43C00632E21 /* Poppins-Medium.ttf */; };
+		89CAC041266FF43C00632E21 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CAC03F266FF43C00632E21 /* Poppins-SemiBold.ttf */; };
 		C1E66AEA400A5247227F0F08 /* libPods-fiya.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53385A9F633D5786B0E039A6 /* libPods-fiya.a */; };
 		E8F018A30BAAE39D31113A31 /* libPods-fiya-fiyaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F70C89B0EEADFA498CC40723 /* libPods-fiya-fiyaTests.a */; };
 /* End PBXBuildFile section */
@@ -51,6 +54,9 @@
 		892FA04E26664F3200260440 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Regular.ttf"; path = "fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		892FA04F26664F3200260440 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Bold.ttf"; path = "fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		897B6FAC2663B99F0040BB08 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
+		89CAC03C266FEC8E00632E21 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
+		89CAC03E266FF43C00632E21 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Medium.ttf"; path = "fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		89CAC03F266FF43C00632E21 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-SemiBold.ttf"; path = "fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		96BD0359B97046B18D64DD7B /* Roboto_medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto_medium.ttf; path = "../node_modules/native-base/Fonts/Roboto_medium.ttf"; sourceTree = "<group>"; };
 		A30B8D698966FD5F5BD8C5A7 /* Pods-fiya.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fiya.debug.xcconfig"; path = "Target Support Files/Pods-fiya/Pods-fiya.debug.xcconfig"; sourceTree = "<group>"; };
 		CD9E139105ED4C20A76A5D4A /* Roboto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto.ttf; path = "../node_modules/native-base/Fonts/Roboto.ttf"; sourceTree = "<group>"; };
@@ -141,8 +147,11 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				89CAC03E266FF43C00632E21 /* Poppins-Medium.ttf */,
+				89CAC03F266FF43C00632E21 /* Poppins-SemiBold.ttf */,
 				897B6FAC2663B99F0040BB08 /* fonts */,
 				892FA04C26664AEE00260440 /* fonts */,
+				89CAC03C266FEC8E00632E21 /* fonts */,
 				13B07FAE1A68108700A75B9A /* fiya */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* fiyaTests */,
@@ -271,7 +280,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89CAC040266FF43C00632E21 /* Poppins-Medium.ttf in Resources */,
+				89CAC041266FF43C00632E21 /* Poppins-SemiBold.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				89CAC03D266FEC8E00632E21 /* fonts in Resources */,
 				892FA05126664F3200260440 /* Poppins-Bold.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				48C0BBACBEEF4D069E728F8E /* Roboto_medium.ttf in Resources */,

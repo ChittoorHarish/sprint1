@@ -5,6 +5,8 @@ import styles from './styles';
 import OptionsMenu from "react-native-option-menu";
 import Icon from 'react-native-vector-icons/Ionicons';
 import RBSheet from "react-native-raw-bottom-sheet";
+import { useEffect } from "react";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Button, Text, SafeAreaView,Image,TextComponent,TouchableOpacity, TextInput,} from 'react-native';
 import { ScrollView } from "react-native-gesture-handler";
 import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale } from '../../services/responsiveFunc';
@@ -14,7 +16,31 @@ const homeongoing1 = (props) => {
     const refRBSheet = useRef();
     const [discard, discardPost] = useState();
     const [edit, editPost] = useState();
+    const [estado, setEstado] = useState(false);
+    const [data, setData] = useState({});
+
+  const agregarFavoritos = () => {
+    setEstado(!estado);
+  };
     const myIcon = (<Icon name="ellipsis-vertical-outline" color="grey" size={25} />)
+    useEffect(async () => {
+      let token = await AsyncStorage.getItem('auth_token');
+      let userid = await AsyncStorage.getItem('auth_userid');
+   //  setAuthtoken(a.id)
+     fetch("https://obn1qqspll.execute-api.us-east-1.amazonaws.com/dev/user/post/applicant?post_id=" + userid,
+     {
+       method: 'GET',
+      headers: {
+        "Authorization": 'Bearer ' + token
+      }
+       
+     })
+     .then(res=>res.json())
+     .then(results=>{
+       console.log("resp:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" + JSON.stringify(results))
+       setData(results.data)
+     })
+   },[]) 
   return (
     <SafeAreaView style={{flex:1,backgroundColor:'white'}}>
       <ScrollView>
@@ -96,7 +122,7 @@ style={{
 source={require('../assets/image/gal.png')}></Image>
 </View>
 <View style={styles.touch}>
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => agregarFavoritos()}>
   <Text style={styles.applicantname}>Gal_Gadot</Text>
   <Text style={styles.about}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Text>
   </TouchableOpacity>
@@ -109,9 +135,15 @@ source={require('../assets/image/gal.png')}></Image>
         <View style={styles.flameicon}>
 <Icon name="flame-outline" color="gold" size={16}/>
 </View>
+{estado ?
+<TouchableOpacity>
 <View style={styles.procontainer}>   
           <Text style={styles.points}>view profile</Text>         
         </View>
+        </TouchableOpacity>  : <View style={styles.procontainerchange}>   
+          <Text style={styles.points}>view profile</Text>         
+        </View>}
+
     </View>
     <View
 style={{
@@ -122,18 +154,25 @@ style={{
   marginTop:hp('2%')
 }}
 />
+{estado ?
 <View style={styles.chatbutton}>
             <TouchableOpacity style={styles.chattouch}>
               <Text style={styles.chattext}>Chat</Text>
 
             </TouchableOpacity>
-          </View>
+          </View> : <View style={styles.chatbutton}>
+            <View style={styles.chattouchinact}>
+              <Text style={styles.chattext}>Chat</Text>
+
+            </View>
+          </View> }
           <View style={styles.chatbutton}>
+          {estado ?
             <TouchableOpacity style={styles.vidaudtouch}
             onPress={() => refRBSheet.current.open()}>
               <Text style={styles.vidaudtext}>Request - Video/Audio call</Text>
 
-            </TouchableOpacity>
+            </TouchableOpacity> : <Text style={styles.vidaudtextinact}>Request - Video/Audio call</Text>}
             <RBSheet
         ref={refRBSheet}
         animationType="slide"
@@ -158,7 +197,9 @@ style={{
       >
        <View style={styles.rawbottom}>
            <Text style={styles.choose}>Choose Call Type</Text>
+           <TouchableOpacity onPress={() => refRBSheet.current.close()}>
            <Text style={styles.done}>Done</Text>
+           </TouchableOpacity>
        </View>
        <View
 style={{
@@ -183,9 +224,11 @@ to Video call / Audio call</Text>
     <Text style={styles.guide}>Video</Text>
     </View>
     <View style={styles.vidaud}>
+    <TouchableOpacity>
     <View style={styles.aud}>
           <Icon name="mic" color="white" size={40}/>
     </View>
+    </TouchableOpacity>
     <Text style={styles.guide}>Audio</Text>
     </View>
 </View>
@@ -224,6 +267,7 @@ style={{
            
     </View>
     </ScrollView>
+    {estado ?
     <View style={styles.center}>
     <View style={styles.button}>
             <TouchableOpacity style={styles.marktouch}>
@@ -231,7 +275,14 @@ style={{
 
             </TouchableOpacity>
           </View>
+          </View> : <View style={styles.center}>
+    <View style={styles.button}>
+            <View style={styles.marktouchinact}>
+              <Text style={styles.marktextinact}>Mark as Complete</Text>
+              </View>
+            
           </View>
+          </View>}
     </SafeAreaView>
   );
 };

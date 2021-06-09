@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
 title:{
   fontSize:moderateScale(22),
   marginLeft:wp('5%'),
+  color:'rgb(80,80,80)',
   fontFamily:'Poppins-Bold',
 },
    

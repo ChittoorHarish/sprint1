@@ -10,9 +10,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
       },
       itemtext:{
-        fontSize:moderateScale(17),
+        fontSize:moderateScale(12),
         textAlign:'center',
-        fontFamily:'Poppins-Regular'
+        lineHeight:18,
+        color: 'rgb(80,80,80)',
+        fontFamily:'Poppins-Medium'
       },
       basic:{
         justifyContent:'center',
@@ -82,7 +84,7 @@ const styles = StyleSheet.create({
         padding: 10,
         textAlign: 'center',
         fontSize: 18,
-        fontWeight: 'bold',
+        fontFamily:'Poppins-Bold'
       },
       paragraphStyle: {
         padding: 20,
@@ -104,29 +106,33 @@ const styles = StyleSheet.create({
       },
       introTitleStyle: {
         fontSize: moderateScale(26),
-        color: 'black',
+        color: 'rgb(80,80,80)',
         marginTop:hp('10%'),
         textAlign: 'center',
+        lineHeight: 39,
         fontFamily:'Poppins-Bold',
         alignSelf:'center'
       },
       introTitleStyle2: {
         fontSize: moderateScale(26),
-        color: 'black',
+        color: 'rgb(80,80,80)',
+        lineHeight:39,
         textAlign: 'center',
         fontFamily:'Poppins-Bold',
       },
       introTitleStyle3: {
         fontSize: moderateScale(26),
-        color: 'black',
+        color: 'rgb(80,80,80)',
         textAlign: 'center',
+        lineHeight: 39,
         fontFamily:'Poppins-Bold',
+        alignSelf:'center'
       },
       onboardtext:{
         justifyContent:'center',
         alignItems:'center',
         marginLeft:wp('7%'),
-        marginTop:hp('1%'),
+        marginTop:hp('3%'),
         marginEnd:wp('7%')
       },
       skipCircle: {

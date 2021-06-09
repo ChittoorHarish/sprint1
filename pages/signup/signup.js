@@ -122,13 +122,27 @@ const [data1, setData1] = React.useState({
       if(responseJson.code==200  
   
         ){
+           alert(
+            "User successfully registered, A verification link has been sent to your Email",
+            
+            [
+              {
+                text: "Cancel",
+                onPress: () => console.log("Cancel Pressed"),
+                style: "cancel"
+              },
+              { text: "OK", onPress: () => console.log("OK Pressed") }
+            ],
+            
+          );
           
-          props.navigation.navigate('hamburger')
+          props.navigation.navigate('signin')
         }
         else{
           setErrormsgtext(responseJson.message)
           setErrormsg(true);
           return;
+          
           // alert(
           //   "Please Check the Fields to Proceed",
             
@@ -213,21 +227,40 @@ const [data1, setData1] = React.useState({
           />
  
         </View>
- <View style={styles.SectionStyle}>
+        <View style={styles.country}>
+        <View style={styles.SectionStyle1}>
  
  <View style={styles.basic}>
-<Icon name="call-outline" size={30}/>
+<Icon name="globe-outline" size={30}/>
 </View>
 
    <TextInput
        style={styles.textin}
-       placeholder="Phone"
-       value={phone_no}
-       keyboardType='numeric'
-       onChangeText={(text)=>setPhone_no(text)}
+       placeholder="Country"
+       value={username}
+       onChangeText={(text)=>setUsername(text)}
+   />
+    <View style={styles.basic}>
+<Icon name="chevron-down-outline" size={20} color={'#1ab2ff'}/>
+</View>
+
+ </View>
+ <View style={styles.SectionStyle1}>
+ 
+ <View style={styles.basic}>
+<Icon name="calendar-outline" size={30}/>
+</View>
+
+   <TextInput
+       style={styles.textin}
+       placeholder="DOB"
+       value={username}
+       onChangeText={(text)=>setUsername(text)}
    />
 
  </View>
+ </View>
+
  <View style={styles.SectionStyle}>
  
  <View style={styles.basic}>
