@@ -11,7 +11,7 @@ import { Button, Text, SafeAreaView,Image,TextComponent,TouchableOpacity, TextIn
 import { ScrollView } from "react-native-gesture-handler";
 import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale } from '../../services/responsiveFunc';
 
-const homeongoing1 = (props) => {
+const callschedule = (props) => {
     const [toggle, setToggle] = useState(false);
     const refRBSheet = useRef();
     const [discard, discardPost] = useState();
@@ -23,24 +23,24 @@ const homeongoing1 = (props) => {
     setEstado(!estado);
   };
     const myIcon = (<Icon name="ellipsis-vertical-outline" color="grey" size={25} />)
-    useEffect(async () => {
-      let token = await AsyncStorage.getItem('auth_token');
-      let userid = await AsyncStorage.getItem('auth_userid');
-   //  setAuthtoken(a.id)
-     fetch("https://obn1qqspll.execute-api.us-east-1.amazonaws.com/dev/user/post/applicant?post_id=" + userid,
-     {
-       method: 'GET',
-      headers: {
-        "Authorization": 'Bearer ' + token
-      }
+//     useEffect(async () => {
+//       let token = await AsyncStorage.getItem('auth_token');
+//       let userid = await AsyncStorage.getItem('auth_userid');
+//    //  setAuthtoken(a.id)
+//      fetch("https://obn1qqspll.execute-api.us-east-1.amazonaws.com/dev/user/post/applicant?post_id=" + userid,
+//      {
+//        method: 'GET',
+//       headers: {
+//         "Authorization": 'Bearer ' + token
+//       }
        
-     })
-     .then(res=>res.json())
-     .then(results=>{
-       console.log("resp:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" + JSON.stringify(results))
-       setData(results.data)
-     })
-   },[]) 
+//      })
+//      .then(res=>res.json())
+//      .then(results=>{
+//        console.log("resp:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" + JSON.stringify(results))
+//        setData(results.data)
+//      })
+//    },[]) 
   return (
     <SafeAreaView style={{flex:1,backgroundColor:'white'}}>
       <ScrollView>
@@ -99,7 +99,7 @@ source={require('../assets/image/galgadot.jpeg')}></Image>
                 <Text style={styles.needtext}>Needed By:</Text>
                 <Text style={styles.datetext}>20-march-2021</Text>
                 <View style={styles.calicon}>
-<Icon name="calendar-outline" color="black" size={20}/>
+<Icon name="calendar-outline" color="black" size={25}/>
 </View>
             </View>
             <View
@@ -122,7 +122,7 @@ style={{
 source={require('../assets/image/gal.png')}></Image>
 </View>
 <View style={styles.touch}>
-    <TouchableOpacity onPress={() => agregarFavoritos()}>
+    <TouchableOpacity >
   <Text style={styles.applicantname}>Gal_Gadot</Text>
   <Text style={styles.about}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Text>
   </TouchableOpacity>
@@ -135,14 +135,12 @@ source={require('../assets/image/gal.png')}></Image>
         <View style={styles.flameicon}>
 <Icon name="flame-outline" color="gold" size={16}/>
 </View>
-{estado ?
+
 <TouchableOpacity>
 <View style={styles.procontainer}>   
           <Text style={styles.points}>View Profile</Text>         
         </View>
-        </TouchableOpacity>  : <View style={styles.procontainerchange}>   
-          <Text style={styles.points}>View Profile</Text>         
-        </View>}
+        </TouchableOpacity> 
 
     </View>
     <View
@@ -154,116 +152,21 @@ style={{
   marginTop:hp('2%')
 }}
 />
-{estado ?
+
 <View style={styles.chatbutton}>
-            <TouchableOpacity style={styles.chattouch}
-            onPress={() => props.navigation.navigate('callschedule')}>
-              <Text style={styles.chattext}>Go to chat</Text>
+            <TouchableOpacity style={styles.chattouch}>
+              <Text style={styles.chattext}>Go to Chat</Text>
 
             </TouchableOpacity>
-          </View> : <View style={styles.chatbutton}>
-         
-            <View style={styles.chattouchinact}>
-              <Text style={styles.chattext}>Go to chat</Text>
-
-            </View>
-            
-          </View> }
-          <View style={styles.chatbutton}>
-          {estado ?
-            <TouchableOpacity style={styles.vidaudtouch}
-            onPress={() => refRBSheet.current.open()}>
-              <Text style={styles.vidaudtext}>Request - Video/Audio call</Text>
-
-            </TouchableOpacity> : <Text style={styles.vidaudtextinact}>Request - Video/Audio call</Text>}
-            <RBSheet
-        ref={refRBSheet}
-        animationType="slide"
-        // closeOnDragDown={true}
-        closeOnPressMask={true}
-        closeOnPressBack={true}
-        customStyles={{
-          wrapper: {
-            backgroundColor: "rgba(0.5, 0.25, 0, 0.2)"
-          },
-          container:{
-              borderRadius:30,
-              width:wp('92%'),
-              height:hp('48%'),
-              marginLeft:wp('4%'),
-              marginEnd:wp('4%')
-          },              
-          draggableIcon: {
-          
-            
-          }
-        }}
-      >
-       <View style={styles.rawbottom}>
-           <Text style={styles.choose}>Choose Call Type</Text>
-           <TouchableOpacity onPress={() => refRBSheet.current.close()}>
-           <Text style={styles.done}>Done</Text>
-           </TouchableOpacity>
-       </View>
-       <View
-style={{
-  borderBottomColor: 'grey',
-  borderBottomWidth: 1,
-  width:wp("13%"),
-  marginLeft:wp('39%'),
-  marginTop:hp('1%')
-}}
-/>
-<View style={styles.rawtext}>
-    <Text style={styles.change}>Want to change preferred communication</Text>
-<Text style={styles.change}>channel to Video call / Audio call</Text>
-</View>
-<View style={styles.channel}>
-    <View style={styles.vidaud}>
-      <TouchableOpacity>
-    <View style={styles.vid}>
-          <Icon name="videocam" color="white" size={40}/>
-    </View>
-    </TouchableOpacity>
-    <Text style={styles.guide}>Video</Text>
-    </View>
-    <View style={styles.vidaud}>
-    <TouchableOpacity>
-    <View style={styles.aud}>
-          <Icon name="mic" color="white" size={40}/>
-    </View>
-    </TouchableOpacity>
-    <Text style={styles.guide}>Audio</Text>
-    </View>
-</View>
-<View
-style={{
-  borderBottomColor: 'grey',
-  borderBottomWidth: 1,
-  width:wp("82%"),
-  marginLeft:wp('4%'),
-  marginTop:hp('2%')
-}}
-/>
-<View style={styles.switch}>
-    <View style={styles.switchtext}>
-        <Text style={styles.remember}>Remember my choice</Text>
-        <Text style={styles.bottext}>This can be changed in profile settings</Text>
-    </View>
-    <View style={styles.switchbutton}>
-    <Switch
-        trackColor={{false: 'gray', true: 'blue'}}
-        thumbColor="white"
-        ios_backgroundColor="gray"
-        onValueChange={(value) => setToggle(value)}
-        value={toggle}
-      />
-    </View>
-
-</View>
-
-      </RBSheet>
           </View>
+          <View style={styles.scheduledbutton}>
+            <TouchableOpacity style={styles.scheduletouch}
+            onPress={() => props.navigation.navigate('joincall')}>
+              <Text style={styles.scheduletext}>Video call scheduled at 1:00pm to 3:30pm</Text>
+
+            </TouchableOpacity>
+          </View>
+          
 
                 
 
@@ -271,7 +174,7 @@ style={{
            
     </View>
     </ScrollView>
-    {estado ?
+    
     <View style={styles.center}>
     <View style={styles.button}>
             <TouchableOpacity style={styles.marktouch}>
@@ -279,14 +182,7 @@ style={{
 
             </TouchableOpacity>
           </View>
-          </View> : <View style={styles.center}>
-    <View style={styles.button}>
-            <View style={styles.marktouchinact}>
-              <Text style={styles.marktextinact}>Mark as Complete</Text>
-              </View>
-            
           </View>
-          </View>}
     </SafeAreaView>
   );
 };
@@ -295,4 +191,4 @@ style={{
   
 // });
 
-export default homeongoing1;
+export default callschedule;

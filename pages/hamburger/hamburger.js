@@ -51,7 +51,7 @@ const hamburger = (props) => {
                 onPress={() => props.navigation.openDrawer()}
               />
               <View style={styles.notification}>
-       <TouchableOpacity >
+       <TouchableOpacity onPress={() =>props.navigation.navigate('notifications')}>
        <Icon name="notifications-outline" size={35} color={'white'}/>
       
        </TouchableOpacity>
@@ -86,7 +86,7 @@ const hamburger = (props) => {
 
       <View style={styles.container}>
         <SegmentedControlTab
-          values={['Ongoing', 'MyPost']}
+          values={['Ongoing', 'Past Posts']}
           selectedIndex={customStyleIndex}
           onTabPress={handleCustomIndexSelect}
           borderRadius={20}

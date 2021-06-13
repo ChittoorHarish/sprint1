@@ -50,8 +50,8 @@ const CustomSidebarMenu = (props) => {
   return (
     <SafeAreaView style={{flex: 1}}>
       
-     <View style={{justifyContent:'flex-start',alignItems:'center',width:wp('78'),height:hp('35%'),backgroundColor:'#1ab2ff',borderBottomEndRadius:30,borderBottomStartRadius:30,}}>
-     <View style={{justifyContent:'flex-end',alignItems:'flex-end',marginTop:hp("2%"),marginLeft:wp('60%')}}>
+     <View style={styles.main}>
+     <View style={styles.wrong}>
        <TouchableOpacity onPress={() => props.navigation.closeDrawer()}>
        <Icon name="close-outline" size={35} color={'white'}
        />
@@ -71,10 +71,10 @@ const CustomSidebarMenu = (props) => {
 
      </View>
      
-      <DrawerContentScrollView {...props}>
+      
         <DrawerItemList {...props} />
         
-      </DrawerContentScrollView>
+      
      
       </SafeAreaView>
 

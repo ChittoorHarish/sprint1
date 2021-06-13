@@ -49,6 +49,12 @@ const styles = StyleSheet.create({
   flameicon:{
     justifyContent:'center',alignItems:'center',marginLeft:wp('0.5%')
   },
+  main:{
+    justifyContent:'flex-start',alignItems:'center',width:wp('78'),height:hp('35%'),backgroundColor:'#1ab2ff',borderBottomEndRadius:30,borderBottomStartRadius:30,
+  },
+  wrong:{
+    justifyContent:'flex-end',alignItems:'flex-end',marginTop:hp("2%"),marginLeft:wp('60%')
+  }
    
  
   

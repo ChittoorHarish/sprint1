@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
         fontSize:moderateScale(12),fontFamily:'Poppins-Regular',color:'#888888',marginEnd:wp("13%"),lineHeight:15
       },
       readmore:{
-        fontSize:moderateScale(13),fontFamily:'Poppins-Regular',color:'rgb(0,153,218)',marginEnd:wp("12%")
+        fontSize:moderateScale(13),fontFamily:'Poppins-Regular',color:'blue',marginEnd:wp("12%")
       },
       pointview:{
         justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',marginLeft:wp("4%"),marginTop:hp('2%')
@@ -137,11 +137,8 @@ const styles = StyleSheet.create({
       chattouch:{
         justifyContent:'center',alignItems:'center',backgroundColor:'#1ab2ff',borderRadius:7,padding:7,width:wp('83%'),alignSelf:'center'
       },
-      chattouchinact:{
-        justifyContent:'center',alignItems:'center',backgroundColor:'grey',borderRadius:7,padding:7,width:wp('83%'),alignSelf:'center'
-      },
       chattext:{
-        fontSize:moderateScale(14),color:'#ffffff',fontFamily:'Poppins-Bold'
+        fontSize:moderateScale(12),color:'#ffffff',fontFamily:'Poppins-SemiBold',lineHeight:18,padding:2
       },
       vidaudtouch:{
         justifyContent:'center',alignItems:'center',width:wp('83%'),alignSelf:'center'
@@ -149,23 +146,20 @@ const styles = StyleSheet.create({
       vidaudtext:{
         fontSize:moderateScale(14),color:'#1ab2ff',fontFamily:'Poppins-Bold'
       },
-      vidaudtextinact:{
-        fontSize:moderateScale(14),color:'grey',fontFamily:'Poppins-Bold'
-      },
       rawbottom:{
-        justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',marginTop:hp('2%')
+        justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row'
       },
       choose:{
-        fontFamily:'Poppins-Regular',fontWeight:'300',fontSize:moderateScale(17),marginLeft:wp("24%")
+        fontFamily:'Poppins-Regular',fontWeight:'300',fontSize:moderateScale(17),marginLeft:wp("23%")
       },
       done:{
         fontFamily:'Poppins-Regular',fontWeight:'100',fontSize:moderateScale(17),color:'#1ab2ff',marginLeft:wp("12%")
       },
       rawtext:{
-        justifyContent:'center',alignItems:'center',flexDirection:'column',marginLeft:wp("4%"),width:wp('80%'),marginTop:hp('2%')
+        justifyContent:'center',alignItems:'center',flexDirection:'column',marginLeft:wp("5%"),width:wp('80%'),marginTop:hp('2%')
       },
       change:{
-        fontSize:moderateScale(12),fontFamily:'Poppins-Regular',color:'grey',lineHeight:18
+        fontSize:moderateScale(12),fontFamily:'Poppins-Regular',color:'grey'
       },
       channel:{
         justifyContent:'space-evenly',alignItems:'center',flexDirection:'row',marginLeft:wp("5%"),width:wp('80%'),marginTop:hp('3%')
@@ -206,9 +200,19 @@ const styles = StyleSheet.create({
       marktext:{
         fontSize:moderateScale(18),color:'#1ab2ff',fontFamily:'Poppins-Bold'
       },
-      marktextinact:{
-        fontSize:moderateScale(18),color:'grey',fontFamily:'Poppins-Bold'
-      }
+      scheduledbutton:{
+        justifyContent:'center',
+        alignItems:'center',
+        marginTop:hp('2%'),
+        alignSelf:'center',
+        marginBottom:hp('1%')
+      },
+      scheduletouch:{
+        justifyContent:'center',alignItems:'center',backgroundColor:'rgb(223,255,213)',borderRadius:7,padding:7,width:wp('83%'),alignSelf:'center'
+      },
+      scheduletext:{
+        fontSize:moderateScale(12),color:'rgb(41,177,0)',fontFamily:'Poppins-Medium',lineHeight:18,padding:2
+      },
 
 });
 export default styles;

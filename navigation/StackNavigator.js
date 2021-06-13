@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import Icon from 'react-native-vector-icons/Ionicons';
+import LinearGradient from 'react-native-linear-gradient';
 import { Button,Dimensions,tintcolor, View,Text, ScrollView,SafeAreaView,Image,TextComponent,TouchableOpacity,StyleSheet, TextInput } from 'react-native';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale, heightPercentageToDP } from '../services/responsiveFunc';
 
@@ -12,7 +13,7 @@ import signin from '../pages/signin/signin';
 import signup from '../pages/signup/signup';
 import forgotpassword from '../pages/forgotpassword/forgotpassword';
 import newpassword from '../pages/newpassword/newpassword';
-import Contact from "../pages/Contact/Contact";
+import search from "../pages/search/search";
 import hamburger from "../pages/hamburger/hamburger";
 import { getActiveChildNavigationOptions } from "react-navigation";
 import Profile from "../pages/Profile/Profile";
@@ -24,6 +25,10 @@ import termsofuse from "../pages/termsofuse/termsofuse";
 import logout from "../pages/logout/logout";
 import homeongoing from "../pages/homeongoing/homeongoing";
 import homeongoing1 from "../pages/homeongoing1/homeongoing1";
+import callschedule from "../pages/callschedule/callschedule";
+import joincall from "../pages/joincall/joincall";
+import applicantprofile from "../pages/applicantprofile/applicantprofile";
+import notifications from "../pages/notifications/notifications";
 import CustomSidebarMenu from '../pages/CustomSidebarMenu/CustomSidebarMenu';
 import termsandconditions from "../pages/termsandconditions/termsandconditions";
 import { Label } from "native-base";
@@ -92,8 +97,9 @@ const MainStackNavigator = () => {
           name="signin"
           component={signin}
           options={{ 
+            headerBackTitle:" ",
             headerStyle: {
-              height:hp('9%'),
+              height:hp('12%'),
               backgroundColor: '#ffffff', //Set Header color
             },
             headerTintColor: '#000000', //Set Header text color
@@ -111,8 +117,9 @@ const MainStackNavigator = () => {
           name="signup"
           component={signup}
           options={{ 
+            headerBackTitle:" ",
             headerStyle: {
-              height:hp('9%'),
+              height:hp('12%'),
               backgroundColor: '#ffffff', //Set Header color
             },
             headerTintColor: '#000000', //Set Header text color
@@ -145,8 +152,9 @@ const MainStackNavigator = () => {
           name="forgotpassword"
           component={forgotpassword}
           options={{ 
+            headerBackTitle:" ",
             headerStyle: {
-              height:hp('9%'),
+              height:hp('12%'),
               backgroundColor: '#ffffff', //Set Header color
             },
             headerTintColor: '#000000', //Set Header text color
@@ -164,8 +172,9 @@ const MainStackNavigator = () => {
           name="newpassword"
           component={newpassword}
           options={{ 
+            headerBackTitle:" ",
             headerStyle: {
-              height:hp('9%'),
+              height:hp('12%'),
               backgroundColor: '#ffffff', //Set Header color
             },
             headerTintColor: '#000000', //Set Header text color
@@ -184,8 +193,9 @@ const MainStackNavigator = () => {
           component={termsandconditions}
           options={{ 
             title:"Terms and Conditions",
+            headerBackTitle:" ",
             headerStyle: {
-              height:hp('9%'),
+              height:hp('12%'),
               backgroundColor: '#1e90ff', //Set Header color
             },
             headerTintColor: '#ffffff', //Set Header text color
@@ -199,9 +209,10 @@ const MainStackNavigator = () => {
           name="homeongoing"
           component={homeongoing}
           options={{ 
-            title:"Ongoing",
+            title:"Ongoing Post",
+            headerBackTitle:" ",
             headerStyle: {
-              height:hp('9%'),
+              height:hp('12%'),
               backgroundColor: '#1e90ff', //Set Header color
             },
             headerTintColor: '#ffffff', //Set Header text color
@@ -215,9 +226,10 @@ const MainStackNavigator = () => {
           name="homeongoing1"
           component={homeongoing1}
           options={{ 
-            title:"Ongoing",
+            title:"Ongoing Post",
+            headerBackTitle:" ",
             headerStyle: {
-              height:hp('9%'),
+              height:hp('12%'),
               backgroundColor: '#1e90ff', //Set Header color
             },
             headerTintColor: '#ffffff', //Set Header text color
@@ -225,6 +237,100 @@ const MainStackNavigator = () => {
               fontFamily:'Poppins-Bold',
               fontSize:moderateScale(17) //Set Header text style
             },
+          }}
+        />
+         <Stack.Screen
+          name="callschedule"
+          component={callschedule}
+          options={{ 
+            title:"Ongoing Post",
+            headerBackTitle:" ",
+            headerStyle: {
+              height:hp('12%'),
+              backgroundColor: '#1e90ff', //Set Header color
+            },
+            headerTintColor: '#ffffff', //Set Header text color
+            headerTitleStyle: {
+              fontFamily:'Poppins-Bold',
+              fontSize:moderateScale(17) //Set Header text style
+            },
+          }}
+        />
+         <Stack.Screen
+          name="joincall"
+          component={joincall}
+          options={{ 
+            title:"Ongoing Post",
+            headerBackTitle:" ",
+            headerStyle: {
+              height:hp('12%'),
+              backgroundColor: '#1e90ff', //Set Header color
+            },
+            headerTintColor: '#ffffff', //Set Header text color
+            headerTitleStyle: {
+              fontFamily:'Poppins-Bold',
+              fontSize:moderateScale(17) //Set Header text style
+            },
+            headerTitle: () =>(
+              <View style={{justifyContent:'flex-start',alignItems:'center',flexDirection:'row',marginEnd:wp('1%'),width:wp('85%'),marginLeft:wp('2%')}}>
+                <Text style={{fontSize:moderateScale(16),lineHeight:25,color:'white',fontFamily:'Poppins-SemiBold'}}>Ongoing Post</Text>
+                <TouchableOpacity style={{justifyContent:'flex-start',alignItems:'flex-start',borderRadius:10,backgroundColor:'#ffffff',width:wp("29%"),height:hp('5%'),padding:3,marginLeft:wp('25%'),flexDirection:'row'}}>
+                  <View style={{justifyContent:'center',alignItems:'center',marginLeft:wp('1%'),borderRadius:10,backgroundColor:'rgb(41,177,0)',width:wp('9%'),height:hp('4%')}}>
+                  <Icon name="videocam-outline" color="white" size={22}/>
+                  </View>
+                  <Text style={{fontFamily:'Poppins-SemiBold',fontSize:moderateScale(12),color:'rgb(41,177,0)',marginLeft:wp('1.5%'),marginTop:hp("1%")}}>Join Call</Text>
+
+                </TouchableOpacity>
+              </View>
+              
+            ),
+          }}
+        />
+        <Stack.Screen
+          name="applicantprofile"
+          component={applicantprofile}
+          options={{ 
+            title:"Ongoing Post",
+            headerBackTitle:" ",
+            headerStyle: {
+              height:hp('12%'),
+              backgroundColor: '#1e90ff', //Set Header color
+            },
+            headerTintColor: '#ffffff', //Set Header text color
+            headerTitleStyle: {
+              fontFamily:'Poppins-Bold',
+              fontSize:moderateScale(17) //Set Header text style
+            },
+            headerTitle: () =>(
+              <View style={{justifyContent:'flex-start',alignItems:'center',flexDirection:'row',marginEnd:wp('1%'),width:wp('85%'),marginLeft:wp('2%')}}>
+                <Text style={{fontSize:moderateScale(16),lineHeight:25,color:'white',fontFamily:'Poppins-SemiBold'}}>Profile</Text>
+              </View>
+              
+            ),
+          }}
+        />
+         <Stack.Screen
+          name="notifications"
+          component={notifications}
+          options={{ 
+            title:"Ongoing Post",
+            headerBackTitle:" ",
+            headerStyle: {
+              height:hp('12%'),
+              backgroundColor: '#1e90ff', //Set Header color
+            },
+            
+            headerTintColor: '#ffffff', //Set Header text color
+            headerTitleStyle: {
+              fontFamily:'Poppins-Bold',
+              fontSize:moderateScale(17) //Set Header text style
+            },
+            headerTitle: () =>(
+              <View style={{justifyContent:'flex-start',alignItems:'center',flexDirection:'row',marginEnd:wp('1%'),width:wp('85%'),marginLeft:wp('2%')}}>
+                <Text style={{fontSize:moderateScale(16),lineHeight:25,color:'white',fontFamily:'Poppins-SemiBold'}}>Notifications</Text>
+              </View>
+              
+            ),
           }}
         />
     </Stack.Navigator>
@@ -291,7 +397,7 @@ const ContactStackNavigator = () => {
           ),
           
         }}/>
-        <Tab.Screen name="Contact" component={Contact} 
+        <Tab.Screen name="search" component={search} 
         options={{
           tabBarLabel:() =>null,
           tabBarIcon: ({ color,}) =>(

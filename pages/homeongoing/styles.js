@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         fontFamily:'Poppins-Regular',fontSize:moderateScale(14),color:'#888888',lineHeight:21
       },
       captionview:{
-        justifyContent:'center',alignItems:'center',marginLeft:wp('4%'),marginEnd:wp('4%'),marginTop:hp('1%')
+        justifyContent:'center',alignItems:'center',marginLeft:wp('4%'),marginEnd:wp('4%')
       },
       description:{
         fontFamily:'Poppins-Regular',fontSize:moderateScale(12),lineHeight:18,color:'rgb(80,80,80)'
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
         justifyContent:'center',alignItems:'center',marginLeft:wp('12%'),
       },
       dateview:{
-        justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',marginLeft:wp('4%'),marginTop:hp("1%")
+        justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',marginLeft:wp('5.5%'),marginTop:hp("1%")
       },
       needtext:{
         justifyContent:'flex-start',alignSelf:'flex-start',fontSize:moderateScale(14),fontFamily:'Poppins-Regular',color:'rgb(189,189,189)',lineHeight:21
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
         justifyContent:'flex-start',alignItems:'flex-start',marginLeft:wp('1.5%')
       },
       applicantview:{
-        justifyContent:'flex-start',alignItems:'flex-start',marginLeft:wp('4%'),marginTop:hp('1%')
+        justifyContent:'flex-start',alignItems:'flex-start',marginLeft:wp('5%'),marginTop:hp('1%')
       },
       applicanttext:{
         fontFamily:'Poppins-SemiBold',fontSize:moderateScale(16),lineHeight:25
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
         fontSize:moderateScale(12),fontFamily:'Poppins-Regular',color:'#888888',marginEnd:wp("13%"),lineHeight:15
       },
       readmore:{
-        fontSize:moderateScale(13),fontFamily:'Poppins-Regular',color:'blue',marginEnd:wp("12%")
+        fontSize:moderateScale(13),fontFamily:'Poppins-Regular',color:'rgb(0,153,218)',marginEnd:wp("12%")
       },
       pointview:{
         justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',marginLeft:wp("4%"),marginTop:hp('2%')

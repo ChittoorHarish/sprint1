@@ -56,7 +56,7 @@ source={require('../assets/image/galgadot.jpeg')}></Image>
     </View>
     <View style={styles.bodyview}>
               <View style={styles.info}>
-                <View style={{justifyContent:'center',alignItems:'flex-start',flexDirection:'column'}}>
+                <View style={{justifyContent:'center',alignItems:'flex-start',flexDirection:'column',width:wp('30%')}}>
                  
                   <Text style={styles.chaptertitle}>Inaya_04</Text>
                   <Text style={styles.chaptername}>Algebra</Text>
@@ -88,17 +88,17 @@ source={require('../assets/image/galgadot.jpeg')}></Image>
         </View>
             </View>
             <View style={styles.dateview}>
-                <Text style={styles.needtext}>Needey by:</Text>
+                <Text style={styles.needtext}>Needed By:</Text>
                 <Text style={styles.datetext}>20-march-2021</Text>
                 <View style={styles.calicon}>
-<Icon name="calendar-outline" color="black" size={25}/>
+<Icon name="calendar-outline" color="black" size={20}/>
 </View>
             </View>
             <View style={styles.dateview}>
                 <Text style={styles.needtext}>Communication Preferred:</Text>
                 <Text style={styles.datetext}>Chat</Text>
                 <View style={styles.calicon}>
-<Icon name="chatbox-ellipses-outline" color="black" size={25}/>
+<Icon name="chatbox-ellipses-outline" color="black" size={20}/>
 </View>
             </View>
             <View
@@ -129,16 +129,18 @@ source={require('../assets/image/gal.png')}></Image>
 </View>
     </View>
     <View style={styles.pointview}>
-        <Text style={styles.offered}>Offered points:</Text>
+        <Text style={styles.offered}>Offered Points:</Text>
         <Text style={styles.number}>300</Text>
         <View style={styles.flameicon}>
 <Icon name="flame-outline" color="gold" size={16}/>
 </View>
+<TouchableOpacity onPress={() => props.navigation.navigate('applicantprofile')}>
 <View style={styles.procontainer}>
           
-          <Text style={styles.points}>view profile</Text>
+          <Text style={styles.points}>View Profile</Text>
           
         </View>
+        </TouchableOpacity>
 
 
 
@@ -162,16 +164,18 @@ source={require('../assets/image/gal.png')}></Image>
 </View>
     </View>
     <View style={styles.pointview}>
-        <Text style={styles.offered}>Offered points:</Text>
+        <Text style={styles.offered}>Offered Points:</Text>
         <Text style={styles.number}>300</Text>
         <View style={styles.flameicon}>
 <Icon name="flame-outline" color="gold" size={16}/>
 </View>
+<TouchableOpacity onPress={() => props.navigation.navigate('applicantprofile')}>
 <View style={styles.procontainer}>
           
-          <Text style={styles.points}>view profile</Text>
+          <Text style={styles.points}>View Profile</Text>
           
         </View>
+        </TouchableOpacity>
 
 
 
