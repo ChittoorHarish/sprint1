@@ -52,9 +52,11 @@ const signin = (props) => {
         {
           console.log("1. auth_token:" + responseJson.data.token);
           console.log("1. auth_userid:" + responseJson.data.id);
+          console.log("2. auth_postid:" + responseJson.data.id);
 
           AsyncStorage.setItem('auth_token',responseJson.data.token);
           AsyncStorage.setItem('auth_userid',responseJson.data.id);
+          AsyncStorage.setItem('auth_postid',responseJson.data.id);
 
           props.navigation.navigate('Home');
           //let token = await AsyncStorage.getItem('auth_token')

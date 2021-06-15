@@ -86,7 +86,7 @@ tutorstar:{
     borderWidth:0.1,height:hp("5.3%"),width:wp('11%'),borderRadius:20,
   },
   ratingstar:{
-      justifyContent:'center',alignItems:'center',marginLeft:wp('25%')
+      justifyContent:'center',alignItems:'center',marginLeft:wp('25%'),width:wp('15%')
   },
   bottombutton:{
       justifyContent:'space-evenly',alignItems:'flex-start',flexDirection:'row',marginLeft:wp("4%"),marginEnd:wp('4%')

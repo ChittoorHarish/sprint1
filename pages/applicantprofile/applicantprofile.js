@@ -1,12 +1,35 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { View, StyleSheet,} from "react-native";
 import styles from './styles';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { Button, Text, SafeAreaView,Image,TextComponent,TouchableOpacity, TextInput,} from 'react-native';
 import { ScrollView } from "react-native-gesture-handler";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale } from '../../services/responsiveFunc';
 
-const applicantprofile = ({navigation}) => {
+const applicantprofile = (props) => {
+  const [authtoken, setAuthtoken] = useState([]);
+  const [note, setNote] = useState([]);
+
+  useEffect(async () => {
+    let token = await AsyncStorage.getItem('auth_token');
+    let userid = await AsyncStorage.getItem('auth_userid');
+    //  setAuthtoken(a.id)
+    fetch("https://obn1qqspll.execute-api.us-east-1.amazonaws.com/dev/user/rating/get?user_id=" + userid,
+      {
+        method: 'GET',
+        headers: {
+          "Authorization": 'Bearer ' + token
+        }
+
+      })
+      .then(res => res.json())
+      .then((json) => {
+        console.log("resp:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" + JSON.stringify(json))
+        setNote(json.data)
+      })
+  }, [])
+
   return (
     <SafeAreaView style={{flex:1,backgroundColor:'white'}}>
       < ScrollView>
@@ -110,7 +133,44 @@ style={{
           <Text style={styles.starrate}>4/5</Text>
           </View>
       </View>
-      <View style={styles.tutordetail}>
+
+      {note.map((item,index)=>{
+            return(
+              <View style={styles.tutordetail} key={index}>
+              <View style={styles.headertitle}>
+            <View style={styles.basic}>
+            <Image style={styles.onpostpic}
+        source={require('../assets/image/galgadot.jpeg')}></Image>
+        </View>
+        <View style={styles.titlebox}>
+          <Text style={styles.nametitle}>{item.name}</Text>
+          <Text style={styles.occupation}>{item.created_at}</Text>
+        </View>
+        <View style={styles.ratingstar}>
+        <Text style={styles.starrate}>{item.rating}/5</Text>
+        </View>
+        <View style={styles.ratingicon}>
+                  <Icon name="star"  size={22} color={'rgb(80,80,80)'}/>
+                  </View>
+            </View>
+            <View style={styles.tutordesc}>
+            <Text style={styles.tutormaintext}>{item.review} </Text>
+            <Text style={styles.readmore}>Read More... </Text>
+        </View>
+        <View
+        style={{
+          borderBottomColor: 'rgb(189,189,189)',
+          borderBottomWidth: 2,
+          width:wp("92%"),
+          marginLeft:wp('2%'),
+          marginTop:hp('2%'),
+          marginBottom:hp('1%')
+        }}
+        />
+              </View> 
+            );
+            })}
+      {/* <View style={styles.tutordetail}>
       <View style={styles.headertitle}>
     <View style={styles.basic}>
     <Image style={styles.onpostpic}
@@ -141,7 +201,7 @@ style={{
   marginBottom:hp('1%')
 }}
 />
-      </View>
+      </View> */}
       <View style={styles.tutordetail1}>
       <View style={styles.headertitle}>
     <View style={styles.basic}>

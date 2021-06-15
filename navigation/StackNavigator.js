@@ -196,7 +196,7 @@ const MainStackNavigator = () => {
             headerBackTitle:" ",
             headerStyle: {
               height:hp('12%'),
-              backgroundColor: '#1e90ff', //Set Header color
+              backgroundColor: '#1ab2ff', //Set Header color
             },
             headerTintColor: '#ffffff', //Set Header text color
             headerTitleStyle: {
@@ -213,7 +213,7 @@ const MainStackNavigator = () => {
             headerBackTitle:" ",
             headerStyle: {
               height:hp('12%'),
-              backgroundColor: '#1e90ff', //Set Header color
+              backgroundColor: '#1ab2ff', //Set Header color
             },
             headerTintColor: '#ffffff', //Set Header text color
             headerTitleStyle: {
@@ -230,7 +230,7 @@ const MainStackNavigator = () => {
             headerBackTitle:" ",
             headerStyle: {
               height:hp('12%'),
-              backgroundColor: '#1e90ff', //Set Header color
+              backgroundColor: '#1ab2ff', //Set Header color
             },
             headerTintColor: '#ffffff', //Set Header text color
             headerTitleStyle: {
@@ -247,7 +247,7 @@ const MainStackNavigator = () => {
             headerBackTitle:" ",
             headerStyle: {
               height:hp('12%'),
-              backgroundColor: '#1e90ff', //Set Header color
+              backgroundColor: '#1ab2ff', //Set Header color
             },
             headerTintColor: '#ffffff', //Set Header text color
             headerTitleStyle: {
@@ -264,7 +264,7 @@ const MainStackNavigator = () => {
             headerBackTitle:" ",
             headerStyle: {
               height:hp('12%'),
-              backgroundColor: '#1e90ff', //Set Header color
+              backgroundColor: '#1ab2ff', //Set Header color
             },
             headerTintColor: '#ffffff', //Set Header text color
             headerTitleStyle: {
@@ -294,7 +294,7 @@ const MainStackNavigator = () => {
             headerBackTitle:" ",
             headerStyle: {
               height:hp('12%'),
-              backgroundColor: '#1e90ff', //Set Header color
+              backgroundColor: '#1ab2ff', //Set Header color
             },
             headerTintColor: '#ffffff', //Set Header text color
             headerTitleStyle: {
@@ -317,7 +317,7 @@ const MainStackNavigator = () => {
             headerBackTitle:" ",
             headerStyle: {
               height:hp('12%'),
-              backgroundColor: '#1e90ff', //Set Header color
+              backgroundColor: '#1ab2ff', //Set Header color
             },
             
             headerTintColor: '#ffffff', //Set Header text color

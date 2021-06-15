@@ -66,7 +66,7 @@ const hamburger = (props) => {
         source={require('../assets/image/car.jpg')}>
 
         </Image>
-        <Text style={styles.name}>{data ? data.firstname: 'No name'}</Text>
+        <Text style={styles.name}>{data ? data.username: 'No name'}</Text>
         <View style={styles.procontainer}>
           <View style={styles.walleticon}>
           <Icon name="wallet-outline" color="white" size={22}/>

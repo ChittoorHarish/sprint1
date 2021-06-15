@@ -12,22 +12,28 @@ import { ScrollView } from "react-native-gesture-handler";
 import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale } from '../../services/responsiveFunc';
 
 const homeongoing1 = (props) => {
+    const [customStyleIndex, setCustomStyleIndex] = useState(0);
     const [toggle, setToggle] = useState(false);
     const refRBSheet = useRef();
     const [discard, discardPost] = useState();
     const [edit, editPost] = useState();
     const [estado, setEstado] = useState(false);
     const [data, setData] = useState({});
+    const [authtoken,setAuthtoken] = useState([]);
 
   const agregarFavoritos = () => {
     setEstado(!estado);
   };
     const myIcon = (<Icon name="ellipsis-vertical-outline" color="grey" size={25} />)
+    const handleCustomIndexSelect = (index) => {
+      setCustomStyleIndex(index);
+    };
     useEffect(async () => {
       let token = await AsyncStorage.getItem('auth_token');
       let userid = await AsyncStorage.getItem('auth_userid');
+      let postid = await AsyncStorage.getItem('auth_postid');
    //  setAuthtoken(a.id)
-     fetch("https://obn1qqspll.execute-api.us-east-1.amazonaws.com/dev/user/post/applicant?post_id=" + userid,
+     fetch("https://obn1qqspll.execute-api.us-east-1.amazonaws.com/dev/user/post/applicant?post_id=" + postid,
      {
        method: 'GET',
       headers: {
@@ -82,7 +88,7 @@ source={require('../assets/image/galgadot.jpeg')}></Image>
         </View>
               </View>
               <View style={styles.captionview}>
-                <Text style={styles.description}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of lorm.</Text>
+                <Text style={styles.description}>{data ? data.description: "description"}</Text>
               </View>
               <View style={styles.imageview}>
               <View style={styles.insideview}>
