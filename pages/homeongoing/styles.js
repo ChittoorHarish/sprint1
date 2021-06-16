@@ -48,7 +48,16 @@ const styles = StyleSheet.create({
         justifyContent:'flex-end',alignItems:'flex-end',marginHorizontal:wp('42%')
       },
       bodyview:{
-        justifyContent:'flex-start',marginLeft:wp('5%'),alignItems:'flex-start',borderWidth:0.5,borderColor:'grey',height:hp("46%"),width:wp('90%'),marginTop:hp('2%'),borderRadius:10,
+        justifyContent:'flex-start',marginLeft:wp('5%'),alignItems:'flex-start',
+    padding: 4,
+    marginTop:hp('2%'),
+    width:wp('90%'),
+    shadowColor:'#000',shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,  
+    elevation: 4,
+    backgroundColor: 'rgb(255,255,255)',
+    borderRadius: 4,
       },
       info:{
         justifyContent:'center',alignItems:'flex-start',flexDirection:'row',marginLeft:wp('3%'),marginTop:hp('1.5%')
@@ -66,7 +75,7 @@ const styles = StyleSheet.create({
         fontFamily:'Poppins-Regular',fontSize:moderateScale(12),lineHeight:18,color:'rgb(80,80,80)'
       },
       imageview:{
-        justifyContent:'center',alignItems:'center',flexDirection:'row',marginTop:hp('1%')
+        justifyContent:'center',alignItems:'center',flexDirection:'row',marginTop:hp('1%'),marginBottom:hp('2%')
       },
       insideview:{
         justifyContent:'center',alignItems:'center',marginLeft:wp('12%'),
@@ -90,7 +99,16 @@ const styles = StyleSheet.create({
         fontFamily:'Poppins-SemiBold',fontSize:moderateScale(16),lineHeight:25
       },
       detailview:{
-        justifyContent:'flex-start',alignItems:'flex-start',height:hp('23%'),width:wp('90%'),borderWidth:0.2,marginTop:hp('2%'),borderColor:'grey',marginLeft:wp('4%'),borderRadius:10,
+        justifyContent:'flex-start',marginLeft:wp('5%'),alignItems:'flex-start',
+    padding: 4,
+    marginTop:hp('2%'),
+    width:wp('90%'),
+    shadowColor:'#000',shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,  
+    elevation: 4,
+    backgroundColor: 'rgb(255,255,255)',
+    borderRadius: 4,
       },
       detail:{
         justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',marginLeft:wp('4%'),marginTop:hp("2%"),
@@ -108,7 +126,7 @@ const styles = StyleSheet.create({
         fontSize:moderateScale(13),fontFamily:'Poppins-Regular',color:'rgb(0,153,218)',marginEnd:wp("12%")
       },
       pointview:{
-        justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',marginLeft:wp("4%"),marginTop:hp('2%')
+        justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',marginLeft:wp("4%"),marginTop:hp('2%'),marginBottom:hp('2%')
       },
       offered:{
         justifyContent:'flex-start',alignItems:'flex-start',fontFamily:'Poppins-Regular',fontSize:moderateScale(12),color:'rgb(80,80,80)',lineHeight:18

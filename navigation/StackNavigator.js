@@ -273,9 +273,9 @@ const MainStackNavigator = () => {
               fontSize:moderateScale(17) //Set Header text style
             },
             headerTitle: () =>(
-              <View style={{justifyContent:'flex-start',alignItems:'center',flexDirection:'row',marginEnd:wp('1%'),width:wp('85%'),marginLeft:wp('2%')}}>
+              <View style={{justifyContent:'flex-start',alignItems:'center',flexDirection:'row',marginEnd:wp('2%'),width:wp('85%'),marginLeft:wp('2%')}}>
                 <Text style={{fontSize:moderateScale(16),lineHeight:25,color:'white',fontFamily:'Poppins-SemiBold'}}>Ongoing Post</Text>
-                <TouchableOpacity style={{justifyContent:'flex-start',alignItems:'flex-start',borderRadius:10,backgroundColor:'#ffffff',width:wp("29%"),height:hp('5%'),padding:3,marginLeft:wp('25%'),flexDirection:'row'}}>
+                <TouchableOpacity style={{justifyContent:'flex-start',alignItems:'flex-start',borderRadius:10,backgroundColor:'#ffffff',width:wp("29%"),height:hp('5%'),padding:3,marginLeft:wp('23.5%'),flexDirection:'row',marginEnd:wp('1%')}}>
                   <View style={{justifyContent:'center',alignItems:'center',marginLeft:wp('1%'),borderRadius:10,backgroundColor:'rgb(41,177,0)',width:wp('9%'),height:hp('4%')}}>
                   <Icon name="videocam-outline" color="white" size={22}/>
                   </View>

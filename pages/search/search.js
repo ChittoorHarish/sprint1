@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, useCallback} from 'react';
 import {
   View,
   StyleSheet,
@@ -10,7 +10,13 @@ import {
   TextInput,
   Button,
 } from 'react-native';
+import Slider from 'rn-range-slider';
 import styles from './styles';
+import Thumb from './Thumb';
+import Notch from './Notch';
+import Rail from './Rail';
+import RailSelected from './RailSelected';
+import Label from './Label';
 import {
   Collapse,
   CollapseHeader,
@@ -55,6 +61,29 @@ const search = props => {
   const [estado3, setEstado3] = useState(false);
   const [categories, setCategories] = useState([]);
   const [mastercategories, setMastercategories] = useState([]);
+  const [rangeDisabled, setRangeDisabled] = useState(false);
+  const [low, setLow] = useState(0);
+  const [high, setHigh] = useState(100);
+  const [min, setMin] = useState(0);
+  const [max, setMax] = useState(100);
+  const [floatingLabel, setFloatingLabel] = useState(false);
+
+  const renderThumb = useCallback(() => <Thumb/>, []);
+const renderRail = useCallback(() => <Rail/>, []);
+const renderRailSelected = useCallback(() => <RailSelected/>, []);
+const renderLabel = useCallback(value => <Label text={value}/>, []);
+const renderNotch = useCallback(() => <Notch/>, []);
+const handleValueChange = useCallback((low, high) => {
+  setLow(low);
+  setHigh(high);
+}, []);
+
+const toggleRangeEnabled = useCallback(() => setRangeDisabled(!rangeDisabled), [rangeDisabled]);
+  const setMinTo50 = useCallback(() => setMin(50), []);
+  const setMinTo0 = useCallback(() => setMin(0), []);
+  const setMaxTo100 = useCallback(() => setMax(100), []);
+  const setMaxTo500 = useCallback(() => setMax(500), []);
+  const toggleFloatingLabel = useCallback(() => setFloatingLabel(!floatingLabel), [floatingLabel]);
 
   const agregarFavoritos = () => {
     setEstado(!estado);
@@ -198,7 +227,7 @@ const search = props => {
                       container: {
                         borderRadius: 30,
                         width: wp('92%'),
-                        height: hp('55%'),
+                        height: hp('60%'),
                         marginLeft: wp('4%'),
                         marginEnd: wp('4%'),
                       },
@@ -288,7 +317,8 @@ const search = props => {
 
                     <View style={styles.datebox}>
                       <View style={styles.date}>
-                        <Text style={styles.datetext}>20 Feb 2021</Text>
+                      <TextInput style={styles.datetext}
+                        placeholder="20 Feb 2021"></TextInput>
                         <View style={styles.calendar}>
                           <TouchableOpacity>
                             <Icon
@@ -302,7 +332,8 @@ const search = props => {
                       <Text style={styles.totext}>TO</Text>
 
                       <View style={styles.dateboxside}>
-                        <Text style={styles.datetext}>20 Feb 2021</Text>
+                        <TextInput style={styles.datetext}
+                        placeholder="20 Feb 2021"></TextInput>
                         <View style={styles.calendar}>
                           <TouchableOpacity>
                             <Icon
@@ -317,6 +348,57 @@ const search = props => {
                     <View style={styles.rawtext}>
                       <Text style={styles.change}>Short by Reward Points</Text>
                     </View>
+                    <View style={{marginTop:hp('4%'),justifyContent:'flex-start',alignItems:'flex-start'}}>
+                    <Slider
+  style={styles.slider}
+  min={25}
+  max={1500}
+  step={1}
+  floatingLabel
+  renderThumb={renderThumb}
+  renderRail={renderRail}
+  renderRailSelected={renderRailSelected}
+  renderLabel={renderLabel}
+  renderNotch={renderNotch}
+  onValueChanged={handleValueChange}
+/>
+</View>
+<View style={{justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',width:wp('84%'),marginLeft:wp('4%'),marginEnd:wp('4%')}}>
+<View style={{justifyContent:'center',alignItems:'center',flexDirection:'row',marginLeft:wp('2%')}}>
+<Text style={{fontSize:moderateScale(10),fontFamily:'Poppins-regular',color:'rgb(80,80,80)'}}>25</Text>
+<View style={{justifyContent:'center',alignItems:'center'}}>
+<Icon
+name="flame-outline"
+size={16}
+color="gold"
+/>
+
+</View>
+</View>
+
+<View style={{justifyContent:'center',alignItems:'center',flexDirection:'row',marginLeft:wp('63%')}}>
+<Text style={{fontSize:moderateScale(10),fontFamily:'Poppins-regular',color:'rgb(80,80,80)'}}>1500</Text>
+<View style={{justifyContent:'center',alignItems:'center'}}>
+<Icon
+name="flame-outline"
+size={16}
+color="gold"
+/>
+
+</View>
+</View>
+
+</View>
+<View style={{justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',width:wp('84%'),marginLeft:wp('4%'),marginEnd:wp('4%'),marginTop:hp('5%')}}>
+<TouchableOpacity style={{borderWidth:2,width:wp('25%'),padding:9,justifyContent:'center',alignItems:'center',borderColor:'#1ad2ff',borderRadius:7,marginLeft:wp('1%')}}>
+  <Text style={{fontFamily:'Poppins-Bold',fontSize:moderateScale(16),lineHeight:25,color:'#1ab2ff'}}>Clear all</Text>
+
+</TouchableOpacity>
+<TouchableOpacity style={{width:wp('52%'),padding:11,justifyContent:'center',alignItems:'center',backgroundColor:'#1ab2ff',borderRadius:7,marginLeft:wp('4%')}}>
+  <Text style={{fontFamily:'Poppins-Bold',fontSize:moderateScale(16),lineHeight:25,color:'#ffffff'}}>Apply</Text>
+
+</TouchableOpacity>
+</View>
                   </RBSheet>
                 </View>
               </View>

@@ -131,7 +131,16 @@ const styles = StyleSheet.create({
     justifyContent:'flex-end',alignItems:'flex-end',marginHorizontal:wp('42%')
   },
   detailbox:{
-    justifyContent:'flex-start',marginLeft:wp('5%'),alignItems:'flex-start',borderWidth:0.5,borderColor:'grey',height:hp("34%"),width:wp('90%'),marginTop:hp('2%'),borderRadius:10,
+    justifyContent:'flex-start',marginLeft:wp('5%'),alignItems:'flex-start',
+    padding: 4,
+    marginTop:hp('2%'),
+    width:wp('90%'),
+    shadowColor:'#000',shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,  
+    elevation: 4,
+    backgroundColor: 'rgb(255,255,255)',
+    borderRadius: 4,
   },
   detail1:{
     justifyContent:'center',alignItems:'flex-start',flexDirection:'row',marginLeft:wp('3%'),marginTop:hp('1.5%')
@@ -152,7 +161,7 @@ const styles = StyleSheet.create({
     fontFamily:'Poppins-Regular',fontSize:moderateScale(12),lineHeight:18,color:'rgb(80,80,80)'
   },
   imageview:{
-    justifyContent:'center',alignItems:'center',flexDirection:'row',marginTop:hp('1%')
+    justifyContent:'center',alignItems:'center',flexDirection:'row',marginTop:hp('1%'),marginBottom:hp('2%')
   },
   insideview:{
     justifyContent:'center',alignItems:'center',marginLeft:wp('40%'),

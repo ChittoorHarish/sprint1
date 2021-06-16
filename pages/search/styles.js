@@ -117,16 +117,16 @@ const styles = StyleSheet.create({
     justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',width:wp('35%'),borderWidth:1,borderColor:'transparent',borderBottomColor:'grey',padding:5
   },
   datetext:{
-    fontFamily:'Poppins-Regular',fontSize:moderateScale(14),color:'rgb(189,189,189)',paddingTop:2
+    fontFamily:'Poppins-Regular',fontSize:moderateScale(14),color:'rgb(189,189,189)',paddingTop:2,width:wp('23%')
   },
   calendar:{
     justifyContent:'center',alignItems:'center',marginLeft:wp('4%')
   },
   totext:{
-    fontFamily:'Poppins-Regular',fontSize:moderateScale(14),textAlign:'center',marginLeft:wp('2%'),marginRight:wp('2%'),paddingTop:5,color:'rgb(189,189,189)'
+    fontFamily:'Poppins-Regular',fontSize:moderateScale(14),textAlign:'center',marginLeft:wp('4%'),marginRight:wp('2%'),paddingTop:5,color:'rgb(189,189,189)'
   },
   dateboxside:{
-    justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',width:wp('35%'),borderWidth:1,borderColor:'transparent',borderBottomColor:'grey',padding:5,marginLeft:wp('3%')
+    justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',width:wp('35%'),borderWidth:1,borderColor:'transparent',borderBottomColor:'grey',padding:5,marginLeft:wp('0.5%')
   },
   collapsebox:{
     justifyContent:'flex-start',alignItems:'flex-start',marginLeft:wp('5%'),marginTop:hp('3%'),marginEnd:wp('5%'),width:wp('91%')
@@ -157,7 +157,18 @@ const styles = StyleSheet.create({
   },
   selecticon:{
     justifyContent:'center',alignItems:'center',padding:7
-  }
+  },
+  slider:{
+    width:wp('83%'),marginLeft:wp('4%'),marginEnd:wp('4%')
+  },
+  button:{
+    justifyContent:'space-evenly',
+    alignItems:'flex-start',
+    flexDirection:'row',
+    marginTop:hp('2%'),
+    alignSelf:'center',
+    marginBottom:hp('2%')
+  },
 
   
 });

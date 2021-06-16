@@ -88,7 +88,7 @@ source={require('../assets/image/galgadot.jpeg')}></Image>
         </View>
               </View>
               <View style={styles.captionview}>
-                <Text style={styles.description}>{data ? data.description: "description"}</Text>
+                <Text style={styles.description}>{data ? data.description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of lorm."}</Text>
               </View>
               <View style={styles.imageview}>
               <View style={styles.insideview}>

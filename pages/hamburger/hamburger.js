@@ -124,6 +124,7 @@ const hamburger = (props) => {
         <Icon name="ellipsis-vertical-outline" color="grey" size={25}/>
         </View>
             </View>
+            
             <View style={styles.detailbox}>
               <View style={styles.detail1}>
                 <View style={styles.touch}>
@@ -159,6 +160,7 @@ const hamburger = (props) => {
         </View>
         </View>
             </View>
+            
             <View style={styles.heading}>
             <View style={styles.basic}>
             <Image style={styles.onpostpic}
