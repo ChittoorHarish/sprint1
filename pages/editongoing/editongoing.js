@@ -124,7 +124,7 @@ const editongoing = () => {
                           <TouchableOpacity>
                             <Icon
                               name="calendar-outline"
-                              size={21}
+                              size={22}
                               color="rgb(80,80,80)"
                             />
                           </TouchableOpacity>
@@ -143,7 +143,7 @@ const editongoing = () => {
                           <TouchableOpacity>
                             <Icon
                               name="time-outline"
-                              size={21}
+                              size={22}
                               color="rgb(80,80,80)"
                             />
                           </TouchableOpacity>
