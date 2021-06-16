@@ -1,9 +1,10 @@
 import React, {useState} from "react";
-import { View, StyleSheet, Text, SafeAreaView,Image } from "react-native";
+import { View, StyleSheet, Text, SafeAreaView,Image ,Button} from "react-native";
 import styles from './styles';
 import OptionsMenu from "react-native-option-menu";
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useEffect } from "react";
+import Modal from 'react-native-modal';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale, heightPercentageToDP } from '../../services/responsiveFunc';
@@ -12,6 +13,11 @@ const homeongoing = (props) => {
   const [discard, discardPost] = useState();
   const [edit, editPost] = useState();
   const [data, setData] = useState('');
+  const [isModalVisible, setModalVisible] = useState(false);
+
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
     const myIcon = (<Icon name="ellipsis-vertical-outline" color="grey" size={25} />)
 
     useEffect(async () => {
@@ -47,11 +53,66 @@ source={require('../assets/image/galgadot.jpeg')}></Image>
   <Text style={styles.occupation}>College Student</Text>
 </View>
 <View style={styles.ellipsis}>
-<OptionsMenu
+{/* <OptionsMenu
   customButton={myIcon}
   destructiveIndex={1}
   options={["Edit", "Discard", "Cancel"]}
-  actions={[editPost, discardPost]}/>
+  actions={[editPost, discardPost]}/> */}
+  
+      <Icon name="ellipsis-vertical-outline" color="grey" size={25}  onPress={toggleModal}/>
+
+      <Modal isVisible={isModalVisible}
+      onRequestClose={() => { this.setState({modalVisible: false})
+    }}
+      style={{justifyContent:'flex-start',alignItems:'flex-end',marginRight:wp('16%'),marginTop:hp('18%')}}>
+        <View style={{justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'column',width:wp('35%'),height:hp('17%'),backgroundColor:'white',borderRadius:10}}>
+         
+          <View style={{justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',marginLeft:wp('3%'),marginTop:('10%'),marginEnd:wp('2%')}}>
+            <View style={{justifyContent:'flex-start',alignItems:'flex-start'}}>
+          <Icon name="pencil-outline" color="black" size={20}/>
+          </View>
+          <TouchableOpacity onPress={() =>{toggleModal(); props.navigation.navigate('editongoing')}}>
+          <Text style={{color:'grey',fontFamily:'Poppins-SemiBold',marginLeft:wp('2%')}}>Edit</Text>
+          </TouchableOpacity>
+          </View>
+          
+          <View
+style={{
+  borderBottomColor: 'grey',
+  borderBottomWidth: 1,
+  width:wp("25%"),
+  marginLeft:wp('2%'),
+  marginEnd:wp('4%'),
+  marginTop:hp('1%')
+}}
+/>
+<View style={{justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',marginLeft:wp('3%'),marginTop:('10%'),marginEnd:wp('2%')}}>
+            <View style={{justifyContent:'flex-start',alignItems:'flex-start'}}>
+          <Icon name="trash-bin-outline" color="black" size={20}/>
+          </View>
+          <Text style={{color:'grey',fontFamily:'Poppins-SemiBold',marginLeft:wp('2%')}}>Discard</Text>
+          </View>
+          <View
+style={{
+  borderBottomColor: 'grey',
+  borderBottomWidth: 1,
+  width:wp("25%"),
+  marginLeft:wp('2%'),
+  marginEnd:wp('4%'),
+  marginTop:hp('1%')
+}}
+/>
+<View style={{justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',marginLeft:wp('3%'),marginTop:('10%'),marginEnd:wp('2%')}}>
+            <View style={{justifyContent:'flex-start',alignItems:'flex-start'}}>
+          {/* <Icon name="pencil-outline" color="black" size={20}/> */}
+          </View>
+         
+          <Text style={{color:'grey',fontFamily:'Poppins-SemiBold',marginLeft:wp('2%')}} onPress={toggleModal}>Cancel</Text>
+          </View>
+ 
+        </View>
+      </Modal>
+    
 </View>
     </View>
     <View style={styles.bodyview}>

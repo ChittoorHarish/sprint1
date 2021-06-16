@@ -38,6 +38,7 @@
 		B7417EFE197B4EEE8369AF44 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3ED94A9D84874D76B7C83604 /* Fontisto.ttf */; };
 		E6911411A6A844EBAF8EA849 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0D4D019B507149818403C3B1 /* FontAwesome.ttf */; };
 		F068EAF2D2B14CF9AAB56112 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 298A19C46F5343959BD821BA /* FontAwesome5_Regular.ttf */; };
+		9DDB6074CBD1400B8E639449 /* libRangeSlider.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F0667CF9FC64C5BB2D2788F /* libRangeSlider.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,8 @@
 		F47775CA3AB24D9E9DE08D9D /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/native-base/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		F8A11770B5B97A6DCF4F244B /* Pods-fiya.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fiya.release.xcconfig"; path = "Target Support Files/Pods-fiya/Pods-fiya.release.xcconfig"; sourceTree = "<group>"; };
 		F8A9285112643B9D5B338775 /* libPods-fiya.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-fiya.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F05BAB50C4674E019E0A7EB4 /* RangeSlider.xcodeproj */ = {isa = PBXFileReference; name = "RangeSlider.xcodeproj"; path = "../node_modules/react-native-range-slider/ios/RangeSlider.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		1F0667CF9FC64C5BB2D2788F /* libRangeSlider.a */ = {isa = PBXFileReference; name = "libRangeSlider.a"; path = "libRangeSlider.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A0D69A503AEAF41CD53316C /* libPods-fiya.a in Frameworks */,
+				9DDB6074CBD1400B8E639449 /* libRangeSlider.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +174,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				F05BAB50C4674E019E0A7EB4 /* RangeSlider.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -518,6 +523,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-range-slider/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-range-slider/ios/**",
 				);
 				INFOPLIST_FILE = fiyaTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
@@ -528,6 +534,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
@@ -550,6 +557,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-range-slider/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-range-slider/ios/**",
 				);
 				INFOPLIST_FILE = fiyaTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
@@ -560,6 +568,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
@@ -584,6 +593,7 @@
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-range-slider/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-range-slider/ios/**",
 				);
 				INFOPLIST_FILE = fiya/Info.plist;
@@ -647,6 +657,7 @@
 				DEVELOPMENT_TEAM = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-range-slider/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-range-slider/ios/**",
 				);
 				INFOPLIST_FILE = fiya/Info.plist;

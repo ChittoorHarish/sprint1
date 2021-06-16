@@ -31,6 +31,7 @@ import applicantprofile from "../pages/applicantprofile/applicantprofile";
 import notifications from "../pages/notifications/notifications";
 import CustomSidebarMenu from '../pages/CustomSidebarMenu/CustomSidebarMenu';
 import termsandconditions from "../pages/termsandconditions/termsandconditions";
+import editongoing from "../pages/editongoing/editongoing";
 import { Label } from "native-base";
 import color from "color";
 
@@ -309,6 +310,29 @@ const MainStackNavigator = () => {
             ),
           }}
         />
+        <Stack.Screen
+          name="editongoing"
+          component={editongoing}
+          options={{ 
+            title:"Edit Ongoing Post",
+            headerBackTitle:" ",
+            headerStyle: {
+              height:hp('12%'),
+              backgroundColor: '#1ab2ff', //Set Header color
+            },
+            headerTintColor: '#ffffff', //Set Header text color
+            headerTitleStyle: {
+              fontFamily:'Poppins-Bold',
+              fontSize:moderateScale(17) //Set Header text style
+            },
+            headerTitle: () =>(
+              <View style={{justifyContent:'flex-start',alignItems:'center',flexDirection:'row',marginEnd:wp('1%'),width:wp('85%'),marginLeft:wp('2%')}}>
+                <Text style={{fontSize:moderateScale(16),lineHeight:25,color:'white',fontFamily:'Poppins-SemiBold'}}>Edit Post</Text>
+              </View>
+              
+            ),
+          }}
+        />
          <Stack.Screen
           name="notifications"
           component={notifications}
@@ -333,6 +357,7 @@ const MainStackNavigator = () => {
             ),
           }}
         />
+        
     </Stack.Navigator>
   );
 }
