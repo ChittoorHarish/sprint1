@@ -15,62 +15,63 @@ const editongoing = () => {
 
     sendcred = () => {
 
-    //     console.log(description, media, datetime)
-    //     fetch("https://obn1qqspll.execute-api.us-east-1.amazonaws.com/dev/user/post/edit", {
-    //       method: "PUT",
-    //       headers: {
-    //         'Content-Type': 'application/json'
+        // console.log(description, media, datetime)
+        // fetch("https://obn1qqspll.execute-api.us-east-1.amazonaws.com/dev/user/post/edit" + post_id, {
+        //   method: "PUT",
+        //   headers: {
+        //   'Content-Type': 'application/json',
+        //  //   "Authorization": 'Bearer ' + token
             
-    //       },
-    //       body: JSON.stringify({
-    //         "description": description,
-    //         "media": media,
-    //         "datetime":datetime
+        //   },
+        //   body: JSON.stringify({
+        //     "description": description,
+        //     "media": media,
+        //     "datetime":datetime
     
-    //       })
+        //   })
     
-    //     })
-    //       .then(res => res.json())
-    //       .then((responseJson) => {
-    //         //Success
+        // })
+        //   .then(res => res.json())
+        //   .then((responseJson) => {
+        //     //Success
     
-    //         console.log(responseJson.data);
+        //     console.log(responseJson.data);
     
-    //         if (responseJson.code == 200) 
-    //         {
-    //           console.log("1. auth_token:" + responseJson.data.token);
-    //           console.log("1. auth_userid:" + responseJson.data.id);
-    //           console.log("2. auth_postid:" + responseJson.data.id);
+        //     if (responseJson.code == 200) 
+        //     {
+        //       console.log("1. auth_token:" + responseJson.data.token);
+        //       console.log("1. auth_userid:" + responseJson.data.id);
+        //       console.log("2. auth_postid:" + responseJson.data.id);
     
-    //           AsyncStorage.setItem('auth_token',responseJson.data.token);
-    //           AsyncStorage.setItem('auth_userid',responseJson.data.id);
-    //           AsyncStorage.setItem('auth_postid',responseJson.data.id);
+        //       AsyncStorage.setItem('auth_token',responseJson.data.token);
+        //       AsyncStorage.setItem('auth_userid',responseJson.data.id);
+        //       AsyncStorage.setItem('auth_postid',responseJson.data.id);
     
-    //           props.navigation.navigate('Home');
-    //           //let token = await AsyncStorage.getItem('auth_token')
-    //         }
-    //         else {
-    //           setErrormsgtext(responseJson.message)
-    //      setErrormsg(true);
-    //       return;
+        //   //    props.navigation.navigate('Home');
+        //       //let token = await AsyncStorage.getItem('auth_token')
+        //     }
+        //     else {
+        //       setErrormsgtext(responseJson.message)
+        //  setErrormsg(true);
+        //   return;
               
-    //           // alert(
-    //           //   "InValid Credential, Unable to Login ",
+        //       // alert(
+        //       //   "InValid Credential, Unable to Login ",
     
-    //           //   [
-    //           //     {
-    //           //       text: "Cancel",
-    //           //       onPress: () => console.log("Cancel Pressed"),
-    //           //       style: "cancel"
-    //           //     },
-    //           //     { text: "OK", onPress: () => console.log("OK Pressed") }
-    //           //   ],
+        //       //   [
+        //       //     {
+        //       //       text: "Cancel",
+        //       //       onPress: () => console.log("Cancel Pressed"),
+        //       //       style: "cancel"
+        //       //     },
+        //       //     { text: "OK", onPress: () => console.log("OK Pressed") }
+        //       //   ],
     
-    //           // );
+        //       // );
               
-    //         }
-    //       })
-    //     //If response is not in json then in error
+        //     }
+        //   })
+        // //If response is not in json then in error
     
        }
   return (
@@ -119,7 +120,8 @@ const editongoing = () => {
                       <View style={styles.date}>
                       <TextInput style={styles.datetext}
                         placeholder="20 Feb 2021"
-                        value={datetime}></TextInput>
+                        value={datetime}
+                        onChangeText={(text) => setDatetime(text)}></TextInput>
                         <View style={styles.calendar}>
                           <TouchableOpacity>
                             <Icon

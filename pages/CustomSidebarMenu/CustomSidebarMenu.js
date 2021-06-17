@@ -64,8 +64,6 @@ const CustomSidebarMenu = (props) => {
 
         </Image>
         <Text style={styles.name}>{data ? data.firstname: 'No name'}</Text>
-        <Text style={styles.occupation}>College Student</Text>
-       
 
       </View>
 

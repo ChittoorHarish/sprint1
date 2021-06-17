@@ -48,7 +48,7 @@ notificationtext:{
   fontSize:moderateScale(16),fontFamily:'Poppins-SemiBold',lineHeight:25,color:'rgb(80,80,80)'
 },
 markread:{
-  fontSize:moderateScale(12),fontFamily:'Poppins-Regular',lineHeight:18,color:'rgb(0,153,218)',textDecorationLine:'underline',marginTop:hp('0.5%'),marginLeft:wp("34%")
+  fontSize:moderateScale(12),fontFamily:'Poppins-Regular',lineHeight:18,color:'rgb(0,153,218)',textDecorationLine:'underline',marginTop:hp('0.5%'),marginLeft:wp("31%"),marginEnd:wp('2%')
 },
 time:{
   justifyContent:'flex-start',alignItems:'flex-start',fontFamily:'Poppins-Regular',fontSize:moderateScale(10),lineHeight:31,color:'rgb(189,189,189)'

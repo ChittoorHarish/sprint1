@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     justifyContent:'center',borderWidth:0.1,alignItems:'center',width:wp('15%'),height:hp('8%'),borderRadius:5
   },
   basic1:{
-    justifyContent:'center',alignItems:'flex-start'
+    justifyContent:'center',alignItems:'flex-start',backgroundColor:'white',marginBottom:hp('5%')
   },
   heading:{
     justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',marginLeft:wp('4%'),marginTop:hp("2%"),
@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
     justifyContent:'center',alignItems:'flex-start',flexDirection:'column',width:wp("30%")
   },
   chaptertitle:{
-    fontFamily:'Poppins-Bold',fontSize:moderateScale(16),lineHeight:25,color:'rgb(80,80,80)',width:wp('38%')
+    fontFamily:'Poppins-Bold',fontSize:moderateScale(16),lineHeight:25,color:'rgb(80,80,80)'
   },
   chaptername:{
     fontFamily:'Poppins-Regular',fontSize:moderateScale(14),color:'#888888',lineHeight:21
@@ -165,6 +165,34 @@ const styles = StyleSheet.create({
   },
   insideview:{
     justifyContent:'center',alignItems:'center',marginLeft:wp('40%'),
+  },
+
+
+  titleStyle: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    padding: 10,
+  },
+  textStyle: {
+    fontSize: 16,
+    textAlign: 'center',
+    padding: 10,
+  },
+  touchableOpacityStyle: {
+    position: 'absolute',
+    width: 50,
+    height: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    right: 30,
+    bottom: 30,
+  },
+  floatingButtonStyle: {
+    resizeMode: 'contain',
+    width: 50,
+    height: 50,
+    //backgroundColor:'black'
   },
  
 

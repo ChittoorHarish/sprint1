@@ -208,7 +208,9 @@ const toggleRangeEnabled = useCallback(() => setRangeDisabled(!rangeDisabled), [
                   placeholderTextColor={'white'}
                 />
                 <View style={styles.searchicon}>
+                  <TouchableOpacity onPress={() =>props.navigation.navigate('searchfilter')}>
                   <Icon name="search" size={25} color="#ffffff" />
+                  </TouchableOpacity>
                 </View>
                 <View style={styles.options}>
                   <TouchableOpacity onPress={() => refRBSheet.current.open()}>
@@ -234,7 +236,9 @@ const toggleRangeEnabled = useCallback(() => setRangeDisabled(!rangeDisabled), [
                       draggableIcon: {},
                     }}>
                     <View style={styles.rawbottom}>
+                      <TouchableOpacity>
                       <Text style={styles.choose}>Filter</Text>
+                      </TouchableOpacity>
                       <TouchableOpacity
                         onPress={() => refRBSheet.current.close()}>
                         <Text style={styles.done}>Back</Text>

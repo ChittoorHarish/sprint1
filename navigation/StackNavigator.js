@@ -32,6 +32,7 @@ import notifications from "../pages/notifications/notifications";
 import CustomSidebarMenu from '../pages/CustomSidebarMenu/CustomSidebarMenu';
 import termsandconditions from "../pages/termsandconditions/termsandconditions";
 import editongoing from "../pages/editongoing/editongoing";
+import searchfilter from "../pages/searchfilter/searchfilter";
 import { Label } from "native-base";
 import color from "color";
 
@@ -352,6 +353,40 @@ const MainStackNavigator = () => {
             headerTitle: () =>(
               <View style={{justifyContent:'flex-start',alignItems:'center',flexDirection:'row',marginEnd:wp('1%'),width:wp('85%'),marginLeft:wp('2%')}}>
                 <Text style={{fontSize:moderateScale(16),lineHeight:25,color:'white',fontFamily:'Poppins-SemiBold'}}>Notifications</Text>
+              </View>
+              
+            ),
+          }}
+        />
+        <Stack.Screen
+          name="searchfilter"
+          component={searchfilter}
+          options={{ 
+            title:"Search Filter",
+            headerBackTitle:" ",
+            headerStyle: {
+              height:hp('12%'),
+              backgroundColor: '#1ab2ff', //Set Header color
+            },
+            headerTintColor: '#ffffff', //Set Header text color
+            headerTitleStyle: {
+              fontFamily:'Poppins-Bold',
+              fontSize:moderateScale(17) //Set Header text style
+            },
+            headerTitle: () =>(
+              <View style={{justifyContent:'flex-start',alignItems:'center',flexDirection:'row',marginEnd:wp('2%'),width:wp('85%'),marginLeft:wp('2%')}}>
+                <Text style={{fontSize:moderateScale(16),lineHeight:25,color:'white',fontFamily:'Poppins-SemiBold'}}>Search Results</Text>
+                <View style={{justifyContent:'center',alignItems:'center',marginLeft:wp('33%'),transform:[{ rotate:'270deg'}]}}>
+       <Icon name="options" size={26} color={'white'}/>
+       </View>
+       <View style={{justifyContent:'flex-end',alignItems:'flex-end',marginLeft:wp('3%'),}}>
+       <Icon name="notifications-outline" size={26} color={'white'}/>
+       </View>
+       <View style={{justifyContent:'center',alignItems:'center'}}>
+       <View style={{justifyContent:'center',alignItems:'center',borderRadius:10,backgroundColor:'white',width:wp('2.5%'),height:hp('1.4%'),marginLeft:wp('-3%'),marginTop:hp('-0.5%')}}>
+         <Text style={{ fontSize:moderateScale(10),color:'#1ab2ff',fontFamily:'Poppins-Regular',textAlign:'center'}}>2</Text>
+       </View>
+       </View>
               </View>
               
             ),
