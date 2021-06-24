@@ -1,12 +1,12 @@
 import React, {useState} from "react";
-import { View, StyleSheet, Text, SafeAreaView,Image ,Button} from "react-native";
+import { View, StyleSheet, Text, SafeAreaView,Image ,Button,TouchableOpacity} from "react-native";
 import styles from './styles';
 import OptionsMenu from "react-native-option-menu";
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useEffect } from "react";
 import Modal from 'react-native-modal';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
+import { ScrollView,} from "react-native-gesture-handler";
 import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale, heightPercentageToDP } from '../../services/responsiveFunc';
 
 const homeongoing = (props) => {
@@ -14,6 +14,7 @@ const homeongoing = (props) => {
   const [edit, editPost] = useState();
   const [data, setData] = useState('');
   const [isModalVisible, setModalVisible] = useState(false);
+  const currentPost = props.route.params.post;
 
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
@@ -21,6 +22,7 @@ const homeongoing = (props) => {
     const myIcon = (<Icon name="ellipsis-vertical-outline" color="grey" size={25} />)
 
     useEffect(async () => {
+      console.log("currentPost",currentPost);
       let token = await AsyncStorage.getItem('auth_token');
       let userid = await AsyncStorage.getItem('auth_userid');
    //  setAuthtoken(a.id)
@@ -34,7 +36,7 @@ const homeongoing = (props) => {
      })
      .then(res=>res.json())
      .then(results=>{
-       console.log("resp:" + JSON.stringify(results))
+      //  console.log("resp:" + JSON.stringify(results))
        setData(results)
      })
    },[]) 
@@ -65,13 +67,13 @@ source={require('../assets/image/galgadot.jpeg')}></Image>
       onRequestClose={() => { this.setState({modalVisible: false})
     }}
       style={{justifyContent:'flex-start',alignItems:'flex-end',marginRight:wp('16%'),marginTop:hp('18%')}}>
-        <View style={{justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'column',width:wp('35%'),height:hp('17%'),backgroundColor:'white',borderRadius:10}}>
+        <View style={{justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'column',width:wp('35%'),height:hp('12%'),backgroundColor:'white',borderRadius:10}}>
          
           <View style={{justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',marginLeft:wp('3%'),marginTop:('10%'),marginEnd:wp('2%')}}>
             <View style={{justifyContent:'flex-start',alignItems:'flex-start'}}>
           <Icon name="pencil-outline" color="black" size={20}/>
           </View>
-          <TouchableOpacity onPress={() =>{toggleModal(); props.navigation.navigate('editongoing')}}>
+          <TouchableOpacity onPress={() =>{toggleModal(); props.navigation.navigate('editongoing',{currentPost})}}>
           <Text style={{color:'grey',fontFamily:'Poppins-SemiBold',marginLeft:wp('2%')}}>Edit</Text>
           </TouchableOpacity>
           </View>
@@ -90,26 +92,11 @@ style={{
             <View style={{justifyContent:'flex-start',alignItems:'flex-start'}}>
           <Icon name="trash-bin-outline" color="black" size={20}/>
           </View>
+          <TouchableOpacity onPress={() =>{toggleModal()}}>
           <Text style={{color:'grey',fontFamily:'Poppins-SemiBold',marginLeft:wp('2%')}}>Discard</Text>
-          </View>
-          <View
-style={{
-  borderBottomColor: 'grey',
-  borderBottomWidth: 1,
-  width:wp("25%"),
-  marginLeft:wp('2%'),
-  marginEnd:wp('4%'),
-  marginTop:hp('1%')
-}}
-/>
-<View style={{justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',marginLeft:wp('3%'),marginTop:('10%'),marginEnd:wp('2%')}}>
-            <View style={{justifyContent:'flex-start',alignItems:'flex-start'}}>
-          {/* <Icon name="pencil-outline" color="black" size={20}/> */}
+          </TouchableOpacity>
           </View>
          
-          <Text style={{color:'grey',fontFamily:'Poppins-SemiBold',marginLeft:wp('2%')}} onPress={toggleModal}>Cancel</Text>
-          </View>
- 
         </View>
       </Modal>
     
@@ -119,7 +106,7 @@ style={{
               <View style={styles.info}>
                 <View style={{justifyContent:'center',alignItems:'flex-start',flexDirection:'column',width:wp('30%')}}>
                  
-                  <Text style={styles.chaptertitle}>Inaya_04</Text>
+                  <Text style={styles.chaptertitle}>{currentPost.title}</Text>
                   <Text style={styles.chaptername}>Algebra</Text>
                   
                 </View>
@@ -135,7 +122,7 @@ style={{
         </View>
               </View>
               <View style={styles.captionview}>
-                <Text style={styles.description}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of lorm.</Text>
+                <Text style={styles.description}>{currentPost.description}</Text>
               </View>
               <View style={styles.imageview}>
               <View style={styles.insideview}>
@@ -150,7 +137,7 @@ style={{
             </View>
             <View style={styles.dateview}>
                 <Text style={styles.needtext}>Needed By:</Text>
-                <Text style={styles.datetext}>20-march-2021</Text>
+                <Text style={styles.datetext}>06-22-2021</Text>
                 <View style={styles.calicon}>
 <Icon name="calendar-outline" color="black" size={20}/>
 </View>

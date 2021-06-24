@@ -42,7 +42,7 @@ notificationbox:{
   justifyContent:'flex-start',alignItems:'flex-start',width:wp('96%'),marginLeft:wp('2%'),marginEnd:wp('2%')
 },
 headerbox:{
-  justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',marginTop:hp('2%')
+  justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',marginTop:hp('2%'),width:wp('94%')
 },
 notificationtext:{
   fontSize:moderateScale(16),fontFamily:'Poppins-SemiBold',lineHeight:25,color:'rgb(80,80,80)'

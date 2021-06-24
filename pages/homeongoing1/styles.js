@@ -48,10 +48,10 @@ const styles = StyleSheet.create({
         marginBottom:hp('2%')
       },
       headertitle:{
-        justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',marginLeft:wp('4%'),marginTop:hp("2%"),
+        justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',marginLeft:wp('4%'),marginTop:hp("2%"),marginEnd:wp('2%')
       },
       titlebox:{
-        justifyContent:'center',alignItems:'flex-start',flexDirection:'column',marginLeft:wp("3%")
+        justifyContent:'center',alignItems:'flex-start',flexDirection:'column',marginLeft:wp("3%"),width:wp('63%')
       },
       nametitle:{
         fontSize:moderateScale(16),fontFamily:'Poppins-SemiBold',color:'rgb(80,80,80)',lineHeight:25
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         fontSize:moderateScale(12),fontFamily:'Poppins-Regular',color:'#888888',lineHeight:18
       },
       ellipsis:{
-        justifyContent:'flex-end',alignItems:'flex-end',marginHorizontal:wp('42%')
+        justifyContent:'flex-end',alignItems:'flex-end',marginLeft:wp('10%')
       },
       bodyview:{
         justifyContent:'flex-start',marginLeft:wp('5%'),alignItems:'flex-start',
@@ -78,13 +78,13 @@ const styles = StyleSheet.create({
         justifyContent:'center',alignItems:'flex-start',flexDirection:'row',marginLeft:wp('3%'),marginTop:hp('1.5%')
       },
       chaptertitle:{
-        fontFamily:'Poppins-Bold',fontSize:moderateScale(16),lineHeight:25,color:'rgb(80,80,80)'
+        fontFamily:'Poppins-Bold',fontSize:moderateScale(16),lineHeight:25,color:'rgb(80,80,80)',width:wp('58%')
       },
       chaptername:{
         fontFamily:'Poppins-Regular',fontSize:moderateScale(14),color:'#888888',lineHeight:21
       },
       captionview:{
-        justifyContent:'center',alignItems:'center',marginLeft:wp('4%'),marginEnd:wp('4%')
+        justifyContent:'center',alignItems:'center',marginLeft:wp('3%'),marginEnd:wp('4%')
       },
       description:{
         fontFamily:'Poppins-Regular',fontSize:moderateScale(12),lineHeight:18,color:'rgb(80,80,80)'

@@ -107,6 +107,8 @@ const [data1, setData1] = React.useState({
         "lastname":lastname,
         "username":username,
         "email":email,
+        "country_code":country_code,
+        "dob":dob,
         "phone_no":phone_no,
         "password":password,
         "confirm_password":confirm_password
@@ -237,8 +239,8 @@ const [data1, setData1] = React.useState({
    <TextInput
        style={styles.textin}
        placeholder="Country"
-       value={username}
-       onChangeText={(text)=>setUsername(text)}
+       value={country_code}
+       onChangeText={(text)=>setCountry_code(text)}
    />
     <View style={styles.basic}>
 <Icon name="chevron-down-outline" size={20} color={'#1ab2ff'}/>
@@ -254,8 +256,8 @@ const [data1, setData1] = React.useState({
    <TextInput
        style={styles.textin}
        placeholder="DOB"
-       value={username}
-       onChangeText={(text)=>setUsername(text)}
+       value={dob}
+       onChangeText={(text)=>setDob(text)}
    />
 
  </View>

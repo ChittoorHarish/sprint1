@@ -71,22 +71,22 @@ tutorstar:{
     elevation: 4
   },
   headertitle:{
-    justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',marginLeft:wp('4%'),marginTop:hp("2%"),
+    justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',marginLeft:wp('4%'),marginTop:hp("2%"),marginEnd:wp('2%')
   },
   titlebox:{
-    justifyContent:'center',alignItems:'flex-start',flexDirection:'column',marginLeft:wp("3%"),width:wp('25%')
+    justifyContent:'center',alignItems:'flex-start',flexDirection:'column',marginLeft:wp("3%"),width:wp('47%'),
   },
   nametitle:{
-    fontSize:moderateScale(16),fontFamily:'Poppins-SemiBold',color:'rgb(80,80,80)',lineHeight:25
+    fontSize:moderateScale(16),fontFamily:'Poppins-SemiBold',color:'rgb(80,80,80)',lineHeight:25,width:wp('47%'),
   },
   occupation:{
-    fontSize:moderateScale(12),fontFamily:'Poppins-Regular',color:'#888888',lineHeight:18
+    fontSize:moderateScale(12),fontFamily:'Poppins-Regular',color:'#888888',lineHeight:18,width:wp('50%')
   },
   onpostpic:{
     borderWidth:0.1,height:hp("5.3%"),width:wp('11%'),borderRadius:20,
   },
   ratingstar:{
-      justifyContent:'center',alignItems:'center',marginLeft:wp('25%'),width:wp('15%')
+      justifyContent:'flex-end',alignItems:'center',marginLeft:wp('1%'),width:wp('15%'),
   },
   bottombutton:{
       justifyContent:'space-evenly',alignItems:'flex-start',flexDirection:'row',marginLeft:wp("4%"),marginEnd:wp('4%')
@@ -138,7 +138,7 @@ tutorstar:{
     fontFamily:'Poppins-Regular',fontSize:moderateScale(14),color:'rgb(80,80,80)',lineHeight:21,
   },
   starrate:{
-    fontFamily:'Poppins-SemiBold',fontSize:moderateScale(16),color:'rgb(80,80,80)',lineHeight:25,marginLeft:wp('3%')
+    fontFamily:'Poppins-SemiBold',fontSize:moderateScale(16),color:'rgb(80,80,80)',lineHeight:25,width:wp('15%'),textAlign:'right'
   },
   tutordetail:{
     justifyContent:'flex-start',alignItems:'flex-start',marginLeft:wp('2%'),marginEnd:wp('2%'),marginTop:hp('2%'),

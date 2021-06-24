@@ -33,12 +33,12 @@
 		8C3DB783552749E6B387B488 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0034C34827AB4E23A94D08BE /* Zocial.ttf */; };
 		8D5334377BB547E2963B9628 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA97C897736041DA8516E69E /* SimpleLineIcons.ttf */; };
 		9BD5BBBCB958438BAF1168A1 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A375A0E5D5B466A9D50D418 /* FontAwesome5_Brands.ttf */; };
+		9DDB6074CBD1400B8E639449 /* libRangeSlider.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F0667CF9FC64C5BB2D2788F /* libRangeSlider.a */; };
 		A7B3C33198974C64B57184FC /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4AFB858B91D7499EBE3C1DF3 /* MaterialCommunityIcons.ttf */; };
 		B6355D43AC8C4FC4BB23AFD4 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 413FDD163AB74031AE2A8B7F /* MaterialIcons.ttf */; };
 		B7417EFE197B4EEE8369AF44 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3ED94A9D84874D76B7C83604 /* Fontisto.ttf */; };
 		E6911411A6A844EBAF8EA849 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0D4D019B507149818403C3B1 /* FontAwesome.ttf */; };
 		F068EAF2D2B14CF9AAB56112 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 298A19C46F5343959BD821BA /* FontAwesome5_Regular.ttf */; };
-		9DDB6074CBD1400B8E639449 /* libRangeSlider.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F0667CF9FC64C5BB2D2788F /* libRangeSlider.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +63,7 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = fiya/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = fiya/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = fiya/main.m; sourceTree = "<group>"; };
+		1F0667CF9FC64C5BB2D2788F /* libRangeSlider.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRangeSlider.a; sourceTree = "<group>"; };
 		1FB130165D1841E2B3045E55 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/native-base/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		218263856492276CC5A4BC31 /* libPods-fiya-fiyaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-fiya-fiyaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		298A19C46F5343959BD821BA /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
@@ -92,11 +93,10 @@
 		D9FC342E07A3456D995CEDB8 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/native-base/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		EA97C897736041DA8516E69E /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/native-base/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F05BAB50C4674E019E0A7EB4 /* RangeSlider.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RangeSlider.xcodeproj; path = "../node_modules/react-native-range-slider/ios/RangeSlider.xcodeproj"; sourceTree = "<group>"; };
 		F47775CA3AB24D9E9DE08D9D /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/native-base/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		F8A11770B5B97A6DCF4F244B /* Pods-fiya.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fiya.release.xcconfig"; path = "Target Support Files/Pods-fiya/Pods-fiya.release.xcconfig"; sourceTree = "<group>"; };
 		F8A9285112643B9D5B338775 /* libPods-fiya.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-fiya.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F05BAB50C4674E019E0A7EB4 /* RangeSlider.xcodeproj */ = {isa = PBXFileReference; name = "RangeSlider.xcodeproj"; path = "../node_modules/react-native-range-slider/ios/RangeSlider.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		1F0667CF9FC64C5BB2D2788F /* libRangeSlider.a */ = {isa = PBXFileReference; name = "libRangeSlider.a"; path = "libRangeSlider.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +213,7 @@
 		89D10E0F2675B888009D662E /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
+				1F0667CF9FC64C5BB2D2788F /* libRangeSlider.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";

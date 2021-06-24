@@ -262,7 +262,7 @@ const MainStackNavigator = () => {
           name="joincall"
           component={joincall}
           options={{ 
-            title:"Ongoing Post",
+            title:"harish ",
             headerBackTitle:" ",
             headerStyle: {
               height:hp('12%'),
@@ -271,19 +271,26 @@ const MainStackNavigator = () => {
             headerTintColor: '#ffffff', //Set Header text color
             headerTitleStyle: {
               fontFamily:'Poppins-Bold',
-              fontSize:moderateScale(17) //Set Header text style
+              fontSize:moderateScale(16) //Set Header text style
             },
             headerTitle: () =>(
-              <View style={{justifyContent:'flex-start',alignItems:'center',flexDirection:'row',marginEnd:wp('2%'),width:wp('85%'),marginLeft:wp('2%')}}>
-                <Text style={{fontSize:moderateScale(16),lineHeight:25,color:'white',fontFamily:'Poppins-SemiBold'}}>Ongoing Post</Text>
-                <TouchableOpacity style={{justifyContent:'flex-start',alignItems:'flex-start',borderRadius:10,backgroundColor:'#ffffff',width:wp("29%"),height:hp('5%'),padding:3,marginLeft:wp('23.5%'),flexDirection:'row',marginEnd:wp('1%')}}>
+              <View style={{justifyContent:'flex-start',alignItems:'center',flexDirection:'row',marginEnd:wp('1%'),width:wp('90%')}}>
+                <Text style={{fontSize:moderateScale(16),lineHeight:25,color:'white',fontFamily:'Poppins-SemiBold',}}>Ongoing Post</Text>
+                <View style={{justifyContent:'flex-start',alignItems:'flex-start',width:wp('33%'),marginLeft:wp('25%'),padding:3,}}>
+                
+                <TouchableOpacity style={{backgroundColor:'white',width:wp('30%'),marginLeft:wp('1%'),marginEnd:wp('1%'),borderRadius:5,padding:2}}>
+                  <View style={{justifyContent:'center',alignItems:'center',flexDirection:'row'}}>
                   <View style={{justifyContent:'center',alignItems:'center',marginLeft:wp('1%'),borderRadius:10,backgroundColor:'rgb(41,177,0)',width:wp('9%'),height:hp('4%')}}>
                   <Icon name="videocam-outline" color="white" size={22}/>
                   </View>
-                  <Text style={{fontFamily:'Poppins-SemiBold',fontSize:moderateScale(12),color:'rgb(41,177,0)',marginLeft:wp('1.5%'),marginTop:hp("1%")}}>Join Call</Text>
+                  <Text style={{fontFamily:'Poppins-SemiBold',fontSize:moderateScale(12),color:'rgb(41,177,0)',marginLeft:wp('2%')}}>Join Call</Text>
+                  </View>
+                 
 
                 </TouchableOpacity>
-              </View>
+                </View>
+                </View>
+              
               
             ),
           }}
@@ -374,20 +381,23 @@ const MainStackNavigator = () => {
               fontSize:moderateScale(17) //Set Header text style
             },
             headerTitle: () =>(
-              <View style={{justifyContent:'flex-start',alignItems:'center',flexDirection:'row',marginEnd:wp('2%'),width:wp('85%'),marginLeft:wp('2%')}}>
-                <Text style={{fontSize:moderateScale(16),lineHeight:25,color:'white',fontFamily:'Poppins-SemiBold'}}>Search Results</Text>
-                <View style={{justifyContent:'center',alignItems:'center',marginLeft:wp('33%'),transform:[{ rotate:'270deg'}]}}>
-       <Icon name="options" size={26} color={'white'}/>
+              <View style={{justifyContent:'flex-start',alignItems:'center',flexDirection:'row',marginEnd:wp('1%'),width:wp('90%'),borderWidth:1,borderColor:'transparent'}}>
+                 <Text style={{fontSize:moderateScale(16),lineHeight:25,color:'white',fontFamily:'Poppins-SemiBold'}}>Search Results</Text>
+                 <View style={{borderWidth:1,borderColor:'transparent',justifyContent:'flex-start',alignItems:'center',flexDirection:'row',padding:2,marginLeft:wp('33.5%'),width:wp('22%')}}>
+                <View style={{justifyContent:'center',alignItems:'center',marginLeft:wp('3%'),transform:[{ rotate:'270deg'}]}}>
+       <Icon name="options" size={30} color={'white'}/>
        </View>
-       <View style={{justifyContent:'flex-end',alignItems:'flex-end',marginLeft:wp('3%'),}}>
-       <Icon name="notifications-outline" size={26} color={'white'}/>
+       <View style={{justifyContent:'flex-end',alignItems:'flex-end',marginLeft:wp('1.5%'),marginTop:hp('0.3%')}}>
+       <Icon name="notifications-outline" size={30} color={'white'}/>
        </View>
        <View style={{justifyContent:'center',alignItems:'center'}}>
-       <View style={{justifyContent:'center',alignItems:'center',borderRadius:10,backgroundColor:'white',width:wp('2.5%'),height:hp('1.4%'),marginLeft:wp('-3%'),marginTop:hp('-0.5%')}}>
-         <Text style={{ fontSize:moderateScale(10),color:'#1ab2ff',fontFamily:'Poppins-Regular',textAlign:'center'}}>2</Text>
+       <View style={{justifyContent:'center',alignItems:'center',borderRadius:10,backgroundColor:'white',marginLeft:wp('-3.7%'),marginTop:hp('-1%'),marginEnd:wp('3%')}}>
+         <Text style={{ fontSize:moderateScale(10),color:'#1ab2ff',fontFamily:'Poppins-Regular',textAlign:'center',width:wp('4%'),height:hp('1.75%')}}>2</Text>
        </View>
        </View>
-              </View>
+       </View>
+       </View>
+            
               
             ),
           }}
@@ -407,6 +417,7 @@ const ContactStackNavigator = () => {
   function BottomTabNavigator() {
     return (
       <Tab.Navigator
+      
       tabBarOptions={{
         activeTintColor:'#1ab2ff',
         showLabel:true,
@@ -438,7 +449,7 @@ const ContactStackNavigator = () => {
            
             <TouchableOpacity
         style={{
-          position:'relative',
+          position:'absolute',
           bottom: 9, // space from bottombar
           height: 60,
           zIndex:1,
@@ -468,6 +479,7 @@ const ContactStackNavigator = () => {
           ),
           
         }}/>
+        
       </Tab.Navigator>
     );
   }

@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',width:wp('35%'),borderWidth:1,borderColor:'transparent',borderBottomColor:'grey',padding:5
   },
   datetext:{
-    fontFamily:'Poppins-Regular',fontSize:moderateScale(14),color:'rgb(189,189,189)',paddingTop:2,width:wp('23%')
+    fontFamily:'Poppins-Regular',fontSize:moderateScale(12),color:'rgb(189,189,189)',paddingTop:2,width:wp('24%')
   },
   calendar:{
     justifyContent:'center',alignItems:'center',marginLeft:wp('4%')
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     flexDirection:'row',justifyContent:'space-between',alignItems:'flex-start'
   },
   insidebox:{
-    justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',borderRadius:5,backgroundColor:'rgb(245,245,245)',marginTop:hp("2%"),padding:4
+    justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',borderRadius:5,backgroundColor:'rgb(245,245,245)',marginTop:hp("2%"),padding:4,
   },
   selectname:{
     fontFamily:'Poppins-Regular',fontSize:moderateScale(14),lineHeight:31,color:'rgb(80,80,80)',marginLeft:wp('1%')
@@ -169,6 +169,17 @@ const styles = StyleSheet.create({
     alignSelf:'center',
     marginBottom:hp('2%')
   },
+  listItem: {
+    marginTop: 10,
+    padding: 20,
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    width: '100%'
+  },
+  listItemText: {
+    fontSize: 18
+  }
+  
 
   
 });

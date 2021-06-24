@@ -103,7 +103,7 @@ source={require('../assets/image/galgadot.jpeg')}></Image>
             </View>
             <View style={styles.dateview}>
                 <Text style={styles.needtext}>Needed By:</Text>
-                <Text style={styles.datetext}>20-march-2021</Text>
+                <Text style={styles.datetext}>march-22-2021</Text>
                 <View style={styles.calicon}>
 <Icon name="calendar-outline" color="black" size={20}/>
 </View>

@@ -1,6 +1,7 @@
 import React, {useState, useRef, useCallback} from 'react';
 import {
   View,
+  TouchableOpacity,
   StyleSheet,
   Text,
   Image,
@@ -29,7 +30,7 @@ import RadioForm, {
   RadioButtonInput,
   RadioButtonLabel,
 } from 'react-native-simple-radio-button';
-import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
+import {ScrollView,} from 'react-native-gesture-handler';
 import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
@@ -49,7 +50,7 @@ var date = [
 ];
 var last = [{label: 'lastweek', value: 4}];
 
-const search = props => {
+const search = (props) => {
  
   const refRBSheet = useRef();
   const [search, setSearch] = useState('');
@@ -207,6 +208,7 @@ const toggleRangeEnabled = useCallback(() => setRangeDisabled(!rangeDisabled), [
                   placeholder="Search Category..."
                   placeholderTextColor={'white'}
                 />
+               
                 <View style={styles.searchicon}>
                   <TouchableOpacity onPress={() =>props.navigation.navigate('searchfilter')}>
                   <Icon name="search" size={25} color="#ffffff" />
@@ -393,20 +395,24 @@ color="gold"
 </View>
 
 </View>
-<View style={{justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',width:wp('84%'),marginLeft:wp('4%'),marginEnd:wp('4%'),marginTop:hp('5%')}}>
-<TouchableOpacity style={{borderWidth:2,width:wp('25%'),padding:9,justifyContent:'center',alignItems:'center',borderColor:'#1ad2ff',borderRadius:7,marginLeft:wp('1%')}}>
-  <Text style={{fontFamily:'Poppins-Bold',fontSize:moderateScale(16),lineHeight:25,color:'#1ab2ff'}}>Clear all</Text>
+<View style={{justifyContent:'space-between',alignItems:'flex-start',flexDirection:'row',width:wp('86%'),marginLeft:wp('2%'),marginEnd:wp('2%'),marginTop:hp('5%'),borderColor:'transparent',borderWidth:1,padding:2,marginBottom:hp('1%'),}}>
+  <TouchableOpacity>
+<View style={{width:wp('31%'),justifyContent:'center',alignItems:'center',borderRadius:7,marginEnd:wp('1%'),borderWidth:1,borderColor:'#1ab2ff'}}>
+  <Text style={{fontFamily:'Poppins-Bold',fontSize:moderateScale(16),lineHeight:25,color:'#1ab2ff',padding:7}}>Clear All</Text>
 
+</View>
 </TouchableOpacity>
-<TouchableOpacity style={{width:wp('52%'),padding:11,justifyContent:'center',alignItems:'center',backgroundColor:'#1ab2ff',borderRadius:7,marginLeft:wp('4%')}}>
-  <Text style={{fontFamily:'Poppins-Bold',fontSize:moderateScale(16),lineHeight:25,color:'#ffffff'}}>Apply</Text>
+<TouchableOpacity>
+<View style={{width:wp('46%'),justifyContent:'center',alignItems:'center',backgroundColor:'#1ab2ff',borderRadius:7,marginEnd:wp('1%'),borderWidth:1,borderColor:'#1ab2ff'}}>
+  <Text style={{fontFamily:'Poppins-Bold',fontSize:moderateScale(16),lineHeight:25,color:'#ffffff',padding:7}}>Apply</Text>
 
+</View>
 </TouchableOpacity>
 </View>
                   </RBSheet>
                 </View>
               </View>
-
+              
               {/* <FlatList
           data={filteredDataSource}
           keyExtractor={(item, index) => index.toString()}
@@ -449,13 +455,15 @@ color="gold"
                     {
                       mastercategories.filter(subitem=>subitem.parent == item.id).map((subCategory,subIndex)=>{
                         return (
-                          <View key={subIndex} style={subIndex%2==0?null:{marginLeft: wp('3%')}}>
+                          <View key={subIndex} style={subIndex%2==0?null:{marginLeft: wp('-15%')},subIndex%2==0?null:{marginTop:hp('6%'),marginLeft:wp('-15.5%')}}>
                             <Collapse style={{flexDirection: 'row'}}>
                               <CollapseHeader>
                                 <View style={styles.insidebox}>
+                                <TouchableOpacity onPress={()=>props.navigation.navigate('searchfilter',{categories})}>
                                   <Text style={styles.selectname}>
                                     {subCategory.name}
                                   </Text>
+                                  </TouchableOpacity>
                                   <View style={styles.selecticon}>
                                     <Image
                                       style={styles.icons}
@@ -669,7 +677,7 @@ color="gold"
                     color="rgb(0,153,218)"
                   />
                 </View>
-                <Text style={styles.titleidentity}>Math(Static)</Text>
+                <Text style={styles.titleidentity}>Maths</Text>
                 <View style={styles.removeicon}>
                   <TouchableOpacity onPress={() => agregarFavoritos1()}>
                     {estado1 ? (
@@ -783,7 +791,7 @@ color="gold"
                 <View style={styles.mainicon}>
                   <Icon name="flask-outline" size={28} color="rgb(0,153,218)" />
                 </View>
-                <Text style={styles.titleidentity}>Science(Static)</Text>
+                <Text style={styles.titleidentity}>Science</Text>
                 <View style={styles.removeicon}>
                   <TouchableOpacity onPress={() => agregarFavoritos2()}>
                     {estado2 ? (
@@ -1016,7 +1024,7 @@ color="gold"
                     color="rgb(0,153,218)"
                   />
                 </View>
-                <Text style={styles.titleidentity}>Lorem Ipsum(Static)</Text>
+                <Text style={styles.titleidentity}>Lorem Ipsum</Text>
                 <View style={styles.removeicon}>
                   <TouchableOpacity onPress={() => agregarFavoritos3()}>
                     {estado3 ? (
@@ -1250,3 +1258,4 @@ color="gold"
 // });
 
 export default search;
+

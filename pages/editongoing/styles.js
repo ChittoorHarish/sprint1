@@ -35,7 +35,7 @@ picsection:{
     justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',width:wp('35%'),borderWidth:1,borderColor:'transparent',borderBottomColor:'rgb(80,80,80)',padding:5
   },
   datetext:{
-    justifyContent:'flex-start',alignItems:'flex-start',width:wp('23%'),fontSize:moderateScale(14),color:'rgb(80,80,80)',padding:3
+    justifyContent:'flex-start',alignItems:'flex-start',width:wp('25%'),fontSize:moderateScale(12),color:'rgb(80,80,80)',padding:3
   },
   calendar:{
     justifyContent:'center',alignItems:'center',marginLeft:wp('4%')
