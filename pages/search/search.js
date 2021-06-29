@@ -459,7 +459,7 @@ color="gold"
                             <Collapse style={{flexDirection: 'row'}}>
                               <CollapseHeader>
                                 <View style={styles.insidebox}>
-                                <TouchableOpacity onPress={()=>props.navigation.navigate('searchfilter',{categories})}>
+                                <TouchableOpacity onPress={()=>props.navigation.navigate('searchfilter')}>
                                   <Text style={styles.selectname}>
                                     {subCategory.name}
                                   </Text>

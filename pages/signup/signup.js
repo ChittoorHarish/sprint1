@@ -96,7 +96,7 @@ const [data1, setData1] = React.useState({
     //   return;
     // }
 
-    console.log(firstname,lastname,username,email,phone_no,country_code,dob,password,confirm_password)
+    console.log(firstname,lastname,username,email,country_code,dob,password,confirm_password)
     fetch("https://obn1qqspll.execute-api.us-east-1.amazonaws.com/dev/user/signup",{
       method:"POST",
       headers:{
@@ -109,7 +109,6 @@ const [data1, setData1] = React.useState({
         "email":email,
         "country_code":country_code,
         "dob":dob,
-        "phone_no":phone_no,
         "password":password,
         "confirm_password":confirm_password
       })

@@ -24,13 +24,13 @@ import {Header} from 'react-native/Libraries/NewAppScreen';
 import {Item} from 'native-base';
 import { ActivityIndicator } from 'react-native';
 
-const wait = (timeout) => {
-  return new Promise(resolve => setTimeout(resolve, timeout));
-}
+// const wait = (timeout) => {
+//   return new Promise(resolve => setTimeout(resolve, timeout));
+// }
 
 const {width, height} = Dimensions.get('screen');
 
-const hamburger = props => {
+const hamburger = (props) => {
   const [refreshing, setRefreshing] = useState(false);
   const [isLoading, setLoading] = useState(true);
   const [customStyleIndex, setCustomStyleIndex] = useState(0);
@@ -41,10 +41,10 @@ const hamburger = props => {
   const handleCustomIndexSelect = index => {
     setCustomStyleIndex(index);
   };
-  const onRefresh = React.useCallback(() => {
-    setRefreshing(true);
-    wait(2000).then(() => setRefreshing(false));
-  }, []);
+  // const onRefresh = React.useCallback(() => {
+  //   setRefreshing(true);
+  //   wait(2000).then(() => setRefreshing(false));
+  // }, []);
   useEffect(async () => {
     let token = await AsyncStorage.getItem('auth_token');
     let userid = await AsyncStorage.getItem('auth_userid');
@@ -93,13 +93,7 @@ const hamburger = props => {
  
 
   return (
-    <ScrollView
-    refreshControl={
-      <RefreshControl
-        refreshing={refreshing}
-        onRefresh={onRefresh}
-      />
-    }>
+    <ScrollView>
       <View style={styles.center}>
         <View style={styles.ham}>
           <View style={styles.icon}>
@@ -229,20 +223,13 @@ const hamburger = props => {
                           {post.description}
                         </Text>
                       </View>
-                      <View
-                        style={[
-                          styles.imageview,
-                          {
-                          //  width: width - 200,
-                            // backgroundColor: 'red'
-                          },
-                        ]}>
+                      <View>
                         {/* <View style={styles.insideview}>
                           <Image
                             style={styles.insidepic}
                             source={require('../assets/image/car.jpg')}></Image>
                         </View> */}
-                        {post.media.map((image, imgIndex) => {
+                        {/* {post.media.map((image, imgIndex) => {
                           if (index === 0) {
                             console.log('Images: ' + imgIndex + ' // ' + image);
                           }
@@ -253,7 +240,7 @@ const hamburger = props => {
                                 source={{url: image}}></Image>
                             </View>
                           );
-                        })}
+                        })} */}
                       </View>
                     </View>
                   </View>

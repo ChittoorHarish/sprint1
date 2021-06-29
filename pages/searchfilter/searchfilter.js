@@ -46,7 +46,7 @@ const searchfilter = (props) => {
             <View style={styles.detailbox}>
               <View style={styles.detail1}>
                 <View style={styles.touch}>
-                  <TouchableOpacity onPress={() => props.navigation.navigate('homeongoing')}>
+                  <TouchableOpacity onPress={() => props.navigation.navigate('apply')}>
                   <Text style={styles.chaptertitle}>Lorem Ipsum</Text>
                   <Text style={styles.chaptername}>Algebra</Text>
                   </TouchableOpacity>

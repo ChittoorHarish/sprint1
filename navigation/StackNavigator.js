@@ -33,6 +33,7 @@ import CustomSidebarMenu from '../pages/CustomSidebarMenu/CustomSidebarMenu';
 import termsandconditions from "../pages/termsandconditions/termsandconditions";
 import editongoing from "../pages/editongoing/editongoing";
 import searchfilter from "../pages/searchfilter/searchfilter";
+import apply from "../pages/apply/apply";
 import { Label } from "native-base";
 import color from "color";
 
@@ -262,35 +263,39 @@ const MainStackNavigator = () => {
           name="joincall"
           component={joincall}
           options={{ 
-            title:"harish ",
+            title:" ",
             headerBackTitle:" ",
             headerStyle: {
               height:hp('12%'),
               backgroundColor: '#1ab2ff', //Set Header color
             },
             headerTintColor: '#ffffff', //Set Header text color
-            headerTitleStyle: {
-              fontFamily:'Poppins-Bold',
-              fontSize:moderateScale(16) //Set Header text style
-            },
-            headerTitle: () =>(
-              <View style={{justifyContent:'flex-start',alignItems:'center',flexDirection:'row',marginEnd:wp('1%'),width:wp('90%')}}>
-                <Text style={{fontSize:moderateScale(16),lineHeight:25,color:'white',fontFamily:'Poppins-SemiBold',}}>Ongoing Post</Text>
-                <View style={{justifyContent:'flex-start',alignItems:'flex-start',width:wp('33%'),marginLeft:wp('25%'),padding:3,}}>
-                
-                <TouchableOpacity style={{backgroundColor:'white',width:wp('30%'),marginLeft:wp('1%'),marginEnd:wp('1%'),borderRadius:5,padding:2}}>
-                  <View style={{justifyContent:'center',alignItems:'center',flexDirection:'row'}}>
-                  <View style={{justifyContent:'center',alignItems:'center',marginLeft:wp('1%'),borderRadius:10,backgroundColor:'rgb(41,177,0)',width:wp('9%'),height:hp('4%')}}>
-                  <Icon name="videocam-outline" color="white" size={22}/>
-                  </View>
-                  <Text style={{fontFamily:'Poppins-SemiBold',fontSize:moderateScale(12),color:'rgb(41,177,0)',marginLeft:wp('2%')}}>Join Call</Text>
-                  </View>
-                 
-
-                </TouchableOpacity>
-                </View>
-                </View>
+            headerLeft: () => (
+              <View style={{justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row'}}>
+                {/* <TouchableOpacity onPress={()=>{navigation.navigate('search')}}> */}
+              <Icon name="arrow-back-outline" color="white" size={22}/>
+              {/* </TouchableOpacity> */}
+              <Text style={{fontSize:moderateScale(16),lineHeight:25,color:'white',fontFamily:'Poppins-SemiBold'}}>Ongoing Post</Text>
+              </View>
+            ),
+           
+            headerRight: () =>(
+              <View style={{justifyContent:'flex-start',alignItems:'center',flexDirection:'row',marginEnd:wp('1%'),width:wp('35%'),borderWidth:1,borderColor:'transparent'}}>
+              <View style={{justifyContent:'flex-start',alignItems:'flex-start',width:wp('33%'),padding:3,}}>
               
+              <TouchableOpacity style={{backgroundColor:'white',width:wp('30%'),marginLeft:wp('1%'),marginEnd:wp('1%'),borderRadius:5,padding:2}}>
+                <View style={{justifyContent:'center',alignItems:'center',flexDirection:'row'}}>
+                <View style={{justifyContent:'center',alignItems:'center',marginLeft:wp('1%'),borderRadius:10,backgroundColor:'rgb(41,177,0)',width:wp('9%'),height:hp('4%')}}>
+                <Icon name="videocam-outline" color="white" size={22}/>
+                </View>
+                <Text style={{fontFamily:'Poppins-SemiBold',fontSize:moderateScale(12),color:'rgb(41,177,0)',marginLeft:wp('2%')}}>Join Call</Text>
+                </View>
+               
+
+              </TouchableOpacity>
+              </View>
+              </View>
+            
               
             ),
           }}
@@ -369,21 +374,26 @@ const MainStackNavigator = () => {
           name="searchfilter"
           component={searchfilter}
           options={{ 
-            title:"Search Filter",
+           title:" ",
             headerBackTitle:" ",
             headerStyle: {
               height:hp('12%'),
               backgroundColor: '#1ab2ff', //Set Header color
             },
             headerTintColor: '#ffffff', //Set Header text color
-            headerTitleStyle: {
-              fontFamily:'Poppins-Bold',
-              fontSize:moderateScale(17) //Set Header text style
-            },
-            headerTitle: () =>(
-              <View style={{justifyContent:'flex-start',alignItems:'center',flexDirection:'row',marginEnd:wp('1%'),width:wp('90%'),borderWidth:1,borderColor:'transparent'}}>
-                 <Text style={{fontSize:moderateScale(16),lineHeight:25,color:'white',fontFamily:'Poppins-SemiBold'}}>Search Results</Text>
-                 <View style={{borderWidth:1,borderColor:'transparent',justifyContent:'flex-start',alignItems:'center',flexDirection:'row',padding:2,marginLeft:wp('33.5%'),width:wp('22%')}}>
+            headerLeft: () => (
+              <View style={{justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row'}}>
+                {/* <TouchableOpacity onPress={()=>{navigation.navigate('search')}}> */}
+              <Icon name="arrow-back-outline" color="white" size={22}/>
+              {/* </TouchableOpacity> */}
+              <Text style={{fontSize:moderateScale(16),lineHeight:25,color:'white',fontFamily:'Poppins-SemiBold'}}>Search Results</Text>
+              </View>
+            ),
+           
+            headerRight: () =>(
+              <View style={{justifyContent:'flex-start',alignItems:'center',flexDirection:'row',marginEnd:wp('1%'),width:wp('25%'),borderWidth:1,borderColor:'transparent'}}>
+                 
+                 <View style={{borderWidth:1,borderColor:'transparent',justifyContent:'flex-start',alignItems:'center',flexDirection:'row',padding:2,width:wp('22%')}}>
                 <View style={{justifyContent:'center',alignItems:'center',marginLeft:wp('3%'),transform:[{ rotate:'270deg'}]}}>
        <Icon name="options" size={30} color={'white'}/>
        </View>
@@ -396,6 +406,42 @@ const MainStackNavigator = () => {
        </View>
        </View>
        </View>
+       </View>
+            
+              
+            ),
+          }}
+        />
+         <Stack.Screen
+          name="apply"
+          component={apply}
+          options={{ 
+            title:"APPLY",
+            headerBackTitle:" ",
+            headerStyle: {
+              height:hp('12%'),
+              backgroundColor: '#1ab2ff', //Set Header color
+            },
+            
+            headerTintColor: '#ffffff', //Set Header text color
+            headerTitleStyle: {
+              fontFamily:'Poppins-Bold',
+              fontSize:moderateScale(17) //Set Header text style
+            },
+            headerTitle: () =>(
+              <View style={{justifyContent:'flex-start',alignItems:'center',flexDirection:'row',marginEnd:wp('1%'),width:wp('85%'),marginLeft:wp('2%')}}>
+                <Text style={{fontSize:moderateScale(16),lineHeight:25,color:'white',fontFamily:'Poppins-SemiBold'}}>APPLY</Text>
+              </View>
+              
+            ),
+            headerRight: () =>(
+              <View style={{justifyContent:'center',alignItems:'center',width:wp('25%'),borderWidth:1,borderColor:'transparent'}}>
+                 <View style={{justifyContent:'center',alignItems:'center'}}>
+    <Image style={{borderWidth:0.1,height:hp("4.8%"),width:wp('10%'),borderRadius:20,}}
+source={require('../pages/assets/image/gal.png')}></Image>
+</View>
+                 
+                
        </View>
             
               
