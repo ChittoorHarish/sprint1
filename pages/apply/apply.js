@@ -23,7 +23,7 @@ import {
   moderateScale,
 } from '../../services/responsiveFunc';
 
-const apply = props => {
+const apply = (props) => {
   const [customStyleIndex, setCustomStyleIndex] = useState(0);
   const [toggle, setToggle] = useState(false);
   const refRBSheet = useRef();
@@ -240,7 +240,8 @@ const apply = props => {
                 multiline={true}></TextInput>
             </View>
             <View style={styles.submitbutton}>
-              <TouchableOpacity style={styles.submittouch}>
+              <TouchableOpacity style={styles.submittouch}
+              onPress={()=>{refRBSheet.current.close(),props.navigation.navigate('addpost')}}>
                 <Text style={styles.marktext}>Submit</Text>
               </TouchableOpacity>
             </View>
