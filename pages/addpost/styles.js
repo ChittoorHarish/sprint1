@@ -32,7 +32,6 @@ info:{
     marginTop:hp('1%'),
     borderColor: 'transparent',
     borderBottomColor:'rgb(189,189,189)',
-    height: hp('3%'),
     marginEnd:wp('1%'),
     marginLeft:wp('1%'),
     margin:4
@@ -48,7 +47,6 @@ SectionStyle1: {
   marginHorizontal:wp('4%'),
   marginTop:hp('1%'),
   borderColor: 'transparent',
-  height: hp('3%'),
   margin:4
 },
 country:{
@@ -65,12 +63,14 @@ basic:{
 textin:{
     flex:1,
     fontSize:moderateScale(14),
+    paddingBottom:2,
     fontFamily:'Poppins-Regular',
     color:'rgb(189,189,189)'
 },
 textin2:{
     flex:1,
     fontSize:moderateScale(14),
+    paddingBottom:2,
     fontFamily:'Poppins-Regular',
     color:'rgb(80,80,80)'
 },

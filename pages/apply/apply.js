@@ -166,7 +166,7 @@ const apply = (props) => {
               container: {
                 borderRadius: 30,
                 width: wp('92%'),
-                height: hp('58%'),
+                height: hp('63%'),
                 marginLeft: wp('4%'),
                 marginEnd: wp('4%'),
               },
@@ -239,21 +239,14 @@ const apply = (props) => {
                 placeholder="Type here..."
                 multiline={true}></TextInput>
             </View>
+            
             <View style={styles.submitbutton}>
               <TouchableOpacity style={styles.submittouch}
               onPress={()=>{refRBSheet.current.close(),props.navigation.navigate('addpost')}}>
                 <Text style={styles.marktext}>Submit</Text>
               </TouchableOpacity>
             </View>
-            <View
-              style={{
-                borderBottomColor: 'transparent',
-                borderBottomWidth: 1,
-                width: wp('82%'),
-                marginLeft: wp('4%'),
-                marginTop: hp('1%'),
-              }}
-            />
+           
           </RBSheet>
         </View>
       </View>

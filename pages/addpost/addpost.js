@@ -39,6 +39,7 @@ export default class addpost extends React.Component {
               placeholderTextColor="rgb(189,189,189)"
           />
         </View>
+       
         <Text style={styles.headings2}>Select Category</Text>
         <DropDownPicker
     items={[
@@ -56,6 +57,7 @@ export default class addpost extends React.Component {
         country: item.value
     })}
 />
+
           {/* <View style={styles.SectionStyle}>
  
           <TextInput
@@ -64,10 +66,10 @@ export default class addpost extends React.Component {
               placeholderTextColor="rgb(80,80,80)"
           />
         </View> */}
-        
+        <View>
         <Text style={styles.headings2}>Select Subcategory</Text>
         
-        <View>
+  
         <DropDownPicker
     items={[
         {label: 'MATHS', value: 'maths'},
@@ -78,6 +80,7 @@ export default class addpost extends React.Component {
     style={{backgroundColor: '#fff',borderColor:'transparent',borderWidth:2,borderBottomColor:'rgb(189,189,189)',}}
     itemStyle={{
         justifyContent: 'flex-start',
+        
     }}
     dropDownStyle={{backgroundColor: '#fff'}}
     onChangeItem={item => this.setState({
@@ -85,6 +88,7 @@ export default class addpost extends React.Component {
     })}
 />
 </View>
+
 
           {/* <View style={styles.SectionStyle}>
  
@@ -109,7 +113,9 @@ export default class addpost extends React.Component {
       </View>
         </View>
         
+        
         <Text style={styles.headings2}>Description</Text>
+        
        
               <TextInput
                 style={styles.message}
