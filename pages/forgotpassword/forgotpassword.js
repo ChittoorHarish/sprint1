@@ -64,11 +64,11 @@ const forgotpassword = (props) => {
     <SafeAreaView style={styles.safe}>
       <View style={{justifyContent:'center',}}>
       <View style={styles.forgotpassword}>
-        <Text style={{fontSize:moderateScale(22),color:'rgb(80,80,80)',marginLeft:wp('5%'),fontFamily:'Poppins-Bold'}}>Forgot Password</Text>
+        <Text style={styles.forgotpass}>Forgot Password</Text>
 
       </View>
       <View style={styles.forgotpasstext}>
-          <Text style={{marginLeft:wp('5%'),marginEnd:wp('7%'),color:'grey',fontSize:moderateScale(14),fontFamily:'Poppins-Regular'}}>
+          <Text style={styles.instruction}>
               Please enter the email address you used to create your account and we'll send you a link to reset your password.
           </Text>
       </View>
@@ -94,9 +94,9 @@ const forgotpassword = (props) => {
         :null}
         
         <View style={styles.buttonsend}>
-            <TouchableOpacity style={{justifyContent:'center',alignItems:'center',backgroundColor:'#1e90ff',borderRadius:7,padding:11,width:wp('83%'),alignSelf:'center'}}
+            <TouchableOpacity style={styles.touchpass}
              onPress={() => sendcred()}>
-              <Text style={{fontSize:moderateScale(18),color:'white',fontFamily:'Poppins-Bold'}}>Submit</Text>
+              <Text style={styles.submitbtn}>Submit</Text>
 
             </TouchableOpacity>
           </View>

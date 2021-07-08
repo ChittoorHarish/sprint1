@@ -134,7 +134,7 @@ tutorstar:{
     fontSize:moderateScale(14),lineHeight:21,fontFamily:'Poppins-SemiBold',color:'rgb(80,80,80)',marginTop:hp('1%')
   },
   ratingbox1:{
-    justifyContent:'flex-start',alignItems:'flex-start',marginLeft:wp('2%'),marginEnd:wp('2%'),marginTop:hp('1%'),
+    justifyContent:'flex-start',alignItems:'flex-start',marginLeft:wp('2%'),marginEnd:wp('2%'),marginTop:hp('2%'),
   },
   tutortext:{
     fontFamily:'Poppins-Regular',fontSize:moderateScale(14),color:'rgb(80,80,80)',lineHeight:21,

@@ -23,7 +23,7 @@ import {
   moderateScale,
 } from '../../services/responsiveFunc';
 
-const apply = (props) => {
+const apply = props => {
   const [customStyleIndex, setCustomStyleIndex] = useState(0);
   const [toggle, setToggle] = useState(false);
   const refRBSheet = useRef();
@@ -31,6 +31,12 @@ const apply = (props) => {
   const [edit, editPost] = useState();
   const [data, setData] = useState({});
   const [authtoken, setAuthtoken] = useState([]);
+  const [post_id, setPost_id] = useState('');
+  const [description, setDescription] = useState('');
+  const [agreed_fp, setAgreed_fp] = useState('');
+  const [name, setName] = useState('');
+  const applyCurrentSubCategory = props.route.params.currentSubCategory;
+  const currentRun = props.route.params.run;
 
   const myIcon = (
     <Icon name="ellipsis-vertical-outline" color="grey" size={25} />
@@ -38,25 +44,72 @@ const apply = (props) => {
   const handleCustomIndexSelect = index => {
     setCustomStyleIndex(index);
   };
-  //     useEffect(async () => {
-  //       let token = await AsyncStorage.getItem('auth_token');
-  //       let userid = await AsyncStorage.getItem('auth_userid');
-  //       let postid = await AsyncStorage.getItem('auth_postid');
-  //    //  setAuthtoken(a.id)
-  //      fetch("https://obn1qqspll.execute-api.us-east-1.amazonaws.com/dev/user/post/applicant?post_id=" + postid,
-  //      {
-  //        method: 'GET',
-  //       headers: {
-  //         "Authorization": 'Bearer ' + token
-  //       }
+      useEffect(async () => {
+        console.log('currentRun', currentRun)
+        console.log('applyCurrentSubCategory', applyCurrentSubCategory);
+        let token = await AsyncStorage.getItem('auth_token');
+        sendcred = () =>{
+        console.log(JSON.stringify({
+          post_id: currentRun.id.toString(),
+          description: description.toString(),
+          agreed_fp: agreed_fp.toString(),
+          token
+        }));
+        // let token = AsyncStorage.getItem('auth_token');
+        let userid = AsyncStorage.getItem('auth_userid');
+        let postid = AsyncStorage.getItem('auth_postid');
+     //  setAuthtoken(a.id)
+       fetch("https://obn1qqspll.execute-api.us-east-1.amazonaws.com/dev/user/post/request",
+       {
+         method: 'POST',
+        headers: {
+          "Content-Type":'application/json',
+          "Authorization": 'Bearer ' + token
+        },
+        body:JSON.stringify({
+          post_id:currentRun.id.toString(),
+          description: description.toString(),
+          agreed_fp: agreed_fp.toString(),
+        }),
+       })
+       .then(res=>res.json())
+       .then(responseJson=>{
+         console.log(responseJson);
+         if (responseJson.code == 200) {
+          alert(
+            'Post Success',
 
-  //      })
-  //      .then(res=>res.json())
-  //      .then(results=>{
-  //        console.log("resp:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" + JSON.stringify(results))
-  //        setData(results.data)
-  //      })
-  //    },[])
+            [
+              {
+                text: 'Cancel',
+                onPress: () => console.log('Cancel Pressed'),
+                style: 'cancel',
+              },
+              {text: 'OK', onPress: () => console.log('OK Pressed')},
+            ],
+          );
+
+          props.navigation.navigate('addpost',{currentRun,applyCurrentSubCategory});
+        } else {
+
+          alert(
+            "Please Enter the Offered Points",
+
+            [
+              {
+                text: "Cancel",
+                onPress: () => console.log("Cancel Pressed"),
+                style: "cancel"
+              },
+              { text: "OK", onPress: () => console.log("OK Pressed") }
+            ],
+
+          );
+        }
+         setData(responseJson.data)
+       })
+      }
+     },[])
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
       <ScrollView>
@@ -68,8 +121,10 @@ const apply = (props) => {
                 source={require('../assets/image/galgadot.jpeg')}></Image>
             </View>
             <View style={styles.titlebox}>
+              <TouchableOpacity onPress={()=>props.navigation.navigate('postprofile')}>
               <Text style={styles.nametitle}>Inaya_04</Text>
               <Text style={styles.occupation}>College Student</Text>
+              </TouchableOpacity>
             </View>
             <View style={styles.ellipsis}>
               <OptionsMenu
@@ -89,15 +144,15 @@ const apply = (props) => {
                   flexDirection: 'column',
                   width: wp('30%'),
                 }}>
-                <Text style={styles.chaptertitle}>Lorem Ipsum</Text>
+                <Text style={styles.chaptertitle}>{applyCurrentSubCategory.name}</Text>
                 <View style={styles.dateview1}>
                   <Text style={styles.needtext1}>Needed By:</Text>
-                  <Text style={styles.datetext1}>march-22-2021</Text>
+                  <Text style={styles.datetext1}>June-09-2021</Text>
                 </View>
               </View>
               <View style={styles.procontainer1}>
                 <View style={styles.basic}>
-                  <Text style={styles.pointsbot}>300</Text>
+                  <Text style={styles.pointsbot}>{currentRun.fp}</Text>
                 </View>
                 <View style={styles.flameicon}>
                   <Icon name="flame-outline" color="orange" size={18} />
@@ -105,11 +160,7 @@ const apply = (props) => {
               </View>
             </View>
             <View style={styles.captionview}>
-              <Text style={styles.description}>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of lorm."
+              <Text style={styles.description}>{currentRun.description}
               </Text>
             </View>
             <View style={styles.imageview}>
@@ -132,7 +183,7 @@ const apply = (props) => {
           </View>
           <View style={styles.dateview}>
             <Text style={styles.needtext}>Needed By:</Text>
-            <Text style={styles.datetext}>march-22-2021</Text>
+            <Text style={styles.datetext}>June-09-2021</Text>
             <View style={styles.calicon}>
               <Icon name="calendar-outline" color="black" size={20} />
             </View>
@@ -200,7 +251,9 @@ const apply = (props) => {
                   </View>
                 </View>
                 <View style={styles.SectionStyle1}>
-                  <TextInput style={styles.textin} placeholder="400" />
+                  <TextInput style={styles.textin} placeholder="400" 
+                  value={agreed_fp}
+                  onChangeText={text => setAgreed_fp(text)}/>
                   <View style={styles.basic}>
                     <Icon name="flame-outline" color="orange" size={18} />
                   </View>
@@ -237,12 +290,14 @@ const apply = (props) => {
               <TextInput
                 style={styles.message}
                 placeholder="Type here..."
-                multiline={true}></TextInput>
+                multiline={true}
+                value={description}
+                onChangeText={text => setDescription(text)}></TextInput>
             </View>
             
             <View style={styles.submitbutton}>
               <TouchableOpacity style={styles.submittouch}
-              onPress={()=>{refRBSheet.current.close(),props.navigation.navigate('addpost')}}>
+              onPress={()=>{refRBSheet.current.close(),props.navigation.navigate('addpost',{currentRun,applyCurrentSubCategory})}}>
                 <Text style={styles.marktext}>Submit</Text>
               </TouchableOpacity>
             </View>

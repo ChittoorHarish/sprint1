@@ -63,6 +63,12 @@ SectionStyle1: {
    fontFamily:'Poppins-Regular',
    color:'red'
  },
+ field:{
+  flex:1,fontSize:moderateScale(17),marginLeft:wp('3%')
+ },
+ submitbtn:{
+  fontSize:moderateScale(18),color:'white',fontFamily:'Poppins-Bold'
+ }
 
 });
 export default styles;

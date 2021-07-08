@@ -11,9 +11,6 @@ const styles = StyleSheet.create({
       insidepic:{
         justifyContent:'center',borderWidth:0.1,alignItems:'center',width:wp('30%'),height:hp('20%'),borderRadius:5
       },
-      basic:{
-        justifyContent:'center',alignItems:'center'
-      },
       flameicon:{
         justifyContent:'center',alignItems:'center',marginLeft:wp('0.5%')
       },
@@ -136,6 +133,21 @@ const styles = StyleSheet.create({
       },
       flameicon:{
         justifyContent:'flex-start',alignItems:'flex-start',marginLeft:wp('0.5%')
+      },
+      modal:{
+        justifyContent:'flex-start',alignItems:'flex-end',marginRight:wp('7%'),marginTop:hp('16%')
+      },
+      modalview:{
+        justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'column',width:wp('35%'),height:hp('12%'),backgroundColor:'white',borderRadius:10
+      },
+      modalview1:{
+        justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',marginLeft:wp('3%'),marginTop:('10%'),marginEnd:wp('2%')
+      },
+      modaltext:{
+        color:'grey',fontFamily:'Poppins-SemiBold',marginLeft:wp('2%')
+      },
+      infoview:{
+        justifyContent:'center',alignItems:'flex-start',flexDirection:'column',width:wp('30%')
       }
 
 });

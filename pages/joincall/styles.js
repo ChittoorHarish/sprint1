@@ -231,6 +231,9 @@ const styles = StyleSheet.create({
       scheduletext:{
         fontSize:moderateScale(12),color:'rgb(41,177,0)',fontFamily:'Poppins-Medium',lineHeight:18,padding:2
       },
+      infoview:{
+        justifyContent:'center',alignItems:'flex-start',flexDirection:'column',width:wp('30%')
+      }
 
 });
 export default styles;

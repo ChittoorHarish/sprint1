@@ -29,10 +29,10 @@ const styles = StyleSheet.create({
     marginLeft:wp('15%')
   },
   profilepic:{
-    borderWidth:0.1,height:hp("16%"),width:wp('32.5%'),borderRadius:80,
+    borderWidth:0.1,height:hp("13%"),width:wp('28.5%'),borderRadius:80,
   },
   name:{
-    fontSize:moderateScale(22),fontFamily:'Poppins-Bold',color:'#ffffff',marginTop:hp('1%'),lineHeight:33,
+    fontSize:moderateScale(22),fontFamily:'Poppins-Bold',color:'#ffffff',lineHeight:33,
   },
   occupation:{
     fontSize:moderateScale(14),fontFamily:'Poppins-Regular',color:'#ffffff',lineHeight:21

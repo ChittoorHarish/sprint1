@@ -21,7 +21,7 @@ headings3:{
   fontSize:moderateScale(14),fontFamily:'Poppins-SemiBold',color:'rgb(80,80,80)',lineHeight:21,marginLeft:wp('1%'),marginTop:hp('3%')
 },
 info:{
-  marginTop:hp('3%'),marginLeft:wp('60%')
+  marginTop:hp('3%'),marginLeft:wp('61%')
 },
   SectionStyle: {
     flexDirection: 'row',
@@ -53,6 +53,13 @@ country:{
   flexDirection:'row',
   marginLeft:wp('1%'),
   alignItems:'center',
+  justifyContent:'center',
+  marginEnd:wp('1%')
+},
+time:{
+  flexDirection:'row',
+  alignItems:'center',
+  marginLeft:wp('-2'),
   justifyContent:'center',
   marginEnd:wp('1%')
 },
@@ -116,6 +123,35 @@ marktext: {
   fontSize: moderateScale(16),
   color: '#ffffff',
   fontFamily: 'Poppins-Bold',
+},
+dropdown:{
+  backgroundColor: '#fff',borderColor:'transparent',marginLeft:wp('-3%'),padding:5
+},
+container: {
+  flex: 1,
+  padding: 10
+},
+imgContainer: {
+  alignItems: 'center',
+  marginTop: 10
+},
+img: {
+  width: 150,
+  height: 150,
+  borderColor: 'black',
+  borderWidth: 1
+},
+container1: {
+  marginLeft:wp('3%'),
+  marginTop:hp('1%'),
+  marginBottom:hp('0.5%'),
+  borderRadius:10,
+  backgroundColor: '#FFFFFF',
+  shadowColor: '#000',
+  shadowOffset: {width: 0, height: 2},
+  shadowOpacity: 0.3,
+  shadowRadius: 3,
+  elevation: 4,
 },
 
 });

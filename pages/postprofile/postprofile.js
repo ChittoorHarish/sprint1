@@ -7,7 +7,7 @@ import { ScrollView } from "react-native-gesture-handler";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale } from '../../services/responsiveFunc';
 
-const applicantprofile = (props) => {
+const postprofile = (props) => {
   const [authtoken, setAuthtoken] = useState([]);
   const [note, setNote] = useState([]);
 
@@ -15,7 +15,7 @@ const applicantprofile = (props) => {
     let token = await AsyncStorage.getItem('auth_token');
     let userid = await AsyncStorage.getItem('auth_userid');
     //  setAuthtoken(a.id)
-    fetch("https://obn1qqspll.execute-api.us-east-1.amazonaws.com/dev/user/rating/get?user_id=" + userid,
+    fetch("https://obn1qqspll.execute-api.us-east-1.amazonaws.com/dev/user/rating/get?user_id=20&type=1",
       {
         method: 'GET',
         headers: {
@@ -41,7 +41,7 @@ const applicantprofile = (props) => {
       <View style={styles.header}>
       <View style={styles.center}>
       <Image style={styles.profilepic}
-        source={require('../assets/image/car.jpg')}>
+        source={require('../assets/image/galgadot.jpeg')}>
 
         </Image>
       </View>
@@ -49,11 +49,11 @@ const applicantprofile = (props) => {
         
         </View>
         <View style={styles.nameview}>
-            <Text style={styles.mainname}>James Martin</Text>
+            <Text style={styles.mainname}>Inaya_04</Text>
 
         </View>
         <View style={styles.nameview}>
-            <Text style={styles.teacher}>Teacher's Assistant at Stanford</Text>
+            <Text style={styles.teacher}>College Student</Text>
 
         </View>
         <View style={styles.toppoints}>
@@ -112,7 +112,7 @@ style={{
     <Text style={styles.ratingtext}>Ratings and Reviews</Text>
 </View>     
       </View>
-      <View style={styles.ratingbox1}>
+      {/* <View style={styles.ratingbox1}>
           <View style={styles.tutorstar}>
               <Text style={styles.tutortext}>Tutor Ranking</Text>
               <View style={styles.ratingicon1}>
@@ -132,7 +132,7 @@ style={{
           </View>
           <Text style={styles.starrate}>4/5</Text>
           </View>
-      </View>
+      </View> */}
 
       {note.map((item,index)=>{
             return(
@@ -140,7 +140,7 @@ style={{
               <View style={styles.headertitle}>
             <View style={styles.basic}>
             <Image style={styles.onpostpic}
-        source={require('../assets/image/galgadot.jpeg')}></Image>
+        source={require('../assets/image/gal.png')}></Image>
         </View>
         <View style={styles.titlebox}>
           <Text style={styles.nametitle}>{item.name}</Text>
@@ -150,7 +150,7 @@ style={{
         <Text style={styles.starrate}>{item.rating}/5</Text>
         </View>
         <View style={styles.ratingicon}>
-                  <Icon name="star"  size={22} color={'rgb(80,80,80)'}/>
+                  <Icon name="star"  size={22} color={'yellow'}/>
                   </View>
             </View>
             <View style={styles.tutordesc}>
@@ -202,7 +202,7 @@ style={{
 }}
 />
       </View> */}
-      <View style={styles.tutordetail1}>
+      {/* <View style={styles.tutordetail1}>
       <View style={styles.headertitle}>
     <View style={styles.basic}>
     <Image style={styles.onpostpic}
@@ -233,14 +233,14 @@ style={{
   marginBottom:hp('1%')
 }}
 />
-      </View>
+      </View> */}
       
      
      
       
       
     </ScrollView>
-    <View style={styles.bottombutton}>
+    {/* <View style={styles.bottombutton}>
     <View style={styles.button}>
             <TouchableOpacity style={styles.touchdecline}>
               <Text style={styles.declinetext}>Decline</Text>
@@ -253,7 +253,7 @@ style={{
 
             </TouchableOpacity>
           </View>
-          </View>
+          </View> */}
     </SafeAreaView>
   );
 };
@@ -262,4 +262,4 @@ style={{
   
 // });
 
-export default applicantprofile;
+export default postprofile;

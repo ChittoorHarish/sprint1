@@ -13,6 +13,15 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     alignItems:'center'
 },
+forgotpass:{
+  fontSize:moderateScale(22),color:'rgb(80,80,80)',marginLeft:wp('5%'),fontFamily:'Poppins-Bold'
+},
+instruction:{
+  marginLeft:wp('5%'),marginEnd:wp('7%'),color:'grey',fontSize:moderateScale(14),fontFamily:'Poppins-Regular'
+},
+touchpass:{
+  justifyContent:'center',alignItems:'center',backgroundColor:'#1e90ff',borderRadius:7,padding:11,width:wp('83%'),alignSelf:'center'
+},
   forgotpassword:{
     justifyContent:'center',
     alignItems:'flex-start',
@@ -58,6 +67,9 @@ errortext:{
  fontFamily:'Poppins-Regular',
  color:'red'
 },
+submitbtn:{
+  fontSize:moderateScale(18),color:'white',fontFamily:'Poppins-Bold'
+}
 
 });
 export default styles;

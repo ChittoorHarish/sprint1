@@ -1,18 +1,4 @@
 // import {AsyncStorage} from 'react-native';
-
-// import Configuration from '../utils/Configuration';
-// import Global from '../utils/Global';
-
-// //NetworkConnection-
-// import NetworkUtils from '../utils/NetworkUtils';
-
-// //Utils-
-// import {
-//   getHeaderWithoutToken,
-//   getHeaderWithToken,
-//   getHeaderWithTokenFormData,
-// } from '../utils/Utils';
-
 //BaseUrl-
 const BASE_URL = Configuration.BASE_URL;
 

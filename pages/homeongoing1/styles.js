@@ -226,6 +226,9 @@ const styles = StyleSheet.create({
       },
       marktextinact:{
         fontSize:moderateScale(18),color:'grey',fontFamily:'Poppins-Bold'
+      },
+      infoview:{
+        justifyContent:'center',alignItems:'flex-start',flexDirection:'column',width:wp('30%')
       }
 
 });

@@ -147,10 +147,10 @@ const styles = StyleSheet.create({
     alignItems:'flex-start',justifyContent:'flex-start',backgroundColor:'#ffffff'
   },
   colmain:{
-    flexDirection:'row',justifyContent:'space-between',alignItems:'flex-start'
+    flexDirection:'row',justifyContent:'space-between',alignItems:'flex-start',flexWrap:'wrap'
   },
   insidebox:{
-    justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',borderRadius:5,backgroundColor:'rgb(245,245,245)',marginTop:hp("2%"),padding:4,
+    justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',borderRadius:5,backgroundColor:'rgb(245,245,245)',marginTop:hp("2%"),padding:4,width:wp('30%')
   },
   selectname:{
     fontFamily:'Poppins-Regular',fontSize:moderateScale(14),lineHeight:31,color:'rgb(80,80,80)',marginLeft:wp('1%')
@@ -160,6 +160,18 @@ const styles = StyleSheet.create({
   },
   slider:{
     width:wp('83%'),marginLeft:wp('4%'),marginEnd:wp('4%')
+  },
+  bottompointtext:{
+    fontSize:moderateScale(10),fontFamily:'Poppins-regular',color:'rgb(80,80,80)'
+  },
+  rawpoints:{
+    justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',width:wp('84%'),marginLeft:wp('4%'),marginEnd:wp('4%')
+  },
+  pointsview:{
+    justifyContent:'center',alignItems:'center',flexDirection:'row',marginLeft:wp('2%')
+  },
+  rawpointview1:{
+    justifyContent:'center',alignItems:'center',flexDirection:'row',marginLeft:wp('63%')
   },
   button:{
     justifyContent:'space-evenly',
@@ -178,6 +190,21 @@ const styles = StyleSheet.create({
   },
   listItemText: {
     fontSize: 18
+  },
+  bottomrawbtns:{
+    justifyContent:'space-between',alignItems:'flex-start',flexDirection:'row',width:wp('86%'),marginLeft:wp('2%'),marginEnd:wp('2%'),marginTop:hp('5%'),borderColor:'transparent',borderWidth:1,padding:2,marginBottom:hp('1%'),
+  },
+  clear:{
+    width:wp('31%'),justifyContent:'center',alignItems:'center',borderRadius:7,marginEnd:wp('1%'),borderWidth:1,borderColor:'#1ab2ff'
+  },
+  apply:{
+    width:wp('46%'),justifyContent:'center',alignItems:'center',backgroundColor:'#1ab2ff',borderRadius:7,marginEnd:wp('1%'),borderWidth:1,borderColor:'#1ab2ff'
+  },
+  rawbtntext:{
+    fontFamily:'Poppins-Bold',fontSize:moderateScale(16),lineHeight:25,color:'#ffffff',padding:7
+  },
+  cleartext:{
+    fontFamily:'Poppins-Bold',fontSize:moderateScale(16),lineHeight:25,color:'#1ab2ff',padding:7
   }
   
 

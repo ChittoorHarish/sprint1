@@ -29,7 +29,7 @@ picsection:{
     justifyContent:'flex-start',alignItems:'flex-start',marginLeft:wp('1%'),marginEnd:wp('2%'),flexDirection:'row'
   },
   datebox:{
-    justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',marginTop:hp('2%'),width:wp('84%'),marginEnd:wp('4%')
+    justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',marginTop:hp('1%'),width:wp('84%'),marginEnd:wp('4%')
   },
   date:{
     justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',width:wp('35%'),borderWidth:1,borderColor:'transparent',borderBottomColor:'rgb(80,80,80)',padding:5

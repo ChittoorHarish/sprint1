@@ -86,7 +86,7 @@ const hamburger = (props) => {
         console.log(
           'resp:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>' + JSON.stringify(results),
         );
-        setPosts(results.data)
+        setPosts(results.data || [])
       });
      
   }, []);
@@ -97,6 +97,13 @@ const hamburger = (props) => {
       <View style={styles.center}>
         <View style={styles.ham}>
           <View style={styles.icon}>
+            {/* <View style={{flexDirection:'column'}}>
+              <TouchableOpacity onPress={() => props.navigation.openDrawer()}>
+            <Text style={{fontSize:moderateScale(23),fontWeight:'bold',color:'#fff',}}>__</Text>
+            <Text style={{fontSize:moderateScale(26),fontWeight:'bold',color:'#fff',marginTop:hp('-3%')}}>_</Text>
+            <Text style={{fontSize:moderateScale(18),fontWeight:'bold',color:'#fff',marginTop:hp('-2%')}}>__</Text>
+            </TouchableOpacity>
+            </View> */}
             <Icon
               name="menu"
               size={40}
@@ -202,17 +209,17 @@ const hamburger = (props) => {
                             <Text style={styles.chaptertitle}>
                               {post.title}
                             </Text>
-                            <Text style={styles.chaptername}>Algebra</Text>
+                            <Text style={styles.chaptername}>Computer Science</Text>
                           </TouchableOpacity>
                         </View>
                         <View style={styles.procontainer1}>
                           <View style={styles.basic}>
-                            <Text style={styles.pointsbot}>300</Text>
+                            <Text style={styles.pointsbot}>{post.fp}</Text>
                           </View>
                           <View style={styles.flameicon}>
                             <Icon
                               name="flame-outline"
-                              color="yellow"
+                              color="orange"
                               size={18}
                             />
                           </View>

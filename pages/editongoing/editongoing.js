@@ -76,7 +76,7 @@ const editongoing = props => {
                 lineHeight: 25,
                 marginTop: hp('1.5%'),
               }}>
-              Add more Details
+              Add More Details
             </Text>
             <View
               style={{
@@ -116,7 +116,7 @@ const editongoing = props => {
                 lineHeight: 25,
                 marginTop: hp('1.5%'),
               }}>
-              Add more Media
+              Add More Media
             </Text>
 
             <View style={styles.picsection}>

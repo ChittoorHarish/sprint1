@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     textAlign:'center',fontFamily:'Poppins-Medium',fontSize:moderateScale(15),color:'#fff',marginLeft:wp('1%'),lineHeight:21
   },
   pointsbot:{
-    textAlign:'center',fontFamily:'Poppins-Regular',fontSize:moderateScale(15),color:'#fff',marginLeft:wp('1%')
+    textAlign:'center',fontFamily:'Poppins-Regular',fontSize:moderateScale(15),color:'rgb(80,80,80)',marginLeft:wp('1%')
   },
 
   container: {
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     borderWidth:0.1,height:hp("5.3%"),width:wp('11%'),borderRadius:20,
   },
   procontainer1:{
-    justifyContent:'center',alignItems:'center',width:wp('19%'),backgroundColor:'#999999',flexDirection:'row',borderRadius:20,padding:5,marginLeft:wp('32%')
+    justifyContent:'center',alignItems:'center',width:wp('19%'),backgroundColor:'rgb(246,246,246)',flexDirection:'row',borderRadius:20,padding:5,marginLeft:wp('32%')
   },
   insidepic:{
     justifyContent:'center',borderWidth:0.1,alignItems:'center',width:wp('15%'),height:hp('8%'),borderRadius:5

@@ -30,7 +30,7 @@ import RadioForm, {
   RadioButtonInput,
   RadioButtonLabel,
 } from 'react-native-simple-radio-button';
-import {ScrollView,} from 'react-native-gesture-handler';
+import {ScrollView} from 'react-native-gesture-handler';
 import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
@@ -50,8 +50,7 @@ var date = [
 ];
 var last = [{label: 'lastweek', value: 4}];
 
-const search = (props) => {
- 
+const search = props => {
   const refRBSheet = useRef();
   const [search, setSearch] = useState('');
   const [filteredDataSource, setFilteredDataSource] = useState([]);
@@ -62,6 +61,7 @@ const search = (props) => {
   const [estado3, setEstado3] = useState(false);
   const [categories, setCategories] = useState([]);
   const [mastercategories, setMastercategories] = useState([]);
+  const [filteredCategories, setFilteredCategories] = useState([]);
   const [rangeDisabled, setRangeDisabled] = useState(false);
   const [low, setLow] = useState(0);
   const [high, setHigh] = useState(100);
@@ -69,22 +69,28 @@ const search = (props) => {
   const [max, setMax] = useState(100);
   const [floatingLabel, setFloatingLabel] = useState(false);
 
-  const renderThumb = useCallback(() => <Thumb/>, []);
-const renderRail = useCallback(() => <Rail/>, []);
-const renderRailSelected = useCallback(() => <RailSelected/>, []);
-const renderLabel = useCallback(value => <Label text={value}/>, []);
-const renderNotch = useCallback(() => <Notch/>, []);
-const handleValueChange = useCallback((low, high) => {
-  setLow(low);
-  setHigh(high);
-}, []);
+  const renderThumb = useCallback(() => <Thumb />, []);
+  const renderRail = useCallback(() => <Rail />, []);
+  const renderRailSelected = useCallback(() => <RailSelected />, []);
+  const renderLabel = useCallback(value => <Label text={value} />, []);
+  const renderNotch = useCallback(() => <Notch />, []);
+  const handleValueChange = useCallback((low, high) => {
+    setLow(low);
+    setHigh(high);
+  }, []);
 
-const toggleRangeEnabled = useCallback(() => setRangeDisabled(!rangeDisabled), [rangeDisabled]);
+  const toggleRangeEnabled = useCallback(
+    () => setRangeDisabled(!rangeDisabled),
+    [rangeDisabled],
+  );
   const setMinTo50 = useCallback(() => setMin(50), []);
   const setMinTo0 = useCallback(() => setMin(0), []);
   const setMaxTo100 = useCallback(() => setMax(100), []);
   const setMaxTo500 = useCallback(() => setMax(500), []);
-  const toggleFloatingLabel = useCallback(() => setFloatingLabel(!floatingLabel), [floatingLabel]);
+  const toggleFloatingLabel = useCallback(
+    () => setFloatingLabel(!floatingLabel),
+    [floatingLabel],
+  );
 
   const agregarFavoritos = () => {
     setEstado(!estado);
@@ -117,7 +123,8 @@ const toggleRangeEnabled = useCallback(() => setRangeDisabled(!rangeDisabled), [
         console.log(
           'resp:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>' + JSON.stringify(json),
         );
-        setMastercategories(json.data);
+        setMastercategories(json.data || []);
+        setFilteredCategories(json.data || [])
         setCategories(json.data.filter(item => item.parent == null));
       });
   }, []);
@@ -133,25 +140,24 @@ const toggleRangeEnabled = useCallback(() => setRangeDisabled(!rangeDisabled), [
   //       console.error(error);
   //     });
   // }, []);
-  const searchFilterFunction = text => {
+  const searchFilterFunction = (text =  '') => {
     // Check if searched text is not blank
     if (text) {
       // Inserted text is not blank
       // Filter the masterDataSource
       // Update FilteredDataSource
-      const newData = masterDataSource.filter(function (item) {
-        const itemData = item.title
-          ? item.title.toUpperCase()
-          : ''.toUpperCase();
-        const textData = text.toUpperCase();
-        return itemData.indexOf(textData) > -1;
+      const newData = mastercategories.filter(item=>{
+        if(item.name) {
+          return item.name.toUpperCase().includes(text.toUpperCase())
+        }
+        return false;
       });
-      setFilteredDataSource(newData);
+      setFilteredCategories(newData);
       setSearch(text);
     } else {
       // Inserted text is blank
       // Update FilteredDataSource with masterDataSource
-      setFilteredDataSource(masterDataSource);
+      setFilteredCategories([].concat(mastercategories));
       setSearch(text);
     }
   };
@@ -208,10 +214,11 @@ const toggleRangeEnabled = useCallback(() => setRangeDisabled(!rangeDisabled), [
                   placeholder="Search Category..."
                   placeholderTextColor={'white'}
                 />
-               
+
                 <View style={styles.searchicon}>
-                  <TouchableOpacity onPress={() =>props.navigation.navigate('searchfilter')}>
-                  <Icon name="search" size={25} color="#ffffff" />
+                  <TouchableOpacity
+                    onPress={() => props.navigation.navigate('searchfilter')}>
+                    <Icon name="search" size={25} color="#ffffff" />
                   </TouchableOpacity>
                 </View>
                 <View style={styles.options}>
@@ -239,7 +246,7 @@ const toggleRangeEnabled = useCallback(() => setRangeDisabled(!rangeDisabled), [
                     }}>
                     <View style={styles.rawbottom}>
                       <TouchableOpacity>
-                      <Text style={styles.choose}>Filter</Text>
+                        <Text style={styles.choose}>Filter</Text>
                       </TouchableOpacity>
                       <TouchableOpacity
                         onPress={() => refRBSheet.current.close()}>
@@ -323,8 +330,9 @@ const toggleRangeEnabled = useCallback(() => setRangeDisabled(!rangeDisabled), [
 
                     <View style={styles.datebox}>
                       <View style={styles.date}>
-                      <TextInput style={styles.datetext}
-                        placeholder="20 Feb 2021"></TextInput>
+                        <TextInput
+                          style={styles.datetext}
+                          placeholder="20 Feb 2021"></TextInput>
                         <View style={styles.calendar}>
                           <TouchableOpacity>
                             <Icon
@@ -338,8 +346,9 @@ const toggleRangeEnabled = useCallback(() => setRangeDisabled(!rangeDisabled), [
                       <Text style={styles.totext}>TO</Text>
 
                       <View style={styles.dateboxside}>
-                        <TextInput style={styles.datetext}
-                        placeholder="20 Feb 2021"></TextInput>
+                        <TextInput
+                          style={styles.datetext}
+                          placeholder="20 Feb 2021"></TextInput>
                         <View style={styles.calendar}>
                           <TouchableOpacity>
                             <Icon
@@ -354,65 +363,65 @@ const toggleRangeEnabled = useCallback(() => setRangeDisabled(!rangeDisabled), [
                     <View style={styles.rawtext}>
                       <Text style={styles.change}>Short by Reward Points</Text>
                     </View>
-                    <View style={{marginTop:hp('4%'),justifyContent:'flex-start',alignItems:'flex-start'}}>
-                    <Slider
-  style={styles.slider}
-  min={25}
-  max={1500}
-  step={1}
-  floatingLabel
-  renderThumb={renderThumb}
-  renderRail={renderRail}
-  renderRailSelected={renderRailSelected}
-  renderLabel={renderLabel}
-  renderNotch={renderNotch}
-  onValueChanged={handleValueChange}
-/>
-</View>
-<View style={{justifyContent:'flex-start',alignItems:'flex-start',flexDirection:'row',width:wp('84%'),marginLeft:wp('4%'),marginEnd:wp('4%')}}>
-<View style={{justifyContent:'center',alignItems:'center',flexDirection:'row',marginLeft:wp('2%')}}>
-<Text style={{fontSize:moderateScale(10),fontFamily:'Poppins-regular',color:'rgb(80,80,80)'}}>25</Text>
-<View style={{justifyContent:'center',alignItems:'center'}}>
-<Icon
-name="flame-outline"
-size={16}
-color="gold"
-/>
+                    <View
+                      style={{
+                        marginTop: hp('4%'),
+                        justifyContent: 'flex-start',
+                        alignItems: 'flex-start',
+                      }}>
+                      <Slider
+                        style={styles.slider}
+                        min={25}
+                        max={1500}
+                        step={1}
+                        floatingLabel
+                        renderThumb={renderThumb}
+                        renderRail={renderRail}
+                        renderRailSelected={renderRailSelected}
+                        renderLabel={renderLabel}
+                        renderNotch={renderNotch}
+                        onValueChanged={handleValueChange}
+                      />
+                    </View>
+                    <View style={styles.rawpoints}>
+                      <View style={styles.pointsview}>
+                        <Text style={styles.bottompointtext}>25</Text>
+                        <View
+                          style={{
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                          }}>
+                          <Icon name="flame-outline" size={16} color="gold" />
+                        </View>
+                      </View>
 
-</View>
-</View>
-
-<View style={{justifyContent:'center',alignItems:'center',flexDirection:'row',marginLeft:wp('63%')}}>
-<Text style={{fontSize:moderateScale(10),fontFamily:'Poppins-regular',color:'rgb(80,80,80)'}}>1500</Text>
-<View style={{justifyContent:'center',alignItems:'center'}}>
-<Icon
-name="flame-outline"
-size={16}
-color="gold"
-/>
-
-</View>
-</View>
-
-</View>
-<View style={{justifyContent:'space-between',alignItems:'flex-start',flexDirection:'row',width:wp('86%'),marginLeft:wp('2%'),marginEnd:wp('2%'),marginTop:hp('5%'),borderColor:'transparent',borderWidth:1,padding:2,marginBottom:hp('1%'),}}>
-  <TouchableOpacity>
-<View style={{width:wp('31%'),justifyContent:'center',alignItems:'center',borderRadius:7,marginEnd:wp('1%'),borderWidth:1,borderColor:'#1ab2ff'}}>
-  <Text style={{fontFamily:'Poppins-Bold',fontSize:moderateScale(16),lineHeight:25,color:'#1ab2ff',padding:7}}>Clear All</Text>
-
-</View>
-</TouchableOpacity>
-<TouchableOpacity>
-<View style={{width:wp('46%'),justifyContent:'center',alignItems:'center',backgroundColor:'#1ab2ff',borderRadius:7,marginEnd:wp('1%'),borderWidth:1,borderColor:'#1ab2ff'}}>
-  <Text style={{fontFamily:'Poppins-Bold',fontSize:moderateScale(16),lineHeight:25,color:'#ffffff',padding:7}}>Apply</Text>
-
-</View>
-</TouchableOpacity>
-</View>
+                      <View style={styles.rawpointview1}>
+                        <Text style={styles.bottompointtext}>1500</Text>
+                        <View
+                          style={{
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                          }}>
+                          <Icon name="flame-outline" size={16} color="gold" />
+                        </View>
+                      </View>
+                    </View>
+                    <View style={styles.bottomrawbtns}>
+                      <TouchableOpacity>
+                        <View style={styles.clear}>
+                          <Text style={styles.cleartext}>Clear All</Text>
+                        </View>
+                      </TouchableOpacity>
+                      <TouchableOpacity>
+                        <View style={styles.apply}>
+                          <Text style={styles.rawbtntext}>Apply</Text>
+                        </View>
+                      </TouchableOpacity>
+                    </View>
                   </RBSheet>
                 </View>
               </View>
-              
+
               {/* <FlatList
           data={filteredDataSource}
           keyExtractor={(item, index) => index.toString()}
@@ -421,17 +430,20 @@ color="gold"
         /> */}
             </View>
           </View>
-          {
-            categories.map((item,index)=>{
-              return (
-                <View style={styles.collapsebox} key={index}>
+          {categories.map((item, index) => {
+            return (
+              <View style={styles.collapsebox} key={index}>
                 <Collapse style={{borderBottomWidth: 0, borderTopWidth: 0}}>
                   <CollapseHeader style={styles.colheader}>
                     <View style={styles.mainicon}>
-                      <Icon name="globe-outline" size={28} color="rgb(0,153,218)" />
+                      <Icon
+                        name="globe-outline"
+                        size={28}
+                        color="rgb(0,153,218)"
+                      />
                     </View>
                     <Text style={styles.titleidentity}>{item.name}</Text>
-    
+
                     <View style={styles.removeicon}>
                       <TouchableOpacity onPress={() => agregarFavoritos()}>
                         {estado ? (
@@ -452,27 +464,39 @@ color="gold"
                   </CollapseHeader>
                   <CollapseBody style={styles.colbody}>
                     <View style={styles.colmain}>
-                    {
-                      mastercategories.filter(subitem=>subitem.parent == item.id).map((subCategory,subIndex)=>{
-                        return (
-                          <View key={subIndex} style={subIndex%2==0?null:{marginLeft: wp('-15%')},subIndex%2==0?null:{marginTop:hp('6%'),marginLeft:wp('-15.5%')}}>
-                            <Collapse style={{flexDirection: 'row'}}>
-                              <CollapseHeader>
-                                <View style={styles.insidebox}>
-                                <TouchableOpacity onPress={()=>props.navigation.navigate('searchfilter')}>
-                                  <Text style={styles.selectname}>
-                                    {subCategory.name}
-                                  </Text>
-                                  </TouchableOpacity>
-                                  <View style={styles.selecticon}>
-                                    <Image
-                                      style={styles.icons}
-                                      source={require('../assets/image/signlanguage.png')}></Image>
+                      {filteredCategories
+                        .filter(subitem => subitem.parent == item.id)
+                        .map((subCategory, subIndex) => {
+                          return (
+                            <View
+                              key={subIndex}
+                              >
+                              <Collapse style={{flexDirection: 'row'}}>
+                                <CollapseHeader>
+                                  <View style={styles.insidebox}>
+                                    
+                                    <TouchableOpacity
+                                      onPress={() =>
+                                        props.navigation.navigate(
+                                          'searchfilter',{subCategory}
+                                        )
+                                      }>
+                                      <Text style={styles.selectname}>
+                                        {subCategory.name}
+                                      </Text>
+                                      
+                                    </TouchableOpacity>
+                                    
+                                    <View style={styles.selecticon}>
+                                      <Image
+                                        style={styles.icons}
+                                        source={require('../assets/image/signlanguage.png')}></Image>
+                                    </View>
+                                    
                                   </View>
-                                </View>
-                              </CollapseHeader>
-                            </Collapse>
-                            {/* <Collapse style={{flexDirection: 'row'}}>
+                                </CollapseHeader>
+                              </Collapse>
+                              {/* <Collapse style={{flexDirection: 'row'}}>
                               <CollapseHeader style={{marginLeft: wp('3%')}}>
                                 <View style={styles.insidebox}>
                                   <Text style={styles.selectname}>Arabic</Text>
@@ -484,11 +508,9 @@ color="gold"
                                 </View>
                               </CollapseHeader>
                             </Collapse> */}
-                          </View>
-          
-                        )
-                      })
-                    }
+                            </View>
+                          );
+                        })}
                     </View>
                     {/* <View style={styles.colmain}>
                       <Collapse style={{flexDirection: 'row'}}>
@@ -663,11 +685,11 @@ color="gold"
                    */}
                   </CollapseBody>
                 </Collapse>
-              </View>)
-            })
-          }
+              </View>
+            );
+          })}
 
-          <View style={styles.collapsebox}>
+          {/* <View style={styles.collapsebox}>
             <Collapse style={{borderBottomWidth: 0, borderTopWidth: 0}}>
               <CollapseHeader style={styles.colheader}>
                 <View style={styles.mainicon}>
@@ -783,9 +805,9 @@ color="gold"
                 </View>
               </CollapseBody>
             </Collapse>
-          </View>
+          </View> */}
 
-          <View style={styles.collapsebox}>
+          {/* <View style={styles.collapsebox}>
             <Collapse style={{borderBottomWidth: 0, borderTopWidth: 0}}>
               <CollapseHeader style={styles.colheader}>
                 <View style={styles.mainicon}>
@@ -1012,9 +1034,9 @@ color="gold"
                 </View>
               </CollapseBody>
             </Collapse>
-          </View>
+          </View> */}
 
-          <View style={styles.collapsebox}>
+          {/* <View style={styles.collapsebox}>
             <Collapse style={{borderBottomWidth: 0, borderTopWidth: 0}}>
               <CollapseHeader style={styles.colheader}>
                 <View style={styles.mainicon}>
@@ -1245,8 +1267,7 @@ color="gold"
                 </View>
               </CollapseBody>
             </Collapse>
-          </View>
-         
+          </View> */}
         </View>
       </ScrollView>
     </SafeAreaView>

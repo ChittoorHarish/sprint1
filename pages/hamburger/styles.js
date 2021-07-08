@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontFamily: 'Poppins-Regular',
     fontSize: moderateScale(15),
-    color: '#fff',
+    color: 'rgb(80,80,80)',
     marginLeft: wp('1%'),
   },
 
@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: wp('19%'),
-    backgroundColor: '#999999',
+    backgroundColor: 'rgb(246,246,246)',
     flexDirection: 'row',
     borderRadius: 20,
     padding: 5,
@@ -275,5 +275,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginLeft: wp('2%'),
   },
+  
 });
 export default styles;

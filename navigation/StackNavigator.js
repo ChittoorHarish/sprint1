@@ -46,6 +46,7 @@ import homeongoing1 from '../pages/homeongoing1/homeongoing1';
 import callschedule from '../pages/callschedule/callschedule';
 import joincall from '../pages/joincall/joincall';
 import applicantprofile from '../pages/applicantprofile/applicantprofile';
+import postprofile from '../pages/postprofile/postprofile';
 import notifications from '../pages/notifications/notifications';
 import CustomSidebarMenu from '../pages/CustomSidebarMenu/CustomSidebarMenu';
 import termsandconditions from '../pages/termsandconditions/termsandconditions';
@@ -233,17 +234,18 @@ const MainStackNavigator = () => {
         name="homeongoing"
         component={homeongoing}
         options={{
-          title: 'Ongoing Post',
-          headerBackTitle: ' ',
+          title: ' ',
+          headerBackTitle: 'Ongoing Post',
           headerStyle: {
             height: hp('12%'),
             backgroundColor: '#1ab2ff', //Set Header color
           },
           headerTintColor: '#ffffff', //Set Header text color
-          headerTitleStyle: {
+          headerBackTitleStyle: {
             fontFamily: 'Poppins-Bold',
             fontSize: moderateScale(17), //Set Header text style
           },
+          
         }}
       />
       <Stack.Screen
@@ -412,11 +414,11 @@ const MainStackNavigator = () => {
           ),
         }}
       />
-      <Stack.Screen
-        name="editongoing"
-        component={editongoing}
+       <Stack.Screen
+        name="postprofile"
+        component={postprofile}
         options={{
-          title: 'Edit Ongoing Post',
+          title: 'Ongoing Post',
           headerBackTitle: ' ',
           headerStyle: {
             height: hp('12%'),
@@ -444,10 +446,28 @@ const MainStackNavigator = () => {
                   color: 'white',
                   fontFamily: 'Poppins-SemiBold',
                 }}>
-                Edit Post
+                Profile
               </Text>
             </View>
           ),
+        }}
+      />
+      <Stack.Screen
+        name="editongoing"
+        component={editongoing}
+        options={{
+          title: ' ',
+          headerBackTitle: 'Edit Ongoing Post',
+          headerStyle: {
+            height: hp('12%'),
+            backgroundColor: '#1ab2ff', //Set Header color
+          },
+          headerTintColor: '#ffffff', //Set Header text color
+          headerTitleStyle: {
+            fontFamily: 'Poppins-Bold',
+            fontSize: moderateScale(17), //Set Header text style
+          },
+         
         }}
       />
       <Stack.Screen
@@ -517,7 +537,7 @@ const MainStackNavigator = () => {
                   color: 'white',
                   fontFamily: 'Poppins-SemiBold',
                 }}>
-                Search Results
+                Search Result
               </Text>
             </View>
           ),
@@ -725,7 +745,7 @@ const ContactStackNavigator = () => {
   );
 };
 
-function BottomTabNavigator() {
+function BottomTabNavigator(props,navigation) {
   return (
     <Tab.Navigator
       tabBarOptions={{
@@ -740,8 +760,11 @@ function BottomTabNavigator() {
         component={hamburger}
         options={{
           title: 'Ham',
-          tabBarLabel: () => null,
-          tabBarIcon: ({color}) => <Icon name="home" color={color} size={25} />,
+          tabBarLabel: () =>null,
+          tabBarIcon: ({color}) => 
+         
+            <Icon name="home" color={color} size={25} />
+           
         }}
       />
       <Tab.Screen
@@ -752,7 +775,7 @@ function BottomTabNavigator() {
           tabBarIcon: ({}) => (
             <TouchableOpacity
               style={{
-                position: 'absolute',
+                position: 'relative',
                 bottom: 9, // space from bottombar
                 height: 60,
                 zIndex: 1,
