@@ -190,7 +190,9 @@ const apply = props => {
           </View>
           <View style={styles.dateview}>
             <Text style={styles.needtext}>Communication Preferred:</Text>
+            <TouchableOpacity onPress={()=>props.navigation.navigate('chat')}>
             <Text style={styles.datetext}>Chat</Text>
+            </TouchableOpacity>
             <View style={styles.calicon}>
               <Icon name="chatbox-ellipses-outline" color="black" size={20} />
             </View>

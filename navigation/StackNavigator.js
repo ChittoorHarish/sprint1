@@ -54,6 +54,7 @@ import editongoing from '../pages/editongoing/editongoing';
 import searchfilter from '../pages/searchfilter/searchfilter';
 import apply from '../pages/apply/apply';
 import addpost from "../pages/addpost/addpost";
+import chat from "../pages/chat/chat";
 import {Label} from 'native-base';
 import color from 'color';
 
@@ -235,9 +236,9 @@ const MainStackNavigator = () => {
         component={homeongoing}
         options={{
           title: ' ',
-          headerBackTitle: 'Ongoing Post',
+          headerBackTitle: ' ',
           headerStyle: {
-            height: hp('12%'),
+            
             backgroundColor: '#1ab2ff', //Set Header color
           },
           headerTintColor: '#ffffff', //Set Header text color
@@ -516,18 +517,18 @@ const MainStackNavigator = () => {
           title: ' ',
           headerBackTitle: ' ',
           headerStyle: {
-            height: hp('12%'),
+            
             backgroundColor: '#1ab2ff', //Set Header color
           },
           headerTintColor: '#ffffff', //Set Header text color
-          headerLeft: () => (
+          headerLeft: (navigation) => (
             <View
               style={{
                 justifyContent: 'flex-start',
                 alignItems: 'flex-start',
                 flexDirection: 'row',
               }}>
-              {/* <TouchableOpacity onPress={()=>{navigation.navigate('search')}}> */}
+              {/* <TouchableOpacity onPress={()=>navigation.push('search')}> */}
               <Icon name="arrow-back-outline" color="white" size={22} />
               {/* </TouchableOpacity> */}
               <Text
@@ -536,6 +537,7 @@ const MainStackNavigator = () => {
                   lineHeight: 25,
                   color: 'white',
                   fontFamily: 'Poppins-SemiBold',
+                  marginLeft:wp('2%')
                 }}>
                 Search Result
               </Text>
@@ -618,7 +620,7 @@ const MainStackNavigator = () => {
         name="apply"
         component={apply}
         options={{
-          title: 'APPLY',
+          title: ' ',
           headerBackTitle: ' ',
           headerStyle: {
             height: hp('12%'),
@@ -630,27 +632,29 @@ const MainStackNavigator = () => {
             fontFamily: 'Poppins-Bold',
             fontSize: moderateScale(17), //Set Header text style
           },
-          headerTitle: () => (
+          headerLeft: (navigation) => (
             <View
               style={{
                 justifyContent: 'flex-start',
-                alignItems: 'center',
+                alignItems: 'flex-start',
                 flexDirection: 'row',
-                marginEnd: wp('1%'),
-                width: wp('85%'),
-                marginLeft: wp('2%'),
               }}>
+              {/* <TouchableOpacity onPress={()=>navigation.push('search')}> */}
+              <Icon name="arrow-back-outline" color="white" size={22} />
+              {/* </TouchableOpacity> */}
               <Text
                 style={{
                   fontSize: moderateScale(16),
                   lineHeight: 25,
                   color: 'white',
                   fontFamily: 'Poppins-SemiBold',
+                  marginLeft:wp('2%')
                 }}>
                 Apply
               </Text>
             </View>
           ),
+         
           headerRight: () => (
             <View
               style={{
@@ -731,6 +735,58 @@ const MainStackNavigator = () => {
                   source={require('../pages/assets/image/gal.png')}></Image>
               </View>
             </View>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="chat"
+        component={chat}
+        options={{
+          title: ' ',
+          headerBackTitle: ' ',
+          headerStyle: {
+            backgroundColor: '#1ab2ff', //Set Header color
+          },
+
+          headerTintColor: '#ffffff', //Set Header text color
+          headerTitleStyle: {
+            fontFamily: 'Poppins-Bold',
+            fontSize: moderateScale(17), //Set Header text style
+          },
+         
+          headerLeft: () => (
+            
+              <View style={{justifyContent: 'center', alignItems: 'center',flexDirection:'row'}}>
+                <Icon name="arrow-back-outline" color="white" size={24} />
+                <Image
+                  style={{
+                    borderWidth: 0.1,
+                    height: hp('3.8%'),
+                    width: wp('8.5%'),
+                    marginLeft:wp('2%'),
+                    borderRadius: 20,
+                  }}
+                  source={require('../pages/assets/image/gal.png')}></Image>
+                    <Text
+                style={{
+                  fontSize: moderateScale(16),
+                  lineHeight: 25,
+                  color: 'white',
+                  marginLeft:wp('3%'),
+                  fontFamily: 'Poppins-SemiBold',
+                }}>
+                Chat
+              </Text>
+              </View>
+            
+          ),
+          headerRight:()=>(
+            <View style={{justifyContent:'center',alignItems:'center',flexDirection:'row',marginEnd:wp('4%')}}>
+              <Icon name="call-outline" color="white" size={26} style={{marginEnd:wp('4%')}}/>
+              <Icon name="videocam-outline" color="white" size={26} />
+
+            </View>
+
           ),
         }}
       />

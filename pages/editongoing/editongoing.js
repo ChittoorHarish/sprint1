@@ -169,7 +169,8 @@ const editongoing = props => {
                 <TextInput
                   style={styles.datetext}
                   placeholder="9:20"
-                  value={datetime}></TextInput>
+                  placeholderTextColor="rgb(80,80,80)"
+                  ></TextInput>
 
                 <View style={styles.calendar}>
                   <TouchableOpacity>

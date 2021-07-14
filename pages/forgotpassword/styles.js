@@ -49,7 +49,7 @@ touchpass:{
 buttonsend:{
   justifyContent:'center',
   alignItems:'center',
-  marginTop:hp('15%'),
+  marginTop:hp('27%'),
   alignSelf:'center'
 },
 textinp:{

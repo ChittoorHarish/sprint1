@@ -87,7 +87,7 @@ const newpassword = props => {
           style={{
             justifyContent: 'center',
             alignItems: 'center',
-            marginTop: hp('4%'),
+            marginTop: hp('1%'),
           }}>
           <View style={styles.SectionStyle1}>
             <View style={styles.basic}>

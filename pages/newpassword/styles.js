@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   touchnewpass:{
     justifyContent:'center',
     alignItems:'center',
-    marginTop:hp('22%'),
+    marginTop:hp('27%'),
     alignSelf:'center'
   },
   basic:{

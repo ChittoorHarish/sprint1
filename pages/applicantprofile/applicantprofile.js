@@ -10,6 +10,10 @@ import { heightPercentageToDP as hp, widthPercentageToDP as wp, moderateScale } 
 const applicantprofile = (props) => {
   const [authtoken, setAuthtoken] = useState([]);
   const [note, setNote] = useState([]);
+  const [estado, setEstado] = useState(false);
+  const agregarFavoritos = () => {
+    setEstado(!estado);
+  };
 
   useEffect(async () => {
     let token = await AsyncStorage.getItem('auth_token');
@@ -62,7 +66,7 @@ const applicantprofile = (props) => {
           <Text style={styles.points}>300</Text>
           </View>
           <View style={styles.flameicon}>
-          <Icon name="flame-outline"  size={20} color={'gold'}/>
+          <Icon name="flame-outline"  size={20} color={'orange'}/>
           </View>
           
           
@@ -71,10 +75,21 @@ const applicantprofile = (props) => {
         {/* <View style={styles.staricon}>
           <Icon name="star-outline"  size={12} color={'grey'}/>
           </View> */}
-          <View style={styles.flameicon}>
-          <Icon name="bookmark-outline"  size={22} color={'grey'}/>
-          </View>
           
+          <TouchableOpacity onPress={() => agregarFavoritos()}>
+          {estado ? (
+          <View style={styles.flameicon}>
+          <Icon name="bookmark"  size={22} color={'orange'}/>
+          </View>
+           ):(
+            
+            <View style={styles.flameicon}>
+            <Icon name="bookmark-outline"  size={22} color={'grey'}/>
+            </View>
+            
+            )}
+          </TouchableOpacity>
+         
           
         </View>
         </View>
