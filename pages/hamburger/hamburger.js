@@ -97,19 +97,19 @@ const hamburger = (props) => {
       <View style={styles.center}>
         <View style={styles.ham}>
           <View style={styles.icon}>
-            <View style={{flexDirection:'column',borderWidth:0.3,borderColor:'transparent',width:wp('10%'),}}>
+            {/* <View style={{flexDirection:'column',borderWidth:0.3,borderColor:'transparent',width:wp('10%'),}}>
               <TouchableOpacity onPress={() => props.navigation.openDrawer()}>
             <Text style={{fontSize:moderateScale(23),fontWeight:'bold',color:'#fff',marginTop:hp('-1.3%'),marginLeft:wp('1%'),marginEnd:wp('1%')}}>__</Text>
             <Text style={{fontSize:moderateScale(26),fontWeight:'bold',color:'#fff',marginTop:hp('-3%'),marginLeft:wp('1%'),marginEnd:wp('1%')}}>_</Text>
             <Text style={{fontSize:moderateScale(18),fontWeight:'bold',color:'#fff',marginTop:hp('-2%'),marginLeft:wp('1%'),marginEnd:wp('1%')}}>__</Text>
             </TouchableOpacity>
-            </View>
-            {/* <Icon
+            </View> */}
+            <Icon
               name="menu"
               size={40}
               color="#ffffff"
               onPress={() => props.navigation.openDrawer()}
-            /> */}
+            />
             <View style={styles.notification}>
               <TouchableOpacity
                 onPress={() => props.navigation.navigate('notifications')}>
